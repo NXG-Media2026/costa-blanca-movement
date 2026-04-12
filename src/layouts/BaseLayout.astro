@@ -7,6 +7,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { siteConfig } from '../data/site';
 import type { Locale } from '../data/site';
+import { getTrackingScript, getGA4Script } from '../lib/analytics';
 
 interface Props {
   title: string;
@@ -48,12 +49,9 @@ const {
   />
 
   <!-- Analytics — works without GA4, silent no-op -->
-  <script is:inline>
-    window.trackEvent=function(n,p){if(location.hostname==='localhost'||location.hostname==='127.0.0.1'){console.log('[Analytics]',n,p);return;}if(typeof gtag==='function'){gtag('event',n,p);}};
-  </script>
-
+  <script is:inline set:html={getTrackingScript()} />
   {siteConfig.ga4MeasurementId && (
-    <Fragment set:html={`<script async src="https://www.googletagmanager.com/gtag/js?id=${siteConfig.ga4MeasurementId}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${siteConfig.ga4MeasurementId}');</script>`} />
+    <Fragment set:html={getGA4Script(siteConfig.ga4MeasurementId)} />
   )}
 </head>
 <body class="bg-bg text-text min-h-screen flex flex-col">
