@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Read(//c/Users/Joost/Projects/costa-blanca-movement/**)",
+      "Bash(cp /c/Users/Joost/Projects/costa-blanca-movement/.claude/worktrees/infallible-carson/package.json .)",
+      "Bash(cp /c/Users/Joost/Projects/costa-blanca-movement/.claude/worktrees/infallible-carson/package-lock.json .)",
+      "Bash(cp /c/Users/Joost/Projects/costa-blanca-movement/.claude/worktrees/infallible-carson/astro.config.mjs .)",
+      "Bash(cp /c/Users/Joost/Projects/costa-blanca-movement/.claude/worktrees/infallible-carson/tailwind.config.mjs .)",
+      "Bash(cp -r /c/Users/Joost/Projects/costa-blanca-movement/.claude/worktrees/infallible-carson/src /c/Users/Joost/Projects/costa-blanca-movement/)",
+      "Bash(cp -r /c/Users/Joost/Projects/costa-blanca-movement/.claude/worktrees/infallible-carson/public /c/Users/Joost/Projects/costa-blanca-movement/)",
+      "Bash(npx astro:*)"
+    ]
+  }
+}

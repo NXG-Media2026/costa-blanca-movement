@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+import { generateMedicalBusiness } from '../data/schema';
+---
+
+<BaseLayout
+  title={`${siteConfig.name} — Spine & Mobility Care in Altea, Costa Blanca`}
+  description="Expert spine and mobility care for the expat community on Spain's Costa Blanca. Non-surgical treatments for back pain, neck pain, and sports injuries in Altea."
+  schemas={[generateMedicalBusiness()]}
+  hreflang={[
+    { lang: 'en', href: siteConfig.url },
+    { lang: 'nl', href: `${siteConfig.url}/nl` },
+  ]}
+>
+  <!-- Placeholder content for layout testing -->
+  <section class="py-16 md:py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
+      <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-text mb-6">
+        Move Better. Live Better.
+      </h1>
+      <p class="text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-8">
+        Expert spine and mobility care for the expat community on Spain's Costa Blanca.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-accent hover:bg-accent-dark transition-colors rounded-button"
+      >
+        Book Appointment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
+      <p class="text-text-muted">
+        Full homepage components will be built in step 5.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

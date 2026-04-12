@@ -1,0 +1,62 @@
+---
+import { siteConfig } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  ogType?: string;
+  hreflang?: Array<{ lang: string; href: string }>;
+  noindex?: boolean;
+  schemas?: string[];
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  ogType = 'website',
+  hreflang = [],
+  noindex = false,
+  schemas = [],
+} = Astro.props;
+
+const fullOgImage = ogImage
+  ? ogImage.startsWith('http') ? ogImage : `${siteConfig.url}${ogImage}`
+  : `${siteConfig.url}/images/og/default.jpg`;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content={ogType} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:site_name" content={siteConfig.name} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullOgImage} />
+
+<!-- Hreflang -->
+{hreflang.map(({ lang, href }) => (
+  <link rel="alternate" hreflang={lang} href={href} />
+))}
+
+<!-- JSON-LD Structured Data -->
+{schemas.map((schema) => (
+  <script type="application/ld+json" set:html={schema} />
+))}
