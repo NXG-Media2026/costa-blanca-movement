@@ -1,0 +1,41 @@
+{
+  "lastUpdated": "2026-03-12",
+  "period": "March 2026",
+  "scores": {
+    "overall": { "value": 72, "previousValue": 58, "status": "improving" },
+    "layer1_technical": { "value": 89, "previousValue": 41, "status": "strong" },
+    "layer2_citability": { "value": 67, "previousValue": 38, "status": "improving" },
+    "layer3_authority": { "value": 35, "previousValue": 22, "status": "building" }
+  },
+  "traffic": {
+    "organicClicks": [
+      { "month": "2026-01", "value": 45 },
+      { "month": "2026-02", "value": 128 },
+      { "month": "2026-03", "value": 210 }
+    ]
+  },
+  "events": {
+    "period": "2026-03",
+    "phone_clicks": 12,
+    "whatsapp_clicks": 8,
+    "form_submits": 5,
+    "route_clicks": 15
+  },
+  "reviews": {
+    "total": 23,
+    "averageRating": 4.7,
+    "newThisMonth": 3,
+    "source": "Google"
+  },
+  "actionsCompleted": [
+    { "date": "2026-03-01", "action": "Published: Lower Back Pain treatment page" },
+    { "date": "2026-03-05", "action": "Added FAQ section to 3 treatment pages" },
+    { "date": "2026-03-08", "action": "GBP: weekly post + 4 new photos" },
+    { "date": "2026-03-10", "action": "New citation: Zorgkaart Nederland" }
+  ],
+  "nextPriorities": [
+    { "priority": "Add 2 new condition pages (sciatica, neck pain)", "status": "planned" },
+    { "priority": "Review velocity: target 4 new reviews this month", "status": "in_progress" },
+    { "priority": "Submit to 3 local directories", "status": "planned" }
+  ]
+}
