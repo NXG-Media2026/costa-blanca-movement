@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import CTABand from '../../components/CTABand.astro';
+import { siteConfig } from '../../data/site';
+import { generateLocalBusiness, generateBreadcrumbs } from '../../data/schema';
+import { t } from '../../i18n/utils';
+
+const treatments = await getCollection('treatments');
+const enTreatments = treatments
+  .filter((tr) => tr.data.lang === 'en')
+  .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Treatments' },
+];
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs([
+    { name: 'Home', url: siteConfig.url },
+    { name: 'Treatments', url: `${siteConfig.url}/treatments` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={`Our Treatments | ${siteConfig.name}`}
+  description="Explore our range of non-surgical treatments for back pain, neck pain, sports injuries, and postural problems. Spinal decompression, sports massage, and more."
+  canonical={`${siteConfig.url}/treatments`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/treatments` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/behandelingen` },
+  ]}
+  locale="en"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <section class="py-16 md:py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="max-w-3xl mb-12 md:mb-16">
+        <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-6">
+          Our Treatments
+        </h1>
+        <p class="text-lg text-text-muted leading-relaxed">
+          We offer a range of evidence-based, non-surgical treatments designed to relieve pain, restore mobility, and help you get back to the activities you love. Every treatment plan is personalised to your condition and goals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {enTreatments.map((treatment) => (
+          <a
+            href={`/treatments/${treatment.id.split('/').pop()!.replace(/\.md$/, '')}`}
+            class="group block p-6 md:p-8 bg-white border border-border rounded-card hover:border-accent/30 hover:shadow-lg transition-all duration-300"
+          >
+            <h2 class="font-heading text-xl md:text-2xl text-text mb-3 group-hover:text-accent transition-colors">
+              {treatment.data.title}
+            </h2>
+            <p class="text-text-muted leading-relaxed mb-4">
+              {treatment.data.definition}
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-text-muted">
+                {t('treatment.duration', 'en')}: {treatment.data.duration}
+              </span>
+              <span class="inline-flex items-center text-sm font-medium text-accent">
+                {t('cta.learnMore', 'en')}
+                <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    title="Not Sure Which Treatment Is Right for You?"
+    subtitle="Book an initial assessment and we'll recommend the best approach for your condition."
+    ctaText="Book Assessment"
+    ctaHref="/contact"
+    locale="en"
+    pageType="treatment"
+    pageSlug="treatments"
+  />
+</BaseLayout>

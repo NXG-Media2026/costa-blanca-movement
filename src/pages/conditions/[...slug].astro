@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import ConditionLayout from '../../layouts/ConditionLayout.astro';
+
+export async function getStaticPaths() {
+  const conditions = await getCollection('conditions');
+  const treatments = await getCollection('treatments');
+
+  const enConditions = conditions.filter((c) => c.data.lang === 'en');
+  const enTreatments = treatments.filter((t) => t.data.lang === 'en');
+
+  const treatmentTitles: Record<string, string> = {};
+  enTreatments.forEach((t) => {
+    const slug = t.id.split('/').pop()!.replace(/\.md$/, '');
+    treatmentTitles[slug] = t.data.title;
+  });
+
+  return enConditions.map((condition) => {
+    const slug = condition.id.split('/').pop()!.replace(/\.md$/, '');
+    return {
+      params: { slug },
+      props: { condition, treatmentTitles, slug },
+    };
+  });
+}
+
+const { condition, treatmentTitles, slug } = Astro.props;
+const { Content } = await condition.render();
+---
+
+<ConditionLayout frontmatter={{ ...condition.data, slug }} treatmentTitles={treatmentTitles}>
+  <Content />
+</ConditionLayout>

@@ -9,7 +9,6 @@ const treatments = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     lang: z.enum(['en', 'nl']),
     translationSlug: z.string().optional(),
     metaTitle: z.string(),
@@ -30,7 +29,6 @@ const conditions = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     lang: z.enum(['en', 'nl']),
     translationSlug: z.string().optional(),
     metaTitle: z.string(),

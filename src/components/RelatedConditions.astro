@@ -1,0 +1,42 @@
+---
+import { t } from '../i18n/utils';
+import type { Locale } from '../data/site';
+
+interface RelatedItem {
+  title: string;
+  slug: string;
+}
+
+interface Props {
+  conditions: RelatedItem[];
+  basePath: string;
+  locale?: Locale;
+}
+
+const { conditions, basePath, locale = 'en' } = Astro.props;
+---
+
+{conditions.length > 0 && (
+  <section class="py-12 md:py-16 bg-bg-alt">
+    <div class="max-w-3xl mx-auto px-4 md:px-6">
+      <h2 class="font-heading text-2xl md:text-3xl text-text mb-6">
+        {t('treatment.relatedConditions', locale)}
+      </h2>
+      <ul class="flex flex-wrap gap-3">
+        {conditions.map((item) => (
+          <li>
+            <a
+              href={`${basePath}/${item.slug}`}
+              class="inline-flex items-center px-4 py-2.5 text-sm font-medium border border-border rounded-button text-text hover:text-accent hover:border-accent/30 transition-colors"
+            >
+              {item.title}
+              <svg class="w-4 h-4 ml-2 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
