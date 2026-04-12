@@ -1,0 +1,85 @@
+---
+import type { EventName, CTALocation, PageType } from '../lib/analytics';
+import { trackOnClick } from '../lib/analytics';
+import type { Locale } from '../data/site';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaText: string;
+  ctaHref: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+  backgroundImage?: string;
+  locale?: Locale;
+  pageType?: PageType;
+  pageSlug?: string;
+}
+
+const {
+  title,
+  subtitle,
+  ctaText,
+  ctaHref,
+  secondaryCtaText,
+  secondaryCtaHref,
+  backgroundImage,
+  locale = 'en',
+  pageType = 'homepage',
+  pageSlug = '/',
+} = Astro.props;
+
+const trackProps = { page_type: pageType, page_slug: pageSlug, locale, cta_location: 'hero' as CTALocation };
+---
+
+<section class="relative overflow-hidden bg-[#2D2A26] text-white">
+  {/* Background gradient — image optional */}
+  {backgroundImage ? (
+    <div class="absolute inset-0">
+      <img
+        src={backgroundImage}
+        alt=""
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#2D2A26]/90 via-[#2D2A26]/70 to-[#2D2A26]/40"></div>
+    </div>
+  ) : (
+    <div class="absolute inset-0 bg-gradient-to-br from-[#2D2A26] via-[#3a3530] to-[#2D2A26]"></div>
+  )}
+
+  {/* Subtle accent glow */}
+  <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 md:px-6 py-20 md:py-28 lg:py-36">
+    <div class="max-w-2xl">
+      <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
+        {title}
+      </h1>
+      <p class="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-xl">
+        {subtitle}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href={ctaHref}
+          class="inline-flex items-center justify-center px-6 py-3.5 text-base font-medium bg-accent hover:bg-accent-dark text-white transition-colors rounded-button"
+          onclick={trackOnClick('appointment_click', trackProps)}
+        >
+          {ctaText}
+          <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        {secondaryCtaText && secondaryCtaHref && (
+          <a
+            href={secondaryCtaHref}
+            class="inline-flex items-center justify-center px-6 py-3.5 text-base font-medium border border-white/30 hover:border-white/60 text-white transition-colors rounded-button"
+            onclick={trackOnClick('phone_click', trackProps)}
+          >
+            {secondaryCtaText}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

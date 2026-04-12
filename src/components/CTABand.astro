@@ -1,0 +1,57 @@
+---
+import type { EventName, CTALocation, PageType } from '../lib/analytics';
+import { trackOnClick } from '../lib/analytics';
+import type { Locale } from '../data/site';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText: string;
+  ctaHref: string;
+  eventName?: EventName;
+  ctaLocation?: CTALocation;
+  locale?: Locale;
+  pageType?: PageType;
+  pageSlug?: string;
+}
+
+const {
+  title,
+  subtitle,
+  ctaText,
+  ctaHref,
+  eventName = 'appointment_click',
+  ctaLocation = 'inline',
+  locale = 'en',
+  pageType = 'homepage',
+  pageSlug = '/',
+} = Astro.props;
+---
+
+<section class="py-16 md:py-20 bg-accent">
+  <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
+    <h2 class="font-heading text-3xl md:text-4xl text-white mb-4">
+      {title}
+    </h2>
+    {subtitle && (
+      <p class="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+        {subtitle}
+      </p>
+    )}
+    <a
+      href={ctaHref}
+      class="inline-flex items-center px-8 py-4 text-base font-medium bg-white text-accent hover:bg-bg-alt transition-colors rounded-button"
+      onclick={trackOnClick(eventName, {
+        page_type: pageType,
+        page_slug: pageSlug,
+        locale,
+        cta_location: ctaLocation,
+      })}
+    >
+      {ctaText}
+      <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </a>
+  </div>
+</section>

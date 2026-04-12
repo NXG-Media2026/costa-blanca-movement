@@ -1,41 +1,157 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import DefinitionBlock from '../components/DefinitionBlock.astro';
+import TestimonialSlider from '../components/TestimonialSlider.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTABand from '../components/CTABand.astro';
 import { siteConfig } from '../data/site';
-import { generateMedicalBusiness } from '../data/schema';
+import { generateMedicalBusiness, generateFAQPage } from '../data/schema';
+
+const services = [
+  {
+    title: 'Spinal Decompression',
+    slug: 'spinal-decompression',
+    excerpt: 'Non-surgical treatment to relieve compressed spinal discs, reduce nerve pressure, and restore mobility.',
+    icon: 'spine',
+  },
+  {
+    title: 'Sports Massage',
+    slug: 'sports-massage',
+    excerpt: 'Deep tissue and sports-focused massage for faster recovery, injury prevention, and pain relief.',
+    icon: 'massage',
+  },
+  {
+    title: 'Postural Assessment',
+    slug: 'postural-assessment',
+    excerpt: 'Comprehensive evaluation of your alignment and movement patterns to identify the root cause of pain.',
+    icon: 'posture',
+  },
+  {
+    title: 'Dry Needling',
+    slug: 'dry-needling',
+    excerpt: 'Targeted trigger point therapy using thin needles to release muscle tension and reduce chronic pain.',
+    icon: 'needle',
+  },
+];
+
+const testimonials = [
+  {
+    name: 'Margaret T.',
+    text: 'After years of lower back pain, I finally found relief at Costa Blanca Movement Centre. Dr. Mitchell explained everything clearly and the spinal decompression treatment has been life-changing.',
+    rating: 5,
+    source: 'Google',
+  },
+  {
+    name: 'Hans van der Berg',
+    text: 'As a keen cyclist, regular sports massage here keeps me on the bike. Laura is incredibly skilled — she finds tension I didn\'t even know I had. Highly recommended for any active expat.',
+    rating: 5,
+    source: 'Google',
+  },
+  {
+    name: 'David R.',
+    text: 'Professional, knowledgeable, and genuinely caring. I came in with severe neck pain and sciatica. Within 6 sessions, I saw a dramatic improvement. Best clinic on the Costa Blanca.',
+    rating: 5,
+    source: 'Google',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Do I need a referral to visit your clinic?',
+    a: 'No, you don\'t need a referral. You can book an appointment directly by phone, WhatsApp, or through our contact form. We welcome both new and returning patients.',
+  },
+  {
+    q: 'Do you treat international patients and expats?',
+    a: 'Yes — our clinic primarily serves the international expat community on the Costa Blanca. We speak English, Dutch, and Spanish, and we\'re experienced with international health insurance claims.',
+  },
+  {
+    q: 'What should I expect during my first visit?',
+    a: 'Your first visit includes a comprehensive assessment of your condition, medical history, and movement patterns. We\'ll discuss your symptoms, perform a physical examination, and create a personalized treatment plan. Please allow 45–60 minutes.',
+  },
+  {
+    q: 'How many treatment sessions will I need?',
+    a: 'This depends on your condition and its severity. Most patients notice improvement within 3–4 sessions. During your initial assessment, we\'ll give you an honest estimate of the recommended treatment course.',
+  },
+  {
+    q: 'Is treatment covered by insurance?',
+    a: 'Many international health insurance providers cover our treatments. We can provide detailed invoices for reimbursement. Contact us with your insurance details and we\'ll help you understand your coverage.',
+  },
+  {
+    q: 'Where is your clinic located?',
+    a: 'We\'re located in Altea, on the Costa Blanca in Spain. Our clinic is easily accessible from Benidorm (10 min), Jávea (45 min), and Dénia (55 min). Free parking is available nearby.',
+  },
+];
+
+const trustItems = [
+  { value: '15+', label: 'Years\nExperience' },
+  { value: '2,500+', label: 'Patients\nTreated' },
+  { value: '4.7★', label: 'Google\nRating' },
+  { value: '23', label: 'Verified\nReviews' },
+];
 ---
 
 <BaseLayout
   title={`${siteConfig.name} — Spine & Mobility Care in Altea, Costa Blanca`}
   description="Expert spine and mobility care for the expat community on Spain's Costa Blanca. Non-surgical treatments for back pain, neck pain, and sports injuries in Altea."
-  schemas={[generateMedicalBusiness()]}
+  schemas={[generateMedicalBusiness(), generateFAQPage(faqs)]}
   hreflang={[
     { lang: 'en', href: siteConfig.url },
     { lang: 'nl', href: `${siteConfig.url}/nl` },
   ]}
+  locale="en"
 >
-  <!-- Placeholder content for layout testing -->
-  <section class="py-16 md:py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
-      <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-text mb-6">
-        Move Better. Live Better.
-      </h1>
-      <p class="text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-8">
-        Expert spine and mobility care for the expat community on Spain's Costa Blanca.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-accent hover:bg-accent-dark transition-colors rounded-button"
-      >
-        Book Appointment
-      </a>
-    </div>
-  </section>
+  <HeroSection
+    title="Move Better. Live Better."
+    subtitle="Expert spine and mobility care for the expat community on Spain's Costa Blanca. Non-surgical treatments that get you back to the life you love."
+    ctaText="Book Appointment"
+    ctaHref="/contact"
+    secondaryCtaText="Call Us"
+    secondaryCtaHref={`tel:${siteConfig.phone}`}
+    locale="en"
+    pageType="homepage"
+    pageSlug="/"
+  />
 
-  <section class="py-16 md:py-24 bg-bg-alt">
-    <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
-      <p class="text-text-muted">
-        Full homepage components will be built in step 5.
-      </p>
-    </div>
-  </section>
+  <TrustBar items={trustItems} />
+
+  <ServicesGrid
+    title="Our Treatments"
+    services={services}
+    basePath="/treatments"
+    locale="en"
+    pageType="homepage"
+    pageSlug="/"
+  />
+
+  <DefinitionBlock
+    term="What We Do"
+    definition="Costa Blanca Movement Centre is a specialist mobility and spine health clinic in Altea, Spain. We combine evidence-based manual therapy with modern non-surgical techniques to treat back pain, neck pain, sports injuries, and postural problems. Our multilingual team serves the international expat community across the Costa Blanca — from Benidorm to Jávea and Dénia."
+  />
+
+  <TestimonialSlider
+    testimonials={testimonials}
+    locale="en"
+  />
+
+  <FAQAccordion
+    items={faqs}
+    locale="en"
+    pageType="homepage"
+    pageSlug="/"
+  />
+
+  <CTABand
+    title="Ready to Move Without Pain?"
+    subtitle="Book your initial assessment today. We'll create a personalised treatment plan to get you back to doing what you love."
+    ctaText="Book Your Assessment"
+    ctaHref="/contact"
+    eventName="appointment_click"
+    ctaLocation="inline"
+    locale="en"
+    pageType="homepage"
+    pageSlug="/"
+  />
 </BaseLayout>

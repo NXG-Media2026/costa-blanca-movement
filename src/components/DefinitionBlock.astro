@@ -1,0 +1,19 @@
+---
+interface Props {
+  term: string;
+  definition: string;
+}
+
+const { term, definition } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-bg-alt">
+  <div class="max-w-3xl mx-auto px-4 md:px-6">
+    <h2 class="font-heading text-3xl md:text-4xl text-text mb-6">
+      {term}
+    </h2>
+    <p class="text-lg text-text-muted leading-relaxed">
+      {definition}
+    </p>
+  </div>
+</section>
