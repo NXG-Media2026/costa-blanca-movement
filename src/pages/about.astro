@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import CTABand from '../components/CTABand.astro';
+import { siteConfig } from '../data/site';
+import { generateLocalBusiness, generateBreadcrumbs, generatePerson } from '../data/schema';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us' },
+];
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs([
+    { name: 'Home', url: siteConfig.url },
+    { name: 'About Us', url: `${siteConfig.url}/about` },
+  ]),
+  ...siteConfig.team.map((member) => generatePerson(member)),
+];
+---
+
+<BaseLayout
+  title={`About Us | ${siteConfig.name}`}
+  description="Meet the team behind Costa Blanca Movement Centre. Expert chiropractor and sports massage therapist serving the expat community in Altea, Costa Blanca."
+  canonical={`${siteConfig.url}/about`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/about` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/over-ons` },
+  ]}
+  locale="en"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <!-- Mission -->
+  <section class="py-16 md:py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-4 md:px-6">
+      <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-6">
+        About {siteConfig.name}
+      </h1>
+      <div class="space-y-5 text-lg text-text-muted leading-relaxed">
+        <p>
+          We opened our doors in Altea with a simple mission: provide the expat community on the Costa Blanca with the same quality of specialist spine and mobility care they'd expect back home — in English, Dutch, or Spanish.
+        </p>
+        <p>
+          Too many people put up with chronic pain, limited movement, or recurring injuries because they can't find a practitioner who speaks their language and understands their needs. We're here to change that.
+        </p>
+        <p>
+          Our approach is hands-on, evidence-based, and focused on long-term results — not quick fixes. Every treatment plan is built around your specific condition, lifestyle, and goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="max-w-5xl mx-auto px-4 md:px-6">
+      <h2 class="font-heading text-2xl md:text-3xl text-text text-center mb-12 md:mb-16">
+        Meet the Team
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        {siteConfig.team.map((member) => (
+          <div class="bg-bg rounded-card border border-border overflow-hidden">
+            <!-- Photo placeholder -->
+            <div class="aspect-[4/3] bg-gradient-to-br from-accent-light to-bg-alt flex items-center justify-center">
+              <svg class="w-24 h-24 text-accent/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <h3 class="font-heading text-xl md:text-2xl text-text mb-1">
+                {member.name}
+              </h3>
+              <p class="text-accent font-medium text-sm mb-4">
+                {member.role}
+              </p>
+              <p class="text-text-muted leading-relaxed mb-6">
+                {member.bio}
+              </p>
+
+              <!-- Qualifications -->
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-text-muted/60 mb-3">
+                Qualifications
+              </h4>
+              <ul class="space-y-2">
+                {member.qualifications.map((q) => (
+                  <li class="flex items-start gap-2 text-sm text-text-muted">
+                    <svg class="w-4 h-4 mt-0.5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+                    </svg>
+                    <span>{q}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 md:px-6">
+      <h2 class="font-heading text-2xl md:text-3xl text-text text-center mb-12">
+        Why Choose Us
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: 'Multilingual Care', desc: 'We speak English, Dutch, and Spanish — no language barriers between you and your recovery.' },
+          { title: 'Evidence-Based', desc: 'Every treatment we offer is backed by clinical research and proven results.' },
+          { title: 'Specialist Equipment', desc: 'Including motorised spinal decompression — one of few clinics on the Costa Blanca to offer this.' },
+          { title: 'No Referral Needed', desc: 'Book directly. No GP visit required, no waiting lists.' },
+          { title: 'International Insurance', desc: 'We work with most international health insurance providers and provide detailed invoices.' },
+          { title: 'Personalised Plans', desc: 'No one-size-fits-all. Your treatment is tailored to your condition, goals, and lifestyle.' },
+        ].map((item) => (
+          <div class="p-6 bg-bg-alt rounded-card">
+            <h3 class="font-heading text-lg text-text mb-2">{item.title}</h3>
+            <p class="text-sm text-text-muted leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    title="Ready to Move Better?"
+    subtitle="Book your initial assessment and let's build a plan that works for you."
+    ctaText="Book Appointment"
+    ctaHref="/contact"
+    locale="en"
+    pageType="about"
+    pageSlug="about"
+  />
+</BaseLayout>

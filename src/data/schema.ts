@@ -161,6 +161,28 @@ export function generateMedicalCondition(condition: {
   return JSON.stringify(schema);
 }
 
+/** AggregateRating — for reviews page. */
+export function generateAggregateRating(rating: {
+  ratingValue: number;
+  reviewCount: number;
+  bestRating?: number;
+}) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    address: baseAddress(),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: rating.ratingValue,
+      reviewCount: rating.reviewCount,
+      bestRating: rating.bestRating ?? 5,
+      worstRating: 1,
+    },
+  });
+}
+
 /** Person — for team members (E-E-A-T). */
 export function generatePerson(member: {
   name: string;

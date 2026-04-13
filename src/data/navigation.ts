@@ -31,6 +31,7 @@ export const navigation: Record<Locale, NavItem[]> = {
     },
     { label: 'Locations', href: '/locations' },
     { label: 'About', href: '/about' },
+    { label: 'Reviews', href: '/reviews' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Contact', href: '/contact' },
   ],
