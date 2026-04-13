@@ -4,7 +4,7 @@ slug: "lower-back-pain"
 lang: "en"
 translationSlug: "lage-rugpijn"
 metaTitle: "Lower Back Pain Treatment | Costa Blanca Movement Centre"
-metaDescription: "Effective treatment for lower back pain in Altea, Costa Blanca. Non-surgical approaches including spinal decompression, sports massage, and postural correction."
+metaDescription: "Effective treatment for lower back pain in Torrevieja, Costa Blanca. Non-surgical approaches including spinal decompression, sports massage, and postural correction."
 definition: "Lower back pain (lumbar pain) is pain or discomfort in the area between the bottom of the ribcage and the top of the legs. It can range from a dull, constant ache to sudden, sharp pain that makes movement difficult. Lower back pain is one of the most common reasons people seek treatment — and one of the conditions we treat most frequently at our clinic."
 symptoms:
   - "Persistent aching or stiffness along the spine"

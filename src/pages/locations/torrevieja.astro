@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import CTABand from '../../components/CTABand.astro';
+import { siteConfig } from '../../data/site';
+import { trackOnClick } from '../../lib/analytics';
+import { generateLocalBusiness, generateBreadcrumbs, generatePerson } from '../../data/schema';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Torrevieja' },
+];
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs([
+    { name: 'Home', url: siteConfig.url },
+    { name: 'Locations', url: `${siteConfig.url}/locations` },
+    { name: 'Torrevieja', url: `${siteConfig.url}/locations/torrevieja` },
+  ]),
+  ...siteConfig.team.map((member) => generatePerson(member)),
+];
+
+const { address } = siteConfig;
+
+const treatments = [
+  { name: 'Spinal Decompression', href: '/treatments/spinal-decompression', desc: 'Non-surgical motorised traction therapy for herniated discs, sciatica, and chronic back pain.' },
+  { name: 'Sports Massage', href: '/treatments/sports-massage', desc: 'Deep tissue and myofascial release for muscle tension, sports injuries, and recovery.' },
+  { name: 'Postural Assessment', href: '/treatments/postural-assessment', desc: 'Comprehensive movement analysis to identify imbalances and build a corrective plan.' },
+  { name: 'Dry Needling', href: '/treatments/dry-needling', desc: 'Targeted trigger point therapy for chronic pain, tight muscles, and nerve-related symptoms.' },
+];
+---
+
+<BaseLayout
+  title={`Torrevieja Clinic | ${siteConfig.name}`}
+  description={`Visit ${siteConfig.name} at ${address.street}, Torrevieja. Specialist spine and mobility treatments. Open Monday–Saturday. Book your appointment today.`}
+  canonical={`${siteConfig.url}/locations/torrevieja`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/locations/torrevieja` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/locaties/torrevieja` },
+  ]}
+  locale="en"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <!-- Hero -->
+  <section class="py-16 md:py-24 lg:py-32">
+    <div class="max-w-5xl mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+
+        <!-- Main content (3 cols) -->
+        <div class="lg:col-span-3">
+          <span class="inline-block text-xs font-semibold uppercase tracking-wider text-accent bg-accent-light px-3 py-1 rounded-full mb-4">
+            Main Clinic
+          </span>
+          <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-4">
+            {siteConfig.name} — Torrevieja
+          </h1>
+          <p class="text-lg text-text-muted leading-relaxed mb-8">
+            Our clinic in Torrevieja is your destination for specialist spine and mobility care on the southern Costa Blanca. Equipped with motorised spinal decompression — one of few clinics in the region to offer this treatment. We serve the large international expat community in English, Dutch, and Spanish.
+          </p>
+
+          <!-- NAP block -->
+          <div class="bg-bg-alt rounded-card border border-border p-6 space-y-4 mb-8">
+            <address class="not-italic text-text leading-relaxed">
+              <strong class="font-medium">{siteConfig.name}</strong><br />
+              {address.street}<br />
+              {address.postalCode} {address.city}<br />
+              {address.province}, {address.country}
+            </address>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href={`tel:${siteConfig.phone}`}
+                class="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white bg-accent hover:bg-accent-dark transition-colors rounded-button"
+                onclick={trackOnClick('phone_click', { page_type: 'location', page_slug: 'torrevieja', locale: 'en', cta_location: 'inline' })}
+              >
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                {siteConfig.phoneDisplay}
+              </a>
+              <a
+                href={siteConfig.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-accent border border-accent hover:bg-accent-light transition-colors rounded-button"
+                onclick={trackOnClick('whatsapp_click', { page_type: 'location', page_slug: 'torrevieja', locale: 'en', cta_location: 'inline' })}
+              >
+                WhatsApp Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Directions -->
+          <div class="space-y-6">
+            <h2 class="font-heading text-xl md:text-2xl text-text">How to Find Us</h2>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-accent-light flex items-center justify-center shrink-0 mt-0.5">
+                  <span class="text-xs font-bold text-accent">AP</span>
+                </div>
+                <div>
+                  <h3 class="font-medium text-text text-sm">From Alicante / Airport (45 min)</h3>
+                  <p class="text-sm text-text-muted">Take the AP-7 motorway south towards Cartagena. Exit at Torrevieja and follow signs to the town centre.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-accent-light flex items-center justify-center shrink-0 mt-0.5">
+                  <span class="text-xs font-bold text-accent">OC</span>
+                </div>
+                <div>
+                  <h3 class="font-medium text-text text-sm">From Orihuela Costa (15 min)</h3>
+                  <p class="text-sm text-text-muted">Head north on the N-332 or via the CV-945. A quick, straightforward drive with plenty of route options.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-accent-light flex items-center justify-center shrink-0 mt-0.5">
+                  <span class="text-xs font-bold text-accent">MU</span>
+                </div>
+                <div>
+                  <h3 class="font-medium text-text text-sm">From Murcia / San Javier Airport (40 min)</h3>
+                  <p class="text-sm text-text-muted">Take the AP-7 north towards Alicante. Exit at Torrevieja. Convenient access from the Región de Murcia.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-accent-light flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h2.25m0 0V11.25m0 3h10.5V11.25m0 0h2.25m-2.25 0V8.625c0-.621-.504-1.125-1.125-1.125H5.25" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-medium text-text text-sm">Parking</h3>
+                  <p class="text-sm text-text-muted">Free street parking is available near the clinic. There is also a public car park within a 2-minute walk.</p>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href={siteConfig.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
+              onclick={trackOnClick('route_click', { page_type: 'location', page_slug: 'torrevieja', locale: 'en', cta_location: 'inline' })}
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+              </svg>
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar (2 cols) -->
+        <div class="lg:col-span-2 space-y-8">
+
+          <!-- Map placeholder -->
+          <div class="aspect-square bg-bg-alt border border-border rounded-image flex items-center justify-center">
+            <div class="text-center text-text-muted">
+              <svg class="w-10 h-10 mx-auto mb-2 text-text-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <p class="text-xs">Google Maps embed</p>
+            </div>
+          </div>
+
+          <!-- Opening hours -->
+          <div class="bg-bg-alt rounded-card border border-border p-6">
+            <h2 class="font-heading text-lg text-text mb-4">Opening Hours</h2>
+            <ul class="space-y-3">
+              {siteConfig.openingHours.map((slot) => (
+                <li class="flex justify-between text-sm">
+                  <span class="text-text-muted">{slot.days}</span>
+                  <span class:list={['font-medium', slot.hours === 'Closed' ? 'text-text-muted/50' : 'text-text']}>
+                    {slot.hours}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Service areas -->
+          <div class="bg-bg-alt rounded-card border border-border p-6">
+            <h2 class="font-heading text-lg text-text mb-4">We Also Serve</h2>
+            <ul class="space-y-3">
+              {siteConfig.serviceAreas.filter((a) => a.type === 'service-area').map((area) => (
+                <li>
+                  <a href={`/locations/${area.slug}`} class="flex items-center justify-between text-sm group">
+                    <span class="text-text group-hover:text-accent transition-colors">{area.name}</span>
+                    <span class="text-text-muted/60">{area.distanceFromClinic}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatments -->
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="max-w-5xl mx-auto px-4 md:px-6">
+      <h2 class="font-heading text-2xl md:text-3xl text-text text-center mb-10 md:mb-14">
+        Treatments Available at Our Torrevieja Clinic
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {treatments.map((t) => (
+          <a href={t.href} class="block p-6 bg-bg rounded-card border border-border hover:border-accent/30 transition-colors group">
+            <h3 class="font-heading text-lg text-text group-hover:text-accent transition-colors mb-2">{t.name}</h3>
+            <p class="text-sm text-text-muted leading-relaxed">{t.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 md:px-6">
+      <h2 class="font-heading text-2xl md:text-3xl text-text text-center mb-10 md:mb-14">
+        Your Team in Torrevieja
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {siteConfig.team.map((member) => (
+          <div class="flex gap-5 p-6 bg-bg-alt rounded-card border border-border">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-accent-light to-bg shrink-0 flex items-center justify-center">
+              <svg class="w-8 h-8 text-accent/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading text-lg text-text">{member.name}</h3>
+              <p class="text-sm text-accent font-medium mb-2">{member.role}</p>
+              <p class="text-sm text-text-muted leading-relaxed">{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    title="Book Your Visit to Torrevieja"
+    subtitle="Ready to start your recovery? Book an appointment at our Torrevieja clinic today."
+    ctaText="Book Appointment"
+    ctaHref="/contact"
+    locale="en"
+    pageType="location"
+    pageSlug="torrevieja"
+  />
+</BaseLayout>

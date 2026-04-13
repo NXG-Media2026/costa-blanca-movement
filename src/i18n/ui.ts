@@ -49,7 +49,7 @@ export const ui = {
     'location.phone': 'Phone',
     'location.servingArea': 'Serving the',
     'location.distanceFromClinic': 'Distance from clinic',
-    'location.bookAtClinic': 'Book an appointment at our clinic in Altea',
+    'location.bookAtClinic': 'Book an appointment at our clinic in Torrevieja',
 
     // General
     'general.readMore': 'Read More',
@@ -122,7 +122,7 @@ export const ui = {
     'location.phone': 'Telefoon',
     'location.servingArea': 'Werkgebied',
     'location.distanceFromClinic': 'Afstand tot kliniek',
-    'location.bookAtClinic': 'Maak een afspraak in onze kliniek in Altea',
+    'location.bookAtClinic': 'Maak een afspraak in onze kliniek in Torrevieja',
 
     // General
     'general.readMore': 'Lees Meer',

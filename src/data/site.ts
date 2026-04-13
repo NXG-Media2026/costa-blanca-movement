@@ -15,20 +15,20 @@ export const siteConfig = {
   whatsappNumber: '34XXXXXXXXX',
   whatsappUrl: 'https://wa.me/34XXXXXXXXX?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment',
 
-  // Primary location (Altea)
+  // Primary location (Torrevieja)
   address: {
     street: 'Calle Example 123',
-    city: 'Altea',
+    city: 'Torrevieja',
     province: 'Alicante',
-    postalCode: '03590',
+    postalCode: '03181',
     country: 'Spain',
     countryCode: 'ES',
   },
   geo: {
-    latitude: 38.5988,
-    longitude: -0.0513,
+    latitude: 37.9786,
+    longitude: -0.6823,
   },
-  googleMapsUrl: 'https://maps.google.com/?q=Costa+Blanca+Movement+Centre+Altea',
+  googleMapsUrl: 'https://maps.google.com/?q=Costa+Blanca+Movement+Centre+Torrevieja',
   googleMapsEmbed: '',
 
   // Opening hours (display format)
@@ -52,10 +52,10 @@ export const siteConfig = {
 
   // Locations and service areas
   serviceAreas: [
-    { name: 'Altea', slug: 'altea', type: 'primary' as const, distanceFromClinic: null },
-    { name: 'Benidorm', slug: 'benidorm', type: 'service-area' as const, distanceFromClinic: '10 min drive' },
-    { name: 'Jávea', slug: 'javea', type: 'service-area' as const, distanceFromClinic: '45 min drive' },
-    { name: 'Dénia', slug: 'denia', type: 'service-area' as const, distanceFromClinic: '55 min drive' },
+    { name: 'Torrevieja', slug: 'torrevieja', type: 'primary' as const, distanceFromClinic: null },
+    { name: 'Orihuela Costa', slug: 'orihuela-costa', type: 'service-area' as const, distanceFromClinic: '15 min drive' },
+    { name: 'Guardamar del Segura', slug: 'guardamar-del-segura', type: 'service-area' as const, distanceFromClinic: '15 min drive' },
+    { name: 'Pilar de la Horadada', slug: 'pilar-de-la-horadada', type: 'service-area' as const, distanceFromClinic: '20 min drive' },
   ],
 
   // Team members

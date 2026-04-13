@@ -52,7 +52,7 @@ export const navigation: Record<Locale, NavItem[]> = {
         { label: 'Lage Rugpijn', href: '/nl/klachten/lage-rugpijn' },
       ],
     },
-    { label: 'Locaties', href: '/nl/locaties/altea' },
+    { label: 'Locaties', href: '/nl/locaties/torrevieja' },
     { label: 'FAQ', href: '/nl/faq' },
     { label: 'Contact', href: '/nl/contact' },
   ],
