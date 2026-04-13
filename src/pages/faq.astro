@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTABand from '../components/CTABand.astro';
+import { siteConfig } from '../data/site';
+import { generateLocalBusiness, generateBreadcrumbs, generateFAQPage } from '../data/schema';
+import faqData from '../data/faq-en.json';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'FAQ' },
+];
+
+const allQuestions = faqData.categories.flatMap((cat) => cat.questions);
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs([
+    { name: 'Home', url: siteConfig.url },
+    { name: 'FAQ', url: `${siteConfig.url}/faq` },
+  ]),
+  generateFAQPage(allQuestions),
+];
+---
+
+<BaseLayout
+  title={`Frequently Asked Questions | ${siteConfig.name}`}
+  description="Find answers to common questions about our treatments, insurance, appointments, and clinic location in Altea, Costa Blanca."
+  canonical={`${siteConfig.url}/faq`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/faq` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/veelgestelde-vragen` },
+  ]}
+  locale="en"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <section class="pt-12 pb-4 md:pt-16 md:pb-6">
+    <div class="max-w-3xl mx-auto px-4 md:px-6">
+      <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-4">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-lg text-text-muted leading-relaxed">
+        Find answers to the most common questions about our clinic, treatments, insurance, and how to get started. Can't find what you're looking for? <a href="/contact" class="text-accent hover:underline">Get in touch</a> and we'll be happy to help.
+      </p>
+    </div>
+  </section>
+
+  {faqData.categories.map((category) => (
+    <FAQAccordion
+      title={category.name}
+      items={category.questions}
+      locale="en"
+      pageType="faq"
+      pageSlug="faq"
+      compact
+    />
+  ))}
+
+  <CTABand
+    title="Still Have Questions?"
+    subtitle="We're here to help. Reach out by phone, WhatsApp, or through our contact form."
+    ctaText="Contact Us"
+    ctaHref="/contact"
+    locale="en"
+    pageType="faq"
+    pageSlug="faq"
+  />
+</BaseLayout>

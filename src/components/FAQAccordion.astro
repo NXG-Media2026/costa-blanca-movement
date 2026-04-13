@@ -15,6 +15,7 @@ interface Props {
   locale?: Locale;
   pageType?: PageType;
   pageSlug?: string;
+  compact?: boolean;
 }
 
 const {
@@ -23,14 +24,17 @@ const {
   locale = 'en',
   pageType = 'homepage',
   pageSlug = '/',
+  compact = false,
 } = Astro.props;
 
 const heading = title ?? t('faq.heading', locale);
+const sectionPadding = compact ? 'pt-8 md:pt-10' : 'py-16 md:py-24 lg:py-32';
+const headingMargin = compact ? 'mb-6 md:mb-8' : 'mb-12 md:mb-16';
 ---
 
-<section class="py-16 md:py-24 lg:py-32 bg-bg">
+<section class:list={[sectionPadding, 'bg-bg']}>
   <div class="max-w-3xl mx-auto px-4 md:px-6">
-    <h2 class="font-heading text-3xl md:text-4xl text-text text-center mb-12 md:mb-16">
+    <h2 class:list={['font-heading text-2xl md:text-3xl text-text text-center', headingMargin, compact && 'lg:text-3xl', !compact && 'lg:text-4xl']}>
       {heading}
     </h2>
 
@@ -50,7 +54,7 @@ const heading = title ?? t('faq.heading', locale);
             </svg>
           </summary>
           <div class="px-6 pb-6 text-text-muted leading-relaxed">
-            <p>{item.a}</p>
+            <p set:html={item.a} />
           </div>
         </details>
       ))}

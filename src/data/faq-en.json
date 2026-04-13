@@ -1,0 +1,97 @@
+{
+  "categories": [
+    {
+      "name": "General",
+      "questions": [
+        {
+          "q": "Do I need a referral to visit your clinic?",
+          "a": "No, you don't need a referral. You can book an appointment directly by phone, WhatsApp, or through our <a href=\"/contact\">contact form</a>. We welcome both new and returning patients."
+        },
+        {
+          "q": "Do you treat international patients and expats?",
+          "a": "Yes — our clinic primarily serves the international expat community on the Costa Blanca. We speak English, Dutch, and Spanish, and we're experienced with international health insurance claims."
+        },
+        {
+          "q": "What should I expect during my first visit?",
+          "a": "Your first visit includes a comprehensive assessment of your condition, medical history, and movement patterns. We'll discuss your symptoms, perform a physical examination, and create a personalised treatment plan. Please allow 45–60 minutes."
+        },
+        {
+          "q": "How many treatment sessions will I need?",
+          "a": "This depends on your condition and its severity. Most patients notice improvement within 3–4 sessions. During your initial assessment, we'll give you an honest estimate of the recommended treatment course."
+        }
+      ]
+    },
+    {
+      "name": "Insurance & Payment",
+      "questions": [
+        {
+          "q": "Is treatment covered by insurance?",
+          "a": "Many international health insurance providers cover our treatments. We can provide detailed invoices for reimbursement. <a href=\"/contact\">Contact us</a> with your insurance details and we'll help you understand your coverage."
+        },
+        {
+          "q": "What payment methods do you accept?",
+          "a": "We accept cash, debit card, credit card (Visa, Mastercard), and bank transfer. Payment is due at the time of treatment."
+        },
+        {
+          "q": "Do you offer package deals for multiple sessions?",
+          "a": "Yes, we offer treatment packages at a reduced rate for patients who need a course of sessions. Ask about our package options during your initial assessment."
+        }
+      ]
+    },
+    {
+      "name": "Treatments",
+      "questions": [
+        {
+          "q": "What is spinal decompression therapy?",
+          "a": "Spinal decompression is a non-surgical, motorised traction therapy that gently stretches the spine to relieve pressure on compressed discs and pinched nerves. Learn more on our <a href=\"/treatments/spinal-decompression\">spinal decompression page</a>."
+        },
+        {
+          "q": "Is spinal decompression painful?",
+          "a": "No. Most patients find the treatment comfortable and relaxing. You'll feel a gentle stretch in your spine. Some patients even fall asleep during the session."
+        },
+        {
+          "q": "Do I need to be an athlete to benefit from sports massage?",
+          "a": "Not at all. <a href=\"/treatments/sports-massage\">Sports massage</a> benefits anyone with muscle tension, chronic pain, or an active lifestyle — including golfers, cyclists, hikers, and people with desk-related tension."
+        },
+        {
+          "q": "What is the difference between sports massage and relaxation massage?",
+          "a": "Sports massage uses firmer pressure and targeted techniques (deep tissue, trigger point therapy, myofascial release) to treat specific problem areas. It's therapeutic rather than purely relaxing. Read more about <a href=\"/treatments/sports-massage\">our sports massage approach</a>."
+        }
+      ]
+    },
+    {
+      "name": "Conditions",
+      "questions": [
+        {
+          "q": "When should I see a specialist for back pain?",
+          "a": "You should seek help if your <a href=\"/conditions/lower-back-pain\">lower back pain</a> lasts longer than 2–3 weeks, radiates into your legs, is accompanied by numbness or tingling, disrupts your sleep, or limits your daily activities."
+        },
+        {
+          "q": "Can neck pain cause headaches?",
+          "a": "Yes. Cervicogenic headaches originate from structures in the neck — tight muscles, stiff joints, or irritated nerves. Treating the underlying <a href=\"/conditions/neck-pain\">neck pain</a> often resolves the headaches."
+        },
+        {
+          "q": "What is sciatica?",
+          "a": "Sciatica is pain that radiates along the sciatic nerve, from the lower back through the buttock and down the leg. It's usually caused by a herniated disc or bone spur compressing the nerve. We treat sciatica with <a href=\"/treatments/spinal-decompression\">spinal decompression</a> and targeted manual therapy."
+        }
+      ]
+    },
+    {
+      "name": "Location & Access",
+      "questions": [
+        {
+          "q": "Where is your clinic located?",
+          "a": "We're located in Altea, on the Costa Blanca in Spain. Our clinic is easily accessible from Benidorm (10 min), Jávea (45 min), and Dénia (55 min). Free parking is available nearby."
+        },
+        {
+          "q": "What are your opening hours?",
+          "a": "We're open Monday to Friday from 9:00 to 18:00, and Saturday from 9:00 to 13:00. We're closed on Sundays. <a href=\"/contact\">Book an appointment</a> to secure your preferred time."
+        },
+        {
+          "q": "Do you offer home visits?",
+          "a": "In certain cases, we may be able to arrange a home visit for patients who have difficulty travelling to the clinic. Please <a href=\"/contact\">contact us</a> to discuss your situation."
+        }
+      ]
+    }
+  ]
+}
