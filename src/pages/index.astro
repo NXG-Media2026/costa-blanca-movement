@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import TrustBar from '../components/TrustBar.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
+import AtmosphereSection from '../components/AtmosphereSection.astro';
 import DefinitionBlock from '../components/DefinitionBlock.astro';
 import TestimonialSlider from '../components/TestimonialSlider.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
@@ -16,24 +17,28 @@ const services = [
     slug: 'spinal-decompression',
     excerpt: 'Non-surgical treatment to relieve compressed spinal discs, reduce nerve pressure, and restore mobility.',
     icon: 'spine',
+    image: '/images/treatments/spinal-decompression.jpg',
   },
   {
     title: 'Sports Massage',
     slug: 'sports-massage',
     excerpt: 'Deep tissue and sports-focused massage for faster recovery, injury prevention, and pain relief.',
     icon: 'massage',
+    image: '/images/treatments/sports-massage.jpg',
   },
   {
     title: 'Postural Assessment',
     slug: 'postural-assessment',
     excerpt: 'Comprehensive evaluation of your alignment and movement patterns to identify the root cause of pain.',
     icon: 'posture',
+    image: '/images/treatments/postural-assessment.jpg',
   },
   {
     title: 'Dry Needling',
     slug: 'dry-needling',
     excerpt: 'Targeted trigger point therapy using thin needles to release muscle tension and reduce chronic pain.',
     icon: 'needle',
+    image: '/images/treatments/dry-needling.jpg',
   },
 ];
 
@@ -110,6 +115,7 @@ const trustItems = [
     ctaHref="/contact"
     secondaryCtaText="Call Us"
     secondaryCtaHref={`tel:${siteConfig.phone}`}
+    backgroundImage="/images/hero/hero-clinic.jpg"
     locale="en"
     pageType="homepage"
     pageSlug="/"
@@ -126,9 +132,17 @@ const trustItems = [
     pageSlug="/"
   />
 
+  <AtmosphereSection
+    image="/images/atmosphere/costa-blanca.jpg"
+    quote="Helping you move freely again — in the heart of the Costa Blanca."
+    alt="Sunny Costa Blanca coastline"
+  />
+
   <DefinitionBlock
     term="What We Do"
     definition="Costa Blanca Movement Centre is a specialist mobility and spine health clinic in Torrevieja, Spain. We combine evidence-based manual therapy with modern non-surgical techniques to treat back pain, neck pain, sports injuries, and postural problems. Our multilingual team serves the international expat community across the southern Costa Blanca — from Orihuela Costa to Guardamar del Segura and Pilar de la Horadada."
+    image="/images/clinic/treatment-room.jpg"
+    imageAlt="Modern treatment room at Costa Blanca Movement Centre"
   />
 
   <TestimonialSlider
@@ -148,6 +162,7 @@ const trustItems = [
     subtitle="Book your initial assessment today. We'll create a personalised treatment plan to get you back to doing what you love."
     ctaText="Book Your Assessment"
     ctaHref="/contact"
+    backgroundImage="/images/cta/cta-background.jpg"
     eventName="appointment_click"
     ctaLocation="inline"
     locale="en"

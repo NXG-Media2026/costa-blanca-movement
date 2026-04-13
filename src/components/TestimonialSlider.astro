@@ -21,20 +21,50 @@ const heading = title ?? t('review.heading', locale);
 function renderStars(rating: number): string {
   return '★'.repeat(Math.round(rating)) + '☆'.repeat(5 - Math.round(rating));
 }
+
+// Generate initials for avatar placeholder
+function getInitials(name: string): string {
+  return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+}
+
+// Warm color palette for avatar backgrounds (deterministic per name)
+const avatarColors = [
+  'bg-accent-light text-accent',
+  'bg-amber-100 text-amber-700',
+  'bg-emerald-100 text-emerald-700',
+  'bg-blue-100 text-blue-700',
+  'bg-rose-100 text-rose-700',
+];
 ---
 
 <section class="py-16 md:py-24 lg:py-32 bg-bg-alt">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
-    <h2 class="font-heading text-3xl md:text-4xl text-text text-center mb-12 md:mb-16">
-      {heading}
-    </h2>
+    <div class="text-center mb-12 md:mb-16 js-reveal">
+      <h2 class="font-heading text-3xl md:text-4xl text-text">
+        {heading}
+      </h2>
+    </div>
 
     {/* CSS-only horizontal scroll on mobile, grid on desktop */}
     <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-3 md:overflow-visible md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
-      {testimonials.map((item) => (
-        <article class="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-white border border-border rounded-card p-6 md:p-8 flex flex-col">
+      {testimonials.map((item, idx) => (
+        <article
+          class:list={[
+            'flex-shrink-0 w-[85vw] md:w-auto snap-center',
+            'bg-white rounded-card p-6 md:p-8 flex flex-col',
+            'border-l-4 border-accent/40',
+            'shadow-sm hover:shadow-md transition-shadow duration-300',
+            'js-reveal',
+          ]}
+          style={`--reveal-delay: ${idx * 120}ms`}
+        >
+          {/* Decorative quote mark */}
+          <svg class="w-8 h-8 text-accent/15 mb-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+          </svg>
+
           {/* Stars */}
-          <div class="text-accent text-lg tracking-wider mb-4" aria-label={`${item.rating} out of 5 stars`}>
+          <div class="text-accent text-base tracking-wider mb-4" aria-label={`${item.rating} out of 5 stars`}>
             {renderStars(item.rating)}
           </div>
 
@@ -43,12 +73,21 @@ function renderStars(rating: number): string {
             <p>"{item.text}"</p>
           </blockquote>
 
-          {/* Attribution */}
-          <footer class="flex items-center justify-between pt-4 border-t border-border">
-            <cite class="not-italic text-sm font-medium text-text">{item.name}</cite>
-            {item.source && (
-              <span class="text-xs text-text-muted">{item.source}</span>
-            )}
+          {/* Attribution with avatar */}
+          <footer class="flex items-center gap-3 pt-4 border-t border-border">
+            {/* Avatar placeholder with initials */}
+            <div class:list={[
+              'w-10 h-10 rounded-full flex items-center justify-center text-xs font-semibold shrink-0',
+              avatarColors[idx % avatarColors.length],
+            ]}>
+              {getInitials(item.name)}
+            </div>
+            <div class="flex-1 min-w-0">
+              <cite class="not-italic text-sm font-medium text-text block">{item.name}</cite>
+              {item.source && (
+                <span class="text-xs text-text-muted">{item.source}</span>
+              )}
+            </div>
           </footer>
         </article>
       ))}
