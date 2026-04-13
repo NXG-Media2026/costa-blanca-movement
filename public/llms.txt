@@ -1,33 +1,56 @@
-# Costa Blanca Movement Centre
+﻿# Costa Blanca Movement Centre
 
 > Expert spine and mobility care for the expat community on Spain's Costa Blanca.
 
-Costa Blanca Movement Centre is a mobility and spine health clinic located in Altea, Costa Blanca, Spain. We specialize in non-surgical treatments for back pain, neck pain, sports injuries, and postural problems. Our clinic primarily serves the international expat community — Dutch, British, Scandinavian, and German residents living on the Costa Blanca.
+## About
+
+Costa Blanca Movement Centre is a specialist mobility and spine health clinic located in Torrevieja, on the southern Costa Blanca, Spain. We provide non-surgical treatments for back pain, neck pain, sports injuries, and postural problems. Our clinic primarily serves the international expat community — British, Dutch, Scandinavian, and German residents living on the Costa Blanca.
 
 ## Treatments
 
-- [Spinal Decompression](/treatments/spinal-decompression): Non-surgical treatment to relieve compressed spinal discs and nerves.
-- [Sports Massage](/treatments/sports-massage): Deep tissue and sports-focused massage for recovery and injury prevention.
-- [Postural Assessment](/treatments/postural-assessment): Comprehensive evaluation of alignment and movement patterns.
-- [Dry Needling](/treatments/dry-needling): Targeted trigger point therapy using thin needles for pain relief.
+- Spinal Decompression (/treatments/spinal-decompression): Non-surgical motorised traction therapy to relieve compressed spinal discs and nerves. Effective for herniated discs, sciatica, and chronic lower back pain. Duration: 30–45 minutes.
+- Sports Massage (/treatments/sports-massage): Deep tissue and sports-focused massage for injury recovery, muscle tension, and improved mobility. Duration: 45–60 minutes.
+- Postural Assessment (/treatments/postural-assessment): Comprehensive evaluation of alignment and movement patterns to identify the root cause of pain.
+- Dry Needling (/treatments/dry-needling): Targeted trigger point therapy using thin needles for chronic pain relief and muscle tension release.
 
 ## Conditions We Treat
 
-- [Lower Back Pain](/conditions/lower-back-pain)
-- [Neck Pain](/conditions/neck-pain)
-- [Sciatica](/conditions/sciatica)
-- [Herniated Disc](/conditions/herniated-disc)
+- Lower Back Pain (/conditions/lower-back-pain)
+- Neck Pain (/conditions/neck-pain)
+- Sciatica (/conditions/sciatica)
+- Herniated Disc (/conditions/herniated-disc)
 
-## Location
+## Location & Contact
 
-- Address: Calle Example 123, Altea 03590, Alicante, Spain
+- Clinic: Costa Blanca Movement Centre
+- Address: Calle Example 123, 03181 Torrevieja, Alicante, Spain
 - Phone: +34 XXX XXX XXX
-- Hours: Mon–Fri 9:00–18:00, Sat 9:00–13:00
+- Email: info@costablancamovement.com
+- Hours: Monday–Friday 9:00–18:00, Saturday 9:00–13:00, Sunday closed
 
 ## Service Areas
 
-Altea (primary clinic), Benidorm, Jávea, Dénia
+- Torrevieja (main clinic)
+- Orihuela Costa (15 min drive)
+- Guardamar del Segura (15 min drive)
+- Pilar de la Horadada (20 min drive)
 
 ## Languages
 
 English, Dutch, Spanish
+
+## Team
+
+- Dr. James Mitchell — Chiropractor & Movement Specialist. Doctor of Chiropractic (DC), Certified Spinal Decompression Specialist, Sports Rehabilitation Diploma. 15+ years experience.
+- Laura van den Berg — Sports Massage Therapist. BSc Sports Therapy, Certified Myofascial Release Practitioner, Dry Needling Certificate. 8 years experience.
+
+## Key Pages
+
+- Homepage: /
+- Treatments overview: /treatments
+- Conditions overview: /conditions
+- Locations: /locations
+- About us: /about
+- Reviews: /reviews
+- FAQ: /faq
+- Contact: /contact

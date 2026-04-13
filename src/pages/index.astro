@@ -8,7 +8,7 @@ import TestimonialSlider from '../components/TestimonialSlider.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import CTABand from '../components/CTABand.astro';
 import { siteConfig } from '../data/site';
-import { generateMedicalBusiness, generateFAQPage } from '../data/schema';
+import { generateMedicalBusiness, generateLocalBusiness, generateFAQPage } from '../data/schema';
 
 const services = [
   {
@@ -96,7 +96,7 @@ const trustItems = [
 <BaseLayout
   title={`${siteConfig.name} — Spine & Mobility Care in Torrevieja, Costa Blanca`}
   description="Expert spine and mobility care for the expat community on Spain's Costa Blanca. Non-surgical treatments for back pain, neck pain, and sports injuries in Torrevieja."
-  schemas={[generateMedicalBusiness(), generateFAQPage(faqs)]}
+  schemas={[generateLocalBusiness(), generateMedicalBusiness(), generateFAQPage(faqs)]}
   hreflang={[
     { lang: 'en', href: siteConfig.url },
     { lang: 'nl', href: `${siteConfig.url}/nl` },

@@ -1,4 +1,16 @@
+﻿# Costa Blanca Movement Centre — robots.txt
+# https://costablancamovement.com
+
+# Default: allow all
 User-agent: *
+Allow: /
+Disallow: /visibility
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 # AI crawlers — explicitly allowed
@@ -12,6 +24,15 @@ User-agent: PerplexityBot
 Allow: /
 
 User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 # Sitemap

@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [
     tailwind({ applyBaseStyles: false }),
     sitemap({
+      filter: (page) => !page.includes('/visibility'),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', nl: 'nl' },

@@ -183,6 +183,40 @@ export function generateAggregateRating(rating: {
   });
 }
 
+/**
+ * Place — for location pages.
+ * Main clinic: full address, geo, map link.
+ * Service areas: locality-level address only.
+ */
+export function generatePlace(location: {
+  name: string;
+  type: 'primary' | 'service-area';
+  locality?: string;
+}) {
+  if (location.type === 'primary') {
+    return JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Place',
+      name: `${siteConfig.name} — ${siteConfig.address.city}`,
+      address: baseAddress(),
+      geo: baseGeo(),
+      hasMap: siteConfig.googleMapsUrl,
+    });
+  }
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Place',
+    name: location.name,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: location.locality ?? location.name,
+      addressRegion: siteConfig.address.province,
+      addressCountry: siteConfig.address.countryCode,
+    },
+  });
+}
+
 /** Person — for team members (E-E-A-T). */
 export function generatePerson(member: {
   name: string;

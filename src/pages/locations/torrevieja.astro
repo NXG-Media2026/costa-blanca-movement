@@ -4,7 +4,7 @@ import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
 import CTABand from '../../components/CTABand.astro';
 import { siteConfig } from '../../data/site';
 import { trackOnClick } from '../../lib/analytics';
-import { generateLocalBusiness, generateBreadcrumbs, generatePerson } from '../../data/schema';
+import { generateLocalBusiness, generateBreadcrumbs, generatePerson, generatePlace } from '../../data/schema';
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
@@ -13,6 +13,7 @@ const breadcrumbs = [
 ];
 
 const schemas = [
+  generatePlace({ name: 'Torrevieja', type: 'primary' }),
   generateLocalBusiness(),
   generateBreadcrumbs([
     { name: 'Home', url: siteConfig.url },
