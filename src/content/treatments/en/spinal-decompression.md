@@ -1,6 +1,6 @@
 ---
 title: "Spinal Decompression"
-slug: "spinal-decompression"
+pageSlug: "spinal-decompression"
 lang: "en"
 translationSlug: "wervelkolom-decompressie"
 metaTitle: "Spinal Decompression Therapy | Costa Blanca Movement Centre"

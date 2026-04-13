@@ -1,6 +1,6 @@
 ---
 title: "Lower Back Pain"
-slug: "lower-back-pain"
+pageSlug: "lower-back-pain"
 lang: "en"
 translationSlug: "lage-rugpijn"
 metaTitle: "Lower Back Pain Treatment | Costa Blanca Movement Centre"

@@ -43,6 +43,8 @@ export const navigation: Record<Locale, NavItem[]> = {
       children: [
         { label: 'Wervelkolom Decompressie', href: '/nl/behandelingen/wervelkolom-decompressie' },
         { label: 'Sportmassage', href: '/nl/behandelingen/sportmassage' },
+        { label: 'Houdingsanalyse', href: '/nl/behandelingen/houdingsanalyse' },
+        { label: 'Dry Needling', href: '/nl/behandelingen/dry-needling' },
       ],
     },
     {
@@ -50,9 +52,14 @@ export const navigation: Record<Locale, NavItem[]> = {
       href: '/nl/klachten',
       children: [
         { label: 'Lage Rugpijn', href: '/nl/klachten/lage-rugpijn' },
+        { label: 'Nekpijn', href: '/nl/klachten/nekpijn' },
+        { label: 'Ischias', href: '/nl/klachten/ischias' },
+        { label: 'Hernia', href: '/nl/klachten/hernia' },
       ],
     },
     { label: 'Locaties', href: '/nl/locaties/torrevieja' },
+    { label: 'Over Ons', href: '/nl/over-ons' },
+    { label: 'Reviews', href: '/nl/reviews' },
     { label: 'FAQ', href: '/nl/faq' },
     { label: 'Contact', href: '/nl/contact' },
   ],

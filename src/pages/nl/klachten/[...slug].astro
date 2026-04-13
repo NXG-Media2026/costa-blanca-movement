@@ -1,20 +1,20 @@
 ---
 import { getCollection } from 'astro:content';
-import ConditionLayout from '../../layouts/ConditionLayout.astro';
+import ConditionLayout from '../../../layouts/ConditionLayout.astro';
 
 export async function getStaticPaths() {
   const conditions = await getCollection('conditions');
   const treatments = await getCollection('treatments');
 
-  const enConditions = conditions.filter((c) => c.data.lang === 'en');
-  const enTreatments = treatments.filter((t) => t.data.lang === 'en');
+  const nlConditions = conditions.filter((c) => c.data.lang === 'nl');
+  const nlTreatments = treatments.filter((t) => t.data.lang === 'nl');
 
   const treatmentTitles: Record<string, string> = {};
-  enTreatments.forEach((t) => {
+  nlTreatments.forEach((t) => {
     treatmentTitles[t.data.pageSlug] = t.data.title;
   });
 
-  return enConditions.map((condition) => ({
+  return nlConditions.map((condition) => ({
     params: { slug: condition.data.pageSlug },
     props: { condition, treatmentTitles, slug: condition.data.pageSlug },
   }));

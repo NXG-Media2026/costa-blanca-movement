@@ -48,8 +48,9 @@ npm run preview  # Preview production build
 
 1. Create `src/content/treatments/en/your-treatment.md`
 2. Copy frontmatter structure from an existing treatment file
-3. Required fields: `title`, `slug`, `lang`, `metaTitle`, `metaDescription`, `definition`, `duration`, `relatedConditions`, `faq`
-4. For NL version: create in `src/content/treatments/nl/` with `translationSlug` pointing to EN slug
+3. Required fields: `title`, `pageSlug`, `lang`, `metaTitle`, `metaDescription`, `definition`, `duration`, `relatedConditions`, `faq`
+4. For NL version: create in `src/content/treatments/nl/` with `translationSlug` pointing to EN pageSlug
+5. **Important:** Use `pageSlug` (not `slug`) in frontmatter — `slug` is reserved by Astro. If EN and NL share the same slug value (e.g. "dry-needling"), use a different filename for the NL file to avoid Astro duplicate id errors.
 5. Add to `src/data/navigation.ts` menu entries
 6. Add slug mapping to `src/i18n/routes.ts`
 

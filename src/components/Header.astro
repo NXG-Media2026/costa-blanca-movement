@@ -2,6 +2,7 @@
 import { navigation } from '../data/navigation';
 import { siteConfig } from '../data/site';
 import { t } from '../i18n/utils';
+import LanguageSwitcher from './LanguageSwitcher.astro';
 import type { Locale } from '../data/site';
 
 interface Props {
@@ -76,10 +77,10 @@ function isActive(href: string): boolean {
           )
         ))}
 
-        <!-- Language switcher placeholder -->
-        <span class="ml-2 px-2 py-1 text-xs font-medium text-text-muted border border-border rounded-button">
-          {locale.toUpperCase()}
-        </span>
+        <!-- Language switcher -->
+        <div class="ml-2">
+          <LanguageSwitcher locale={locale} currentPath={currentPath} />
+        </div>
 
         <!-- CTA -->
         <a
@@ -164,9 +165,10 @@ function isActive(href: string): boolean {
         )
       ))}
 
-      <!-- Mobile language switcher placeholder -->
-      <div class="pt-4 mt-4 border-t border-border">
-        <span class="text-sm text-text-muted">{t('general.language', locale)}: {locale.toUpperCase()}</span>
+      <!-- Mobile language switcher -->
+      <div class="pt-4 mt-4 border-t border-border flex items-center gap-3">
+        <span class="text-sm text-text-muted">{t('general.language', locale)}:</span>
+        <LanguageSwitcher locale={locale} currentPath={currentPath} />
       </div>
 
       <!-- Mobile CTA -->

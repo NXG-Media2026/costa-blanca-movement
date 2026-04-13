@@ -1,6 +1,6 @@
 ---
 title: "Sports Massage"
-slug: "sports-massage"
+pageSlug: "sports-massage"
 lang: "en"
 translationSlug: "sportmassage"
 metaTitle: "Sports Massage Therapy | Costa Blanca Movement Centre"

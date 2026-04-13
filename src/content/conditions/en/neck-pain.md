@@ -1,6 +1,6 @@
 ---
 title: "Neck Pain"
-slug: "neck-pain"
+pageSlug: "neck-pain"
 lang: "en"
 translationSlug: "nekpijn"
 metaTitle: "Neck Pain Treatment | Costa Blanca Movement Centre"

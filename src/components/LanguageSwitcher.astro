@@ -1,0 +1,22 @@
+---
+import { getTranslatedPath } from '../i18n/utils';
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+const targetLocale: Locale = locale === 'en' ? 'nl' : 'en';
+const targetPath = getTranslatedPath(currentPath, targetLocale);
+const targetLabel = targetLocale.toUpperCase();
+---
+
+<a
+  href={targetPath}
+  class="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-text-muted border border-border rounded-button hover:text-accent hover:border-accent/30 transition-colors"
+  aria-label={targetLocale === 'en' ? 'Switch to English' : 'Schakel naar Nederlands'}
+>
+  {targetLabel}
+</a>

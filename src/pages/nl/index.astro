@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
+import DefinitionBlock from '../../components/DefinitionBlock.astro';
+import TestimonialSlider from '../../components/TestimonialSlider.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTABand from '../../components/CTABand.astro';
+import { siteConfig } from '../../data/site';
+import { generateMedicalBusiness, generateLocalBusiness, generateFAQPage } from '../../data/schema';
+
+const services = [
+  {
+    title: 'Wervelkolom Decompressie',
+    slug: 'wervelkolom-decompressie',
+    excerpt: 'Niet-chirurgische behandeling om gecomprimeerde wervelschijven te verlichten, zenuwdruk te verminderen en mobiliteit te herstellen.',
+    icon: 'spine',
+  },
+  {
+    title: 'Sportmassage',
+    slug: 'sportmassage',
+    excerpt: 'Diepe weefsel- en sportgerichte massage voor sneller herstel, blessurepreventie en pijnverlichting.',
+    icon: 'massage',
+  },
+  {
+    title: 'Houdingsanalyse',
+    slug: 'houdingsanalyse',
+    excerpt: 'Uitgebreide evaluatie van je houding en bewegingspatronen om de oorzaak van pijn te achterhalen.',
+    icon: 'posture',
+  },
+  {
+    title: 'Dry Needling',
+    slug: 'dry-needling',
+    excerpt: 'Gerichte triggerpoint-therapie met dunne naalden om spierspanning los te maken en chronische pijn te verminderen.',
+    icon: 'needle',
+  },
+];
+
+const testimonials = [
+  {
+    name: 'Margaret T.',
+    text: 'Na jaren van lage rugpijn vond ik eindelijk verlichting bij Costa Blanca Movement Centre. Dr. Mitchell legde alles duidelijk uit en de wervelkolom decompressie behandeling heeft mijn leven veranderd.',
+    rating: 5,
+    source: 'Google',
+  },
+  {
+    name: 'Hans van der Berg',
+    text: 'Als enthousiast fietser houdt de regelmatige sportmassage hier me op de fiets. Laura is ongelooflijk bekwaam — ze vindt spanning waarvan ik niet eens wist dat ik die had. Sterk aanbevolen voor elke actieve expat.',
+    rating: 5,
+    source: 'Google',
+  },
+  {
+    name: 'David R.',
+    text: 'Professioneel, deskundig en oprecht betrokken. Ik kwam binnen met ernstige nekpijn en ischias. Binnen 6 sessies zag ik een dramatische verbetering. Beste kliniek aan de Costa Blanca.',
+    rating: 5,
+    source: 'Google',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Heb ik een verwijzing nodig om jullie kliniek te bezoeken?',
+    a: 'Nee, je hebt geen verwijzing nodig. Je kunt direct een afspraak maken per telefoon, WhatsApp of via ons contactformulier. Zowel nieuwe als terugkerende patienten zijn welkom.',
+  },
+  {
+    q: 'Behandelen jullie internationale patienten en expats?',
+    a: 'Ja — onze kliniek bedient voornamelijk de internationale expat-gemeenschap aan de Costa Blanca. We spreken Engels, Nederlands en Spaans, en we hebben ervaring met internationale zorgverzekeringsclaims.',
+  },
+  {
+    q: 'Wat kan ik verwachten bij mijn eerste bezoek?',
+    a: 'Je eerste bezoek omvat een uitgebreide beoordeling van je klachten, medische voorgeschiedenis en bewegingspatronen. We bespreken je symptomen, voeren een lichamelijk onderzoek uit en stellen een persoonlijk behandelplan op. Reken op 45-60 minuten.',
+  },
+  {
+    q: 'Hoeveel behandelsessies heb ik nodig?',
+    a: 'Dit hangt af van je klachten en de ernst ervan. De meeste patienten merken verbetering binnen 3-4 sessies. Tijdens je eerste beoordeling geven we een eerlijke inschatting van het aanbevolen behandeltraject.',
+  },
+  {
+    q: 'Wordt de behandeling vergoed door de verzekering?',
+    a: 'Veel internationale zorgverzekeraars vergoeden onze behandelingen. We kunnen gedetailleerde facturen leveren voor restitutie. Neem contact op met je verzekeringsgegevens en we helpen je je dekking te begrijpen.',
+  },
+  {
+    q: 'Waar is jullie kliniek gevestigd?',
+    a: 'We zijn gevestigd in Torrevieja, aan de zuidelijke Costa Blanca in Spanje. Onze kliniek is gemakkelijk bereikbaar vanuit Orihuela Costa (15 min), Guardamar del Segura (15 min) en Pilar de la Horadada (20 min). Gratis parkeren in de buurt.',
+  },
+];
+
+const trustItems = [
+  { value: '15+', label: 'Jaar\nErvaring' },
+  { value: '2.500+', label: 'Patienten\nBehandeld' },
+  { value: '4.7\u2605', label: 'Google\nBeoordeling' },
+  { value: '23', label: 'Geverifieerde\nReviews' },
+];
+---
+
+<BaseLayout
+  title={`${siteConfig.name} — Wervelkolom & Mobiliteit in Torrevieja, Costa Blanca`}
+  description="Deskundige wervelkolom- en mobiliteitszorg voor de expat-gemeenschap aan de Costa Blanca. Niet-chirurgische behandelingen voor rugpijn, nekpijn en sportblessures in Torrevieja."
+  schemas={[generateLocalBusiness(), generateMedicalBusiness(), generateFAQPage(faqs)]}
+  hreflang={[
+    { lang: 'en', href: siteConfig.url },
+    { lang: 'nl', href: `${siteConfig.url}/nl` },
+  ]}
+  locale="nl"
+>
+  <HeroSection
+    title="Beweeg Beter. Leef Beter."
+    subtitle="Deskundige wervelkolom- en mobiliteitszorg voor de expat-gemeenschap aan de Costa Blanca. Niet-chirurgische behandelingen die je terugbrengen naar het leven dat je liefhebt."
+    ctaText="Afspraak Maken"
+    ctaHref="/nl/contact"
+    secondaryCtaText="Bel Ons"
+    secondaryCtaHref={`tel:${siteConfig.phone}`}
+    locale="nl"
+    pageType="homepage"
+    pageSlug="/"
+  />
+
+  <TrustBar items={trustItems} />
+
+  <ServicesGrid
+    title="Onze Behandelingen"
+    services={services}
+    basePath="/nl/behandelingen"
+    locale="nl"
+    pageType="homepage"
+    pageSlug="/"
+  />
+
+  <DefinitionBlock
+    term="Wat Wij Doen"
+    definition="Costa Blanca Movement Centre is een gespecialiseerde kliniek voor mobiliteit en wervelkolomgezondheid in Torrevieja, Spanje. We combineren evidence-based manuele therapie met moderne niet-chirurgische technieken voor de behandeling van rugpijn, nekpijn, sportblessures en houdingsproblemen. Ons meertalig team bedient de internationale expat-gemeenschap in de zuidelijke Costa Blanca — van Orihuela Costa tot Guardamar del Segura en Pilar de la Horadada."
+  />
+
+  <TestimonialSlider
+    testimonials={testimonials}
+    locale="nl"
+  />
+
+  <FAQAccordion
+    items={faqs}
+    locale="nl"
+    pageType="homepage"
+    pageSlug="/"
+  />
+
+  <CTABand
+    title="Klaar om Pijnvrij te Bewegen?"
+    subtitle="Boek vandaag nog je eerste beoordeling. We stellen een persoonlijk behandelplan op om je terug te brengen naar wat je graag doet."
+    ctaText="Boek Je Beoordeling"
+    ctaHref="/nl/contact"
+    eventName="appointment_click"
+    ctaLocation="inline"
+    locale="nl"
+    pageType="homepage"
+    pageSlug="/"
+  />
+</BaseLayout>

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTABand from '../../components/CTABand.astro';
+import { siteConfig } from '../../data/site';
+import { generateLocalBusiness, generateBreadcrumbs, generateFAQPage } from '../../data/schema';
+import faqData from '../../data/faq-nl.json';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/nl' },
+  { label: 'FAQ' },
+];
+
+const allQuestions = faqData.categories.flatMap((cat) => cat.questions);
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs([
+    { name: 'Home', url: siteConfig.url },
+    { name: 'FAQ', url: `${siteConfig.url}/nl/faq` },
+  ]),
+  generateFAQPage(allQuestions),
+];
+---
+
+<BaseLayout
+  title={`Veelgestelde Vragen | ${siteConfig.name}`}
+  description="Antwoorden op veelgestelde vragen over onze behandelingen, verzekering, afspraken en onze kliniek in Torrevieja, Costa Blanca."
+  canonical={`${siteConfig.url}/nl/faq`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/faq` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/faq` },
+  ]}
+  locale="nl"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <section class="pt-12 pb-4 md:pt-16 md:pb-6">
+    <div class="max-w-3xl mx-auto px-4 md:px-6">
+      <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-4">
+        Veelgestelde Vragen
+      </h1>
+      <p class="text-lg text-text-muted leading-relaxed">
+        Antwoorden op de meest gestelde vragen over onze kliniek, behandelingen, verzekering en hoe je kunt beginnen. Staat je vraag er niet bij? <a href="/nl/contact" class="text-accent hover:underline">Neem contact op</a> en we helpen je graag.
+      </p>
+    </div>
+  </section>
+
+  {faqData.categories.map((category) => (
+    <FAQAccordion
+      title={category.name}
+      items={category.questions}
+      locale="nl"
+      pageType="faq"
+      pageSlug="faq"
+      compact
+    />
+  ))}
+
+  <CTABand
+    title="Nog Vragen?"
+    subtitle="We helpen je graag. Neem contact op per telefoon, WhatsApp of via ons contactformulier."
+    ctaText="Neem Contact Op"
+    ctaHref="/nl/contact"
+    locale="nl"
+    pageType="faq"
+    pageSlug="faq"
+  />
+</BaseLayout>

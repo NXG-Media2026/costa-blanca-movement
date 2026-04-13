@@ -1,41 +1,41 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
-import CTABand from '../../components/CTABand.astro';
-import { siteConfig } from '../../data/site';
-import { generateLocalBusiness, generateBreadcrumbs } from '../../data/schema';
-import { t } from '../../i18n/utils';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../../components/BreadcrumbNav.astro';
+import CTABand from '../../../components/CTABand.astro';
+import { siteConfig } from '../../../data/site';
+import { generateLocalBusiness, generateBreadcrumbs } from '../../../data/schema';
+import { t } from '../../../i18n/utils';
 
 const treatments = await getCollection('treatments');
-const enTreatments = treatments
-  .filter((tr) => tr.data.lang === 'en')
+const nlTreatments = treatments
+  .filter((tr) => tr.data.lang === 'nl')
   .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 
 const breadcrumbs = [
-  { label: 'Home', href: '/' },
-  { label: 'Treatments' },
+  { label: 'Home', href: '/nl' },
+  { label: 'Behandelingen' },
 ];
 
 const schemas = [
   generateLocalBusiness(),
   generateBreadcrumbs([
     { name: 'Home', url: siteConfig.url },
-    { name: 'Treatments', url: `${siteConfig.url}/treatments` },
+    { name: 'Behandelingen', url: `${siteConfig.url}/nl/behandelingen` },
   ]),
 ];
 ---
 
 <BaseLayout
-  title={`Our Treatments | ${siteConfig.name}`}
-  description="Explore our range of non-surgical treatments for back pain, neck pain, sports injuries, and postural problems. Spinal decompression, sports massage, and more."
-  canonical={`${siteConfig.url}/treatments`}
+  title={`Onze Behandelingen | ${siteConfig.name}`}
+  description="Ontdek ons aanbod van niet-chirurgische behandelingen voor rugpijn, nekpijn, sportblessures en houdingsproblemen. Wervelkolom decompressie, sportmassage en meer."
+  canonical={`${siteConfig.url}/nl/behandelingen`}
   schemas={schemas}
   hreflang={[
     { lang: 'en', href: `${siteConfig.url}/treatments` },
     { lang: 'nl', href: `${siteConfig.url}/nl/behandelingen` },
   ]}
-  locale="en"
+  locale="nl"
 >
   <BreadcrumbNav items={breadcrumbs} />
 
@@ -43,17 +43,17 @@ const schemas = [
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <div class="max-w-3xl mb-12 md:mb-16">
         <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-6">
-          Our Treatments
+          Onze Behandelingen
         </h1>
         <p class="text-lg text-text-muted leading-relaxed">
-          We offer a range of evidence-based, non-surgical treatments designed to relieve pain, restore mobility, and help you get back to the activities you love. Every treatment plan is personalised to your condition and goals.
+          We bieden een reeks evidence-based, niet-chirurgische behandelingen om pijn te verlichten, mobiliteit te herstellen en je terug te brengen naar de activiteiten die je leuk vindt. Elk behandelplan wordt gepersonaliseerd op basis van je klachten en doelen.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {enTreatments.map((treatment) => (
+        {nlTreatments.map((treatment) => (
           <a
-            href={`/treatments/${treatment.data.pageSlug}`}
+            href={`/nl/behandelingen/${treatment.data.pageSlug}`}
             class="group block p-6 md:p-8 bg-white border border-border rounded-card hover:border-accent/30 hover:shadow-lg transition-all duration-300"
           >
             <h2 class="font-heading text-xl md:text-2xl text-text mb-3 group-hover:text-accent transition-colors">
@@ -64,10 +64,10 @@ const schemas = [
             </p>
             <div class="flex items-center justify-between">
               <span class="text-sm text-text-muted">
-                {t('treatment.duration', 'en')}: {treatment.data.duration}
+                {t('treatment.duration', 'nl')}: {treatment.data.duration}
               </span>
               <span class="inline-flex items-center text-sm font-medium text-accent">
-                {t('cta.learnMore', 'en')}
+                {t('cta.learnMore', 'nl')}
                 <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
@@ -80,12 +80,12 @@ const schemas = [
   </section>
 
   <CTABand
-    title="Not Sure Which Treatment Is Right for You?"
-    subtitle="Book an initial assessment and we'll recommend the best approach for your condition."
-    ctaText="Book Assessment"
-    ctaHref="/contact"
-    locale="en"
+    title="Niet Zeker Welke Behandeling Bij Je Past?"
+    subtitle="Boek een eerste beoordeling en we adviseren de beste aanpak voor jouw klachten."
+    ctaText="Boek Beoordeling"
+    ctaHref="/nl/contact"
+    locale="nl"
     pageType="treatment"
-    pageSlug="treatments"
+    pageSlug="behandelingen"
   />
 </BaseLayout>

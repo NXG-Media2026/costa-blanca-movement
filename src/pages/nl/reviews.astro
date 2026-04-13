@@ -1,13 +1,13 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BreadcrumbNav from '../components/BreadcrumbNav.astro';
-import ReviewCTA from '../components/ReviewCTA.astro';
-import CTABand from '../components/CTABand.astro';
-import { siteConfig } from '../data/site';
-import { generateLocalBusiness, generateBreadcrumbs, generateAggregateRating } from '../data/schema';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import ReviewCTA from '../../components/ReviewCTA.astro';
+import CTABand from '../../components/CTABand.astro';
+import { siteConfig } from '../../data/site';
+import { generateLocalBusiness, generateBreadcrumbs, generateAggregateRating } from '../../data/schema';
 
 const breadcrumbs = [
-  { label: 'Home', href: '/' },
+  { label: 'Home', href: '/nl' },
   { label: 'Reviews' },
 ];
 
@@ -17,49 +17,49 @@ const reviews = [
     rating: 5,
     date: '2025-11-15',
     text: 'After years of lower back pain, I finally found real relief with spinal decompression therapy. Dr. Mitchell explained everything clearly and the results after just 4 sessions were remarkable. Highly recommended for anyone in the Torrevieja area.',
-    treatment: 'Spinal Decompression',
+    treatment: 'Wervelkolom Decompressie',
   },
   {
     name: 'Annemieke de Vries',
     rating: 5,
     date: '2025-10-28',
     text: 'Fantastische kliniek! Laura is een uitstekende sportmasseur. Als Nederlandse expat is het fijn dat ze Nederlands spreekt. Mijn nek- en schouderklachten zijn enorm verbeterd na een reeks behandelingen.',
-    treatment: 'Sports Massage',
+    treatment: 'Sportmassage',
   },
   {
     name: 'Margaret Wilson',
     rating: 5,
     date: '2025-10-02',
     text: 'I was sceptical about non-surgical treatment for my herniated disc, but the decompression therapy has genuinely changed my life. I can walk, garden, and enjoy retirement again without constant pain.',
-    treatment: 'Spinal Decompression',
+    treatment: 'Wervelkolom Decompressie',
   },
   {
     name: 'Peter van Dijk',
     rating: 4,
     date: '2025-09-14',
-    text: 'Very professional clinic with modern equipment. The postural assessment was thorough and the follow-up exercises really helped. Only reason for 4 stars is the limited Saturday hours, but otherwise excellent.',
-    treatment: 'Postural Assessment',
+    text: 'Zeer professionele kliniek met moderne apparatuur. De houdingsanalyse was grondig en de vervolgoefeningen hielpen echt. Enige reden voor 4 sterren zijn de beperkte zaterdaguren, maar verder uitstekend.',
+    treatment: 'Houdingsanalyse',
   },
   {
     name: 'Sarah Jenkins',
     rating: 5,
     date: '2025-08-20',
     text: 'I drive from Orihuela Costa every week for my sports massage with Laura. It\'s worth every kilometre. She found tension I didn\'t even know I had. My golf game has improved noticeably since starting treatment.',
-    treatment: 'Sports Massage',
+    treatment: 'Sportmassage',
   },
   {
     name: 'Jan Bakker',
     rating: 5,
     date: '2025-07-30',
     text: 'Na een verwijzing van een vriend ben ik hier terecht gekomen voor mijn ischias. De combinatie van decompressie en dry needling werkt uitstekend. Het team is professioneel en spreekt perfect Nederlands.',
-    treatment: 'Spinal Decompression',
+    treatment: 'Wervelkolom Decompressie',
   },
   {
     name: 'Christine Moreau',
     rating: 5,
     date: '2025-07-05',
     text: 'Moved to Guardamar recently and was worried about finding quality physiotherapy. This clinic exceeded expectations. The initial assessment was incredibly thorough — they actually listen and create a real plan.',
-    treatment: 'Postural Assessment',
+    treatment: 'Houdingsanalyse',
   },
   {
     name: 'Robert Hughes',
@@ -74,14 +74,14 @@ const totalReviews = reviews.length;
 const averageRating = Math.round((reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews) * 10) / 10;
 
 function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+  return new Date(dateStr).toLocaleDateString('nl-NL', { month: 'long', year: 'numeric' });
 }
 
 const schemas = [
   generateLocalBusiness(),
   generateBreadcrumbs([
     { name: 'Home', url: siteConfig.url },
-    { name: 'Reviews', url: `${siteConfig.url}/reviews` },
+    { name: 'Reviews', url: `${siteConfig.url}/nl/reviews` },
   ]),
   generateAggregateRating({
     ratingValue: averageRating,
@@ -91,15 +91,15 @@ const schemas = [
 ---
 
 <BaseLayout
-  title={`Patient Reviews | ${siteConfig.name}`}
-  description={`Read ${totalReviews} patient reviews for ${siteConfig.name} in Torrevieja. Rated ${averageRating}/5 for spine treatments, sports massage, and mobility care.`}
-  canonical={`${siteConfig.url}/reviews`}
+  title={`Patientreviews | ${siteConfig.name}`}
+  description={`Lees ${totalReviews} patientreviews voor ${siteConfig.name} in Torrevieja. Beoordeeld met ${averageRating}/5 voor wervelkolombehandelingen, sportmassage en mobiliteitszorg.`}
+  canonical={`${siteConfig.url}/nl/reviews`}
   schemas={schemas}
   hreflang={[
     { lang: 'en', href: `${siteConfig.url}/reviews` },
     { lang: 'nl', href: `${siteConfig.url}/nl/reviews` },
   ]}
-  locale="en"
+  locale="nl"
 >
   <BreadcrumbNav items={breadcrumbs} />
 
@@ -107,7 +107,7 @@ const schemas = [
   <section class="py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
       <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-8">
-        What Our Patients Say
+        Wat Onze Patienten Zeggen
       </h1>
 
       <div class="inline-flex flex-col items-center p-8 bg-bg-alt rounded-card border border-border">
@@ -127,14 +127,14 @@ const schemas = [
           ))}
         </div>
         <p class="text-4xl font-heading text-text mb-1">{averageRating}<span class="text-lg text-text-muted">/5</span></p>
-        <p class="text-sm text-text-muted">Based on {totalReviews} patient reviews</p>
+        <p class="text-sm text-text-muted">Gebaseerd op {totalReviews} patientreviews</p>
         <a
           href={siteConfig.social.google || '#'}
           target="_blank"
           rel="noopener noreferrer"
           class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
         >
-          View on Google
+          Bekijk op Google
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
@@ -189,18 +189,18 @@ const schemas = [
   </section>
 
   <ReviewCTA
-    locale="en"
+    locale="nl"
     pageType="reviews"
     pageSlug="reviews"
     googleUrl={siteConfig.social.google || '#'}
   />
 
   <CTABand
-    title="Ready to Start Your Recovery?"
-    subtitle="Join our patients who've found lasting relief. Book your first appointment today."
-    ctaText="Book Appointment"
-    ctaHref="/contact"
-    locale="en"
+    title="Klaar om te Beginnen met je Herstel?"
+    subtitle="Sluit je aan bij onze patienten die blijvende verlichting hebben gevonden. Boek vandaag nog je eerste afspraak."
+    ctaText="Afspraak Maken"
+    ctaHref="/nl/contact"
+    locale="nl"
     pageType="reviews"
     pageSlug="reviews"
   />

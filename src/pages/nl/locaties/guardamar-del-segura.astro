@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../../components/BreadcrumbNav.astro';
+import CTABand from '../../../components/CTABand.astro';
+import { siteConfig } from '../../../data/site';
+import { trackOnClick } from '../../../lib/analytics';
+import { generateLocalBusiness, generateBreadcrumbs, generatePlace } from '../../../data/schema';
+
+const area = siteConfig.serviceAreas.find((a) => a.slug === 'guardamar-del-segura')!;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/nl' },
+  { label: 'Locaties', href: '/nl/locaties/torrevieja' },
+  { label: 'Guardamar del Segura' },
+];
+
+const schemas = [
+  generatePlace({ name: area.name, type: 'service-area' }),
+  generateLocalBusiness({ name: area.name }),
+  generateBreadcrumbs([
+    { name: 'Home', url: `${siteConfig.url}/nl` },
+    { name: 'Locaties', url: `${siteConfig.url}/nl/locaties/torrevieja` },
+    { name: 'Guardamar del Segura', url: `${siteConfig.url}/nl/locaties/guardamar-del-segura` },
+  ]),
+];
+
+const treatments = [
+  { name: 'Wervelkolom Decompressie', href: '/nl/behandelingen/wervelkolom-decompressie' },
+  { name: 'Sportmassage', href: '/nl/behandelingen/sportmassage' },
+  { name: 'Houdingsanalyse', href: '/nl/behandelingen/houdingsanalyse' },
+  { name: 'Dry Needling', href: '/nl/behandelingen/dry-needling' },
+];
+---
+
+<BaseLayout
+  title={`Wervelkolom & Mobiliteit voor Guardamar del Segura | ${siteConfig.name}`}
+  description="Specialistische wervelkolombehandelingen en sportmassage voor inwoners van Guardamar del Segura. Slechts 15 minuten van onze kliniek in Torrevieja."
+  canonical={`${siteConfig.url}/nl/locaties/guardamar-del-segura`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/locations/guardamar-del-segura` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/locaties/guardamar-del-segura` },
+  ]}
+  locale="nl"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <section class="py-16 md:py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-4 md:px-6">
+
+      <div class="mb-12 md:mb-16">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-text-muted bg-bg-alt px-3 py-1 rounded-full">Werkgebied</span>
+          <span class="text-xs text-text-muted/60">&middot;</span>
+          <span class="text-sm text-accent font-medium">{area.distanceFromClinic} van onze kliniek</span>
+        </div>
+        <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-4">
+          Wervelkolom &amp; Mobiliteit voor Guardamar del Segura
+        </h1>
+        <p class="text-lg text-text-muted leading-relaxed">
+          Guardamar del Segura, bekend om zijn prachtige duinstranden en dennenbossen, heeft een groeiende internationale gemeenschap. Als je in Guardamar woont en specialistische wervelkolom- of mobiliteitsbehandeling nodig hebt, is onze kliniek in Torrevieja slechts 15 minuten rijden.
+        </p>
+      </div>
+
+      <!-- Clinic card -->
+      <div class="bg-bg-alt rounded-card border border-border p-6 md:p-8 mb-12">
+        <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+          <div class="flex-1">
+            <h2 class="font-heading text-xl text-text mb-2">Wij behandelen Guardamar patienten in onze kliniek in Torrevieja</h2>
+            <p class="text-text-muted leading-relaxed mb-1">
+              Onze kliniek in Torrevieja ligt op 15 minuten ten zuiden van Guardamar, een rechte rit langs de N-332 kustweg. Gratis parkeren in de buurt.
+            </p>
+            <p class="text-sm text-text-muted/60">
+              {siteConfig.address.street}, {siteConfig.address.postalCode} {siteConfig.address.city}
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 shrink-0">
+            <a
+              href={`tel:${siteConfig.phone}`}
+              class="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-white bg-accent hover:bg-accent-dark transition-colors rounded-button"
+              onclick={trackOnClick('phone_click', { page_type: 'location', page_slug: 'guardamar-del-segura', locale: 'nl', cta_location: 'inline' })}
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              {siteConfig.phoneDisplay}
+            </a>
+            <a
+              href={siteConfig.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-accent border border-accent hover:bg-accent-light transition-colors rounded-button"
+              onclick={trackOnClick('route_click', { page_type: 'location', page_slug: 'guardamar-del-segura', locale: 'nl', cta_location: 'inline' })}
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+              </svg>
+              Route Plannen
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Distance indicator -->
+      <div class="bg-bg-alt rounded-card border border-border p-6 mb-12">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 flex-1">
+            <div class="w-3 h-3 rounded-full bg-accent shrink-0"></div>
+            <div class="h-px flex-1 bg-border"></div>
+            <div class="w-3 h-3 rounded-full bg-accent/40 shrink-0"></div>
+          </div>
+        </div>
+        <div class="flex justify-between mt-2">
+          <span class="text-xs font-medium text-accent">Torrevieja (kliniek)</span>
+          <span class="text-xs text-text-muted">Guardamar del Segura — {area.distanceFromClinic}</span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="prose-section space-y-8 mb-12">
+        <div>
+          <h2 class="font-heading text-xl md:text-2xl text-text mb-3">Waarom Inwoners van Guardamar voor Ons Kiezen</h2>
+          <div class="space-y-4 text-text-muted leading-relaxed">
+            <p>
+              De duinstranden van Guardamar, de rivierpromenades en de nabijheid van het zoutmeer van La Mata trekken actieve gepensioneerden en expats aan. Wandelen, fietsen en zwemmen zijn dagelijkse routines — maar ze kunnen bestaande rugproblemen verergeren of tot nieuwe blessures leiden.
+            </p>
+            <p>
+              Onze kliniek in Torrevieja biedt specialistische behandelingen die lokaal moeilijk te vinden zijn, waaronder gemotoriseerde wervelkolom decompressie voor hernia's en chronische pijn. Wij spreken Engels, Nederlands en Spaans en hebben ruime ervaring met internationale zorgverzekeraars.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-xl md:text-2xl text-text mb-3">Hoe Kom Je Bij Ons Vanaf Guardamar</h2>
+          <ul class="space-y-2 text-text-muted">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-1 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              <span><strong class="text-text">Met de auto:</strong> 15 minuten naar het zuiden via de N-332 richting Torrevieja</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-1 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              <span><strong class="text-text">Via La Mata:</strong> Schilderachtige kustroute door La Mata — rustig en verkeersarm</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-1 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              <span><strong class="text-text">Parkeren:</strong> Gratis parkeren in de buurt van de kliniek</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Available treatments -->
+      <div>
+        <h2 class="font-heading text-xl md:text-2xl text-text mb-6">Beschikbare Behandelingen</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {treatments.map((t) => (
+            <a href={t.href} class="flex items-center gap-3 p-4 bg-bg-alt rounded-card border border-border hover:border-accent/30 transition-colors group">
+              <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span class="text-sm font-medium text-text group-hover:text-accent transition-colors">{t.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    title="Woon je in Guardamar? Wij zijn slechts 15 minuten verderop"
+    subtitle="Maak een afspraak in onze kliniek in Torrevieja. Een korte rit naar het zuiden langs de N-332."
+    ctaText="Afspraak Maken"
+    ctaHref="/nl/contact"
+    locale="nl"
+    pageType="location"
+    pageSlug="guardamar-del-segura"
+  />
+</BaseLayout>
