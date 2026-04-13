@@ -5,8 +5,10 @@ import '../styles/global.css';
 import SEOHead from '../components/SEOHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
 import { siteConfig } from '../data/site';
 import type { Locale } from '../data/site';
+import type { PageType } from '../lib/analytics';
 import { getTrackingScript, getGA4Script } from '../lib/analytics';
 
 interface Props {
@@ -69,6 +71,11 @@ const {
     <slot />
   </main>
 
+  <!-- Mobile CTA padding to prevent footer overlap -->
+  <div class="h-20 md:hidden" aria-hidden="true"></div>
+
   <Footer locale={locale} />
+
+  <StickyMobileCTA locale={locale} />
 </body>
 </html>

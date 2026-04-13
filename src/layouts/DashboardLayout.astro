@@ -1,0 +1,60 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource/dm-serif-display';
+import '../styles/global.css';
+import SEOHead from '../components/SEOHead.astro';
+import { siteConfig } from '../data/site';
+import { getTrackingScript } from '../lib/analytics';
+
+interface Props {
+  title: string;
+  description: string;
+  lastUpdated: string;
+}
+
+const { title, description, lastUpdated } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <SEOHead
+    title={title}
+    description={description}
+    noindex={true}
+  />
+  <script is:inline set:html={getTrackingScript()} />
+</head>
+<body class="bg-bg text-text min-h-screen">
+
+  <!-- Dashboard header — no main site navigation -->
+  <header class="border-b border-border bg-white no-print">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+      <div>
+        <a href="/" class="font-heading text-lg text-text hover:text-accent transition-colors">
+          {siteConfig.name}
+        </a>
+        <span class="ml-3 text-xs font-medium text-white bg-accent/80 px-2 py-0.5 rounded-full">
+          Dashboard
+        </span>
+      </div>
+      <p class="text-xs text-text-muted">
+        Last updated: <time datetime={lastUpdated}>{new Date(lastUpdated).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
+    <slot />
+  </main>
+
+  <!-- Minimal footer -->
+  <footer class="border-t border-border no-print">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-4">
+      <p class="text-xs text-text-muted">
+        &copy; {new Date().getFullYear()} {siteConfig.name} &middot; This dashboard is private and not indexed by search engines.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
