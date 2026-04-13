@@ -11,6 +11,7 @@ interface Props {
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
   backgroundImage?: string;
+  backgroundAlt?: string;
   locale?: Locale;
   pageType?: PageType;
   pageSlug?: string;
@@ -24,6 +25,7 @@ const {
   secondaryCtaText,
   secondaryCtaHref,
   backgroundImage,
+  backgroundAlt = '',
   locale = 'en',
   pageType = 'homepage',
   pageSlug = '/',
@@ -38,7 +40,9 @@ const trackProps = { page_type: pageType, page_slug: pageSlug, locale, cta_locat
     <div class="absolute inset-0">
       <img
         src={backgroundImage}
-        alt=""
+        alt={backgroundAlt}
+        width="1920"
+        height="1280"
         class="w-full h-full object-cover"
         loading="eager"
         fetchpriority="high"

@@ -9,6 +9,7 @@ interface Props {
   ctaText: string;
   ctaHref: string;
   backgroundImage?: string;
+  backgroundAlt?: string;
   eventName?: EventName;
   ctaLocation?: CTALocation;
   locale?: Locale;
@@ -22,6 +23,7 @@ const {
   ctaText,
   ctaHref,
   backgroundImage,
+  backgroundAlt = '',
   eventName = 'appointment_click',
   ctaLocation = 'inline',
   locale = 'en',
@@ -37,7 +39,9 @@ const {
       <div class="absolute inset-0">
         <img
           src={backgroundImage}
-          alt=""
+          alt={backgroundAlt}
+          width="1400"
+          height="1735"
           class="w-full h-full object-cover"
           loading="lazy"
           decoding="async"
