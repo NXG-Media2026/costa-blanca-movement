@@ -33,6 +33,7 @@ export const navigation: Record<Locale, NavItem[]> = {
     { label: 'About', href: '/about' },
     { label: 'Reviews', href: '/reviews' },
     { label: 'FAQ', href: '/faq' },
+    { label: 'Guides', href: '/guides' },
     { label: 'Contact', href: '/contact' },
   ],
   nl: [
@@ -61,6 +62,7 @@ export const navigation: Record<Locale, NavItem[]> = {
     { label: 'Over Ons', href: '/nl/over-ons' },
     { label: 'Reviews', href: '/nl/reviews' },
     { label: 'FAQ', href: '/nl/faq' },
+    { label: 'Gidsen', href: '/nl/gidsen' },
     { label: 'Contact', href: '/nl/contact' },
   ],
 };

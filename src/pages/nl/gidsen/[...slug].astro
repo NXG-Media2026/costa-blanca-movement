@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import GuideLayout from '../../../layouts/GuideLayout.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  const treatments = await getCollection('treatments');
+  const conditions = await getCollection('conditions');
+
+  const nlGuides = guides.filter((g) => g.data.lang === 'nl');
+  const nlTreatments = treatments.filter((t) => t.data.lang === 'nl');
+  const nlConditions = conditions.filter((c) => c.data.lang === 'nl');
+
+  const treatmentTitles: Record<string, string> = {};
+  nlTreatments.forEach((t) => { treatmentTitles[t.data.pageSlug] = t.data.title; });
+
+  const conditionTitles: Record<string, string> = {};
+  nlConditions.forEach((c) => { conditionTitles[c.data.pageSlug] = c.data.title; });
+
+  return nlGuides.map((guide) => {
+    const related = nlGuides
+      .filter((g) => g.data.pageSlug !== guide.data.pageSlug)
+      .filter((g) =>
+        g.data.category === guide.data.category ||
+        g.data.relatedConditions.some((c: string) => guide.data.relatedConditions.includes(c)) ||
+        g.data.relatedTreatments.some((t: string) => guide.data.relatedTreatments.includes(t))
+      )
+      .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+      .slice(0, 3)
+      .map((g) => ({
+        title: g.data.title,
+        slug: g.data.pageSlug,
+        date: g.data.date,
+        category: g.data.category,
+        excerpt: g.data.excerpt,
+      }));
+
+    return {
+      params: { slug: guide.data.pageSlug },
+      props: { guide, relatedGuides: related, treatmentTitles, conditionTitles },
+    };
+  });
+}
+
+const { guide, relatedGuides, treatmentTitles, conditionTitles } = Astro.props;
+const { Content } = await guide.render();
+---
+
+<GuideLayout
+  frontmatter={{ ...guide.data, slug: guide.data.pageSlug }}
+  relatedGuides={relatedGuides}
+  treatmentTitles={treatmentTitles}
+  conditionTitles={conditionTitles}
+>
+  <Content />
+</GuideLayout>

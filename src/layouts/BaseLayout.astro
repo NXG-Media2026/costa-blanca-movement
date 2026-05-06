@@ -3,6 +3,7 @@ import '@fontsource-variable/inter';
 import '@fontsource/dm-serif-display';
 import '../styles/global.css';
 import SEOHead from '../components/SEOHead.astro';
+import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StickyMobileCTA from '../components/StickyMobileCTA.astro';
@@ -65,6 +66,7 @@ const {
     Skip to content
   </a>
 
+  <TopBar locale={locale} currentPath={Astro.url.pathname} />
   <Header locale={locale} currentPath={Astro.url.pathname} />
 
   <main id="main-content" class="flex-1">

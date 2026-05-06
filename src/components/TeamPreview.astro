@@ -1,0 +1,73 @@
+---
+import { siteConfig } from '../data/site';
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const { team } = siteConfig;
+const aboutPath = locale === 'nl' ? '/nl/over-ons' : '/about';
+---
+
+<section class="py-16 md:py-24 lg:py-32 bg-bg">
+  <div class="max-w-4xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 md:mb-16 js-reveal">
+      <div class="w-12 h-1 bg-accent rounded-full mx-auto mb-6"></div>
+      <h2 class="font-heading text-3xl md:text-4xl text-text">
+        {locale === 'nl' ? 'Uw Behandelteam' : 'Your Treatment Team'}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+      {team.map((member, idx) => (
+        <div
+          class="flex flex-col items-center text-center js-reveal"
+          style={`--reveal-delay: ${idx * 120}ms`}
+        >
+          {/* Avatar placeholder */}
+          <div class="w-32 h-32 rounded-full bg-accent-light flex items-center justify-center mb-5 shrink-0">
+            <span class="text-3xl font-heading text-accent">
+              {member.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
+            </span>
+          </div>
+
+          {/* Name + role */}
+          <h3 class="font-heading text-xl text-text mb-1">{member.name}</h3>
+          <p class="text-sm font-medium text-accent mb-3">{member.role}</p>
+
+          {/* Experience line */}
+          <p class="text-sm text-text-muted mb-4">
+            {member.bio.split('.')[0]}.
+          </p>
+
+          {/* Credentials */}
+          {member.qualifications && member.qualifications.length > 0 && (
+            <ul class="space-y-1">
+              {member.qualifications.map((q) => (
+                <li class="text-xs text-text-muted flex items-center justify-center gap-1.5">
+                  <span class="w-1 h-1 rounded-full bg-accent/40 shrink-0"></span>
+                  {q}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+
+    {/* CTA */}
+    <div class="text-center mt-10 md:mt-14 js-reveal">
+      <a
+        href={aboutPath}
+        class="inline-flex items-center text-base font-medium text-accent hover:text-accent-dark transition-colors"
+      >
+        {locale === 'nl' ? 'Maak kennis met het volledige team' : 'Meet the full team'}
+        <svg class="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

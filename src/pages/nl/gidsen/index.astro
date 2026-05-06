@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../../components/BreadcrumbNav.astro';
+import GuideCard from '../../../components/GuideCard.astro';
+import CTABand from '../../../components/CTABand.astro';
+import { siteConfig } from '../../../data/site';
+import { generateLocalBusiness, generateBreadcrumbs } from '../../../data/schema';
+
+const guides = await getCollection('guides');
+const nlGuides = guides
+  .filter((g) => g.data.lang === 'nl')
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const breadcrumbs = [
+  { label: 'Home', href: '/nl' },
+  { label: 'Gidsen' },
+];
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs([
+    { name: 'Home', url: `${siteConfig.url}/nl` },
+    { name: 'Gidsen', url: `${siteConfig.url}/nl/gidsen` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={`Gidsen & Artikelen | ${siteConfig.name}`}
+  description="Deskundige gidsen over wervelkolomgezondheid, pijnpreventie en behandelopties. Geschreven door ons klinisch team in Torrevieja."
+  canonical={`${siteConfig.url}/nl/gidsen`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/guides` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/gidsen` },
+  ]}
+  locale="nl"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <section class="py-16 md:py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="max-w-3xl mb-12 md:mb-16">
+        <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-6">
+          Gidsen & Artikelen
+        </h1>
+        <p class="text-lg text-text-muted leading-relaxed">
+          Deskundige artikelen over wervelkolomgezondheid, pijnpreventie en behandelopties — geschreven door ons klinisch team om u te helpen bij het maken van weloverwogen keuzes over uw zorg.
+        </p>
+      </div>
+
+      {nlGuides.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {nlGuides.map((guide) => (
+            <GuideCard
+              title={guide.data.title}
+              slug={guide.data.pageSlug}
+              date={guide.data.date}
+              category={guide.data.category}
+              excerpt={guide.data.excerpt}
+              basePath="/nl/gidsen"
+              locale="nl"
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12 bg-bg-alt rounded-xl">
+          <p class="text-text-muted text-lg">
+            Binnenkort beschikbaar in het Nederlands. Bekijk onze <a href="/guides" class="text-accent hover:text-accent-dark underline">Engelstalige gidsen</a>.
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <CTABand
+    title="Heeft u een vraag over uw klacht?"
+    subtitle="Maak een afspraak en krijg persoonlijk advies van ons klinisch team."
+    ctaText="Afspraak Maken"
+    ctaHref="/nl/contact"
+    locale="nl"
+    pageType="guide"
+    pageSlug="gidsen"
+  />
+</BaseLayout>

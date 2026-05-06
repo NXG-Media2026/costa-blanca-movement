@@ -3,9 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import TrustBar from '../components/TrustBar.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
+import ApproachSection from '../components/ApproachSection.astro';
 import AtmosphereSection from '../components/AtmosphereSection.astro';
 import DefinitionBlock from '../components/DefinitionBlock.astro';
 import TestimonialSlider from '../components/TestimonialSlider.astro';
+import TeamPreview from '../components/TeamPreview.astro';
+import LocationPreview from '../components/LocationPreview.astro';
+import GuidesPreview from '../components/GuidesPreview.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import CTABand from '../components/CTABand.astro';
 import { siteConfig } from '../data/site';
@@ -18,7 +22,7 @@ const services = [
     excerpt: 'Non-surgical treatment to relieve compressed spinal discs, reduce nerve pressure, and restore mobility.',
     icon: 'spine',
     image: '/images/treatments/spinal-decompression.webp',
-    imageAlt: 'Therapist performing spinal decompression therapy on a patient',
+    imageAlt: 'Therapist performing manual shoulder and spine therapy on a patient lying on a treatment table',
   },
   {
     title: 'Sports Massage',
@@ -26,7 +30,7 @@ const services = [
     excerpt: 'Deep tissue and sports-focused massage for faster recovery, injury prevention, and pain relief.',
     icon: 'massage',
     image: '/images/treatments/sports-massage.webp',
-    imageAlt: 'Sports massage therapist treating shoulder and back muscles',
+    imageAlt: 'Therapist performing deep tissue massage on a patient shoulder and upper back',
   },
   {
     title: 'Postural Assessment',
@@ -34,7 +38,7 @@ const services = [
     excerpt: 'Comprehensive evaluation of your alignment and movement patterns to identify the root cause of pain.',
     icon: 'posture',
     image: '/images/treatments/postural-assessment.webp',
-    imageAlt: 'Patient undergoing a postural alignment assessment',
+    imageAlt: 'Physiotherapist assessing patient spinal posture and alignment in a modern clinic',
   },
   {
     title: 'Dry Needling',
@@ -42,7 +46,7 @@ const services = [
     excerpt: 'Targeted trigger point therapy using thin needles to release muscle tension and reduce chronic pain.',
     icon: 'needle',
     image: '/images/treatments/dry-needling.webp',
-    imageAlt: 'Dry needling treatment targeting muscle trigger points',
+    imageAlt: 'Practitioner inserting thin dry needling needles into a patient upper back and neck area',
   },
 ];
 
@@ -52,18 +56,22 @@ const testimonials = [
     text: 'After years of lower back pain, I finally found relief at Costa Blanca Movement Centre. Dr. Mitchell explained everything clearly and the spinal decompression treatment has been life-changing.',
     rating: 5,
     source: 'Google',
+    treatment: 'Spinal Decompression',
+    location: 'Torrevieja',
   },
   {
     name: 'Hans van der Berg',
     text: 'As a keen cyclist, regular sports massage here keeps me on the bike. Laura is incredibly skilled — she finds tension I didn\'t even know I had. Highly recommended for any active expat.',
     rating: 5,
     source: 'Google',
+    treatment: 'Sports Massage',
   },
   {
     name: 'David R.',
     text: 'Professional, knowledgeable, and genuinely caring. I came in with severe neck pain and sciatica. Within 6 sessions, I saw a dramatic improvement. Best clinic on the Costa Blanca.',
     rating: 5,
     source: 'Google',
+    treatment: 'Spinal Decompression',
   },
 ];
 
@@ -81,24 +89,39 @@ const faqs = [
     a: 'Your first visit includes a comprehensive assessment of your condition, medical history, and movement patterns. We\'ll discuss your symptoms, perform a physical examination, and create a personalized treatment plan. Please allow 45–60 minutes.',
   },
   {
-    q: 'How many treatment sessions will I need?',
-    a: 'This depends on your condition and its severity. Most patients notice improvement within 3–4 sessions. During your initial assessment, we\'ll give you an honest estimate of the recommended treatment course.',
-  },
-  {
     q: 'Is treatment covered by insurance?',
     a: 'Many international health insurance providers cover our treatments. We can provide detailed invoices for reimbursement. Contact us with your insurance details and we\'ll help you understand your coverage.',
-  },
-  {
-    q: 'Where is your clinic located?',
-    a: 'We\'re located in Torrevieja, on the southern Costa Blanca in Spain. Our clinic is easily accessible from Orihuela Costa (15 min), Guardamar del Segura (15 min), and Pilar de la Horadada (20 min). Free parking is available nearby.',
   },
 ];
 
 const trustItems = [
   { value: '15+', label: 'Years\nExperience' },
-  { value: '2,500+', label: 'Patients\nTreated' },
+  { value: '2,300+', label: 'Patients\nTreated' },
   { value: '4.7★', label: 'Google\nRating' },
   { value: '23', label: 'Verified\nReviews' },
+];
+
+const approachItems = [
+  {
+    icon: 'evidence',
+    title: 'Evidence-Based Protocols',
+    description: 'All treatments follow current clinical evidence and best practice guidelines for proven results.',
+  },
+  {
+    icon: 'multilingual',
+    title: 'Multilingual Team',
+    description: 'We speak English, Dutch, and Spanish — making healthcare accessible for the expat community.',
+  },
+  {
+    icon: 'nonsurgical',
+    title: 'Non-Surgical Techniques',
+    description: 'Modern conservative treatments that reduce pain and restore mobility without surgery.',
+  },
+  {
+    icon: 'personalized',
+    title: 'Personalised Plans',
+    description: 'Every patient receives a tailored treatment plan based on their specific condition and goals.',
+  },
 ];
 ---
 
@@ -120,7 +143,7 @@ const trustItems = [
     secondaryCtaText="Call Us"
     secondaryCtaHref={`tel:${siteConfig.phone}`}
     backgroundImage="/images/hero/hero-clinic.webp"
-    backgroundAlt="Modern physiotherapy clinic with treatment equipment"
+    backgroundAlt="Physiotherapist treating a patient on a treatment table in a bright, modern clinic"
     locale="en"
     pageType="homepage"
     pageSlug="/"
@@ -140,14 +163,20 @@ const trustItems = [
   <AtmosphereSection
     image="/images/atmosphere/costa-blanca.webp"
     quote="Helping you move freely again — in the heart of the Costa Blanca."
-    alt="Panoramic view of the sunny Costa Blanca coastline in southern Spain"
+    alt="Golden sunset reflecting over calm Mediterranean Sea waters on the Costa Blanca"
   />
 
   <DefinitionBlock
     term="What We Do"
     definition="Costa Blanca Movement Centre is a specialist mobility and spine health clinic in Torrevieja, Spain. We combine evidence-based manual therapy with modern non-surgical techniques to treat back pain, neck pain, sports injuries, and postural problems. Our multilingual team serves the international expat community across the southern Costa Blanca — from Orihuela Costa to Guardamar del Segura and Pilar de la Horadada."
     image="/images/clinic/treatment-room.webp"
-    imageAlt="Treatment room with modern rehabilitation equipment at Costa Blanca Movement Centre"
+    imageAlt="Physiotherapist providing hands-on treatment to a patient in a warm, modern clinic"
+  />
+
+  <ApproachSection
+    title="Our Approach"
+    items={approachItems}
+    locale="en"
   />
 
   <TestimonialSlider
@@ -155,11 +184,19 @@ const trustItems = [
     locale="en"
   />
 
+  <TeamPreview locale="en" />
+
+  <LocationPreview locale="en" />
+
+  <GuidesPreview locale="en" />
+
   <FAQAccordion
     items={faqs}
     locale="en"
     pageType="homepage"
     pageSlug="/"
+    maxItems={4}
+    showMoreLink={true}
   />
 
   <CTABand
@@ -168,7 +205,7 @@ const trustItems = [
     ctaText="Book Your Assessment"
     ctaHref="/contact"
     backgroundImage="/images/cta/cta-background.webp"
-    backgroundAlt="Serene coastal view along the Mediterranean coast"
+    backgroundAlt="Tranquil Mediterranean beach at sunset with soft purple sky and gentle waves"
     eventName="appointment_click"
     ctaLocation="inline"
     locale="en"

@@ -8,6 +8,7 @@ export const routeSegments: Record<string, Record<string, string>> = {
     contact: 'contact',
     faq: 'faq',
     reviews: 'reviews',
+    guides: 'guides',
     privacy: 'privacy',
   },
   nl: {
@@ -18,6 +19,7 @@ export const routeSegments: Record<string, Record<string, string>> = {
     contact: 'contact',
     faq: 'faq',
     reviews: 'reviews',
+    guides: 'gidsen',
     privacy: 'privacy',
   },
 };

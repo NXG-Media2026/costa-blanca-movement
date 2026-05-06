@@ -1,0 +1,230 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import BreadcrumbNav from '../components/BreadcrumbNav.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
+import RelatedTreatments from '../components/RelatedTreatments.astro';
+import RelatedConditions from '../components/RelatedConditions.astro';
+import CTABand from '../components/CTABand.astro';
+import { siteConfig } from '../data/site';
+import { t } from '../i18n/utils';
+import {
+  generateLocalBusiness,
+  generateBreadcrumbs,
+  generateArticle,
+} from '../data/schema';
+import type { Locale } from '../data/site';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    slug: string;
+    lang: 'en' | 'nl';
+    date: string;
+    updatedDate?: string;
+    excerpt: string;
+    category: string;
+    author: string;
+    metaTitle: string;
+    metaDescription: string;
+    relatedTreatments: string[];
+    relatedConditions: string[];
+  };
+  relatedGuides: Array<{
+    title: string;
+    slug: string;
+    date: string;
+    category: string;
+    excerpt: string;
+  }>;
+  treatmentTitles: Record<string, string>;
+  conditionTitles: Record<string, string>;
+}
+
+const { frontmatter, relatedGuides = [], treatmentTitles = {}, conditionTitles = {} } = Astro.props;
+const locale = frontmatter.lang as Locale;
+const isNl = locale === 'nl';
+
+const guidesPath = isNl ? '/nl/gidsen' : '/guides';
+const treatmentsPath = isNl ? '/nl/behandelingen' : '/treatments';
+const conditionsPath = isNl ? '/nl/klachten' : '/conditions';
+const contactPath = isNl ? '/nl/contact' : '/contact';
+const pageUrl = `${guidesPath}/${frontmatter.slug}`;
+
+const breadcrumbs = [
+  { label: t('breadcrumb.home', locale), href: isNl ? '/nl' : '/' },
+  { label: t('breadcrumb.guides', locale), href: guidesPath },
+  { label: frontmatter.title },
+];
+
+const breadcrumbSchema = breadcrumbs.map((b) => ({
+  name: b.label,
+  url: b.href ? `${siteConfig.url}${b.href}` : `${siteConfig.url}${pageUrl}`,
+}));
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs(breadcrumbSchema),
+  generateArticle({
+    title: frontmatter.title,
+    description: frontmatter.metaDescription,
+    url: `${siteConfig.url}${pageUrl}`,
+    datePublished: frontmatter.date,
+    dateModified: frontmatter.updatedDate,
+    author: frontmatter.author,
+  }),
+];
+
+const formattedDate = new Date(frontmatter.date).toLocaleDateString(isNl ? 'nl-NL' : 'en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const formattedUpdated = frontmatter.updatedDate
+  ? new Date(frontmatter.updatedDate).toLocaleDateString(isNl ? 'nl-NL' : 'en-GB', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  : null;
+
+const relatedTreatmentItems = frontmatter.relatedTreatments.map((slug) => ({
+  title: treatmentTitles[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+  slug,
+}));
+
+const relatedConditionItems = frontmatter.relatedConditions.map((slug) => ({
+  title: conditionTitles[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+  slug,
+}));
+
+const categoryColors: Record<string, string> = {
+  'Treatment': 'bg-accent/10 text-accent',
+  'Prevention': 'bg-emerald-50 text-emerald-700',
+  'Recovery': 'bg-sky-50 text-sky-700',
+  'Patient Guide': 'bg-amber-50 text-amber-700',
+};
+const colorClass = categoryColors[frontmatter.category] || 'bg-accent/10 text-accent';
+---
+
+<BaseLayout
+  title={frontmatter.metaTitle}
+  description={frontmatter.metaDescription}
+  canonical={`${siteConfig.url}${pageUrl}`}
+  ogType="article"
+  schemas={schemas}
+  locale={locale}
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <article class="py-12 md:py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-4 md:px-6">
+      {/* Header */}
+      <div class="mb-10">
+        <span class={`inline-block px-3 py-1 text-xs font-medium rounded-full mb-4 ${colorClass}`}>
+          {frontmatter.category}
+        </span>
+
+        <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-6">
+          {frontmatter.title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-text-muted">
+          <span>{t('guide.by', locale)} {frontmatter.author}</span>
+          <span aria-hidden="true">·</span>
+          <time datetime={frontmatter.date}>{formattedDate}</time>
+          {formattedUpdated && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>{t('guide.updated', locale)} {formattedUpdated}</span>
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Markdown content */}
+      <div class="prose prose-lg max-w-none
+        prose-headings:font-heading prose-headings:text-text prose-headings:font-normal
+        prose-p:text-text-muted prose-p:leading-relaxed
+        prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+        prose-li:text-text-muted
+        prose-strong:text-text prose-strong:font-semibold
+        mb-12"
+      >
+        <slot />
+      </div>
+    </div>
+  </article>
+
+  {/* Related guides */}
+  <RelatedGuides
+    guides={relatedGuides}
+    basePath={guidesPath}
+    locale={locale}
+  />
+
+  {/* Related treatments */}
+  {relatedTreatmentItems.length > 0 && (
+    <section class="py-12 md:py-16 bg-bg">
+      <div class="max-w-3xl mx-auto px-4 md:px-6">
+        <h2 class="font-heading text-2xl md:text-3xl text-text mb-6">
+          {t('guide.relatedTreatments', locale)}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {relatedTreatmentItems.map((item) => (
+            <a
+              href={`${treatmentsPath}/${item.slug}`}
+              class="flex items-center justify-between p-4 bg-white border border-border rounded-xl hover:border-accent/30 hover:shadow-sm transition-all"
+            >
+              <span class="font-medium text-text">{item.title}</span>
+              <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Related conditions */}
+  {relatedConditionItems.length > 0 && (
+    <section class={`py-12 md:py-16 ${relatedTreatmentItems.length > 0 ? 'bg-bg-alt' : 'bg-bg'}`}>
+      <div class="max-w-3xl mx-auto px-4 md:px-6">
+        <h2 class="font-heading text-2xl md:text-3xl text-text mb-6">
+          {t('guide.relatedConditions', locale)}
+        </h2>
+        <ul class="flex flex-wrap gap-3">
+          {relatedConditionItems.map((item) => (
+            <li>
+              <a
+                href={`${conditionsPath}/${item.slug}`}
+                class="inline-flex items-center px-4 py-2.5 text-sm font-medium border border-border rounded-lg text-text hover:text-accent hover:border-accent/30 transition-colors"
+              >
+                {item.title}
+                <svg class="w-4 h-4 ml-2 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Bottom CTA */}
+  <CTABand
+    title={isNl ? 'Klaar om een afspraak te maken?' : 'Ready to Book Your Appointment?'}
+    subtitle={isNl
+      ? 'Neem contact op voor een persoonlijk behandelplan.'
+      : 'Get in touch to discuss your personalised treatment plan.'}
+    ctaText={t('cta.book', locale)}
+    ctaHref={contactPath}
+    eventName="appointment_click"
+    ctaLocation="guide_bottom"
+    locale={locale}
+    pageType="guide"
+    pageSlug={frontmatter.slug}
+  />
+</BaseLayout>

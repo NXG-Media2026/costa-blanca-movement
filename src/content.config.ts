@@ -47,4 +47,24 @@ const conditions = defineCollection({
   }),
 });
 
-export const collections = { treatments, conditions };
+const guides = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    pageSlug: z.string(),
+    lang: z.enum(['en', 'nl']),
+    translationSlug: z.string().optional(),
+    date: z.string(),
+    updatedDate: z.string().optional(),
+    excerpt: z.string(),
+    category: z.enum(['Treatment', 'Prevention', 'Recovery', 'Patient Guide']),
+    author: z.string(),
+    metaTitle: z.string(),
+    metaDescription: z.string(),
+    ogImage: z.string().optional(),
+    relatedTreatments: z.array(z.string()).default([]),
+    relatedConditions: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { treatments, conditions, guides };

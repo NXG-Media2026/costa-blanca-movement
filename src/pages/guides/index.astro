@@ -1,0 +1,100 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import CTABand from '../../components/CTABand.astro';
+import { siteConfig } from '../../data/site';
+import { generateLocalBusiness, generateBreadcrumbs } from '../../data/schema';
+
+const guides = await getCollection('guides');
+const enGuides = guides
+  .filter((g) => g.data.lang === 'en')
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const categories = [...new Set(enGuides.map((g) => g.data.category))];
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides' },
+];
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs([
+    { name: 'Home', url: siteConfig.url },
+    { name: 'Guides', url: `${siteConfig.url}/guides` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={`Guides & Resources | ${siteConfig.name}`}
+  description="Expert guides on spine health, pain prevention, and treatment options. Written by our clinical team in Torrevieja for expats on the Costa Blanca."
+  canonical={`${siteConfig.url}/guides`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/guides` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/gidsen` },
+  ]}
+  locale="en"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <section class="py-16 md:py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="max-w-3xl mb-12 md:mb-16">
+        <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-6">
+          Guides & Resources
+        </h1>
+        <p class="text-lg text-text-muted leading-relaxed">
+          Expert articles on spine health, pain prevention, and treatment options — written by our clinical team to help you make informed decisions about your care.
+        </p>
+      </div>
+
+      {/* CSS-only category filter */}
+      {categories.length > 1 && (
+        <div class="flex flex-wrap gap-2 mb-10">
+          <a
+            href="/guides"
+            class="px-4 py-2 text-sm font-medium rounded-full border border-accent bg-accent text-white transition-colors"
+          >
+            All
+          </a>
+          {categories.map((cat) => (
+            <a
+              href={`#${cat.toLowerCase().replace(/\s+/g, '-')}`}
+              class="px-4 py-2 text-sm font-medium rounded-full border border-border text-text-muted hover:border-accent/30 hover:text-accent transition-colors"
+            >
+              {cat}
+            </a>
+          ))}
+        </div>
+      )}
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {enGuides.map((guide) => (
+          <GuideCard
+            title={guide.data.title}
+            slug={guide.data.pageSlug}
+            date={guide.data.date}
+            category={guide.data.category}
+            excerpt={guide.data.excerpt}
+            basePath="/guides"
+            locale="en"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    title="Have a Question About Your Condition?"
+    subtitle="Book an assessment and get personalised advice from our clinical team."
+    ctaText="Book Assessment"
+    ctaHref="/contact"
+    locale="en"
+    pageType="guide"
+    pageSlug="guides"
+  />
+</BaseLayout>

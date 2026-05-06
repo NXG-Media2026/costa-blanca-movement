@@ -3,7 +3,7 @@
 ## Project Overview
 
 Health clinic website template built with Astro + Tailwind CSS, optimized for SEO and AI visibility.
-First instance: Costa Blanca Movement Centre — mobility/spine clinic for expats in Altea, Spain.
+First instance: Costa Blanca Movement Centre — mobility/spine clinic for expats in Torrevieja, Spain.
 
 **Stack:** Astro 5, Tailwind CSS 3, Cloudflare Pages
 **Hard rules:** No React, no client-side rendering, no hydration, no CMS, no heavy JS

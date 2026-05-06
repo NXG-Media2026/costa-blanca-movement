@@ -1,0 +1,45 @@
+---
+import GuideCard from './GuideCard.astro';
+import type { Locale } from '../data/site';
+import { t } from '../i18n/utils';
+
+interface GuideItem {
+  title: string;
+  slug: string;
+  date: string;
+  category: string;
+  excerpt: string;
+}
+
+interface Props {
+  guides: GuideItem[];
+  basePath: string;
+  locale?: Locale;
+}
+
+const { guides, basePath, locale = 'en' } = Astro.props;
+
+if (guides.length === 0) return;
+---
+
+<section class="py-12 md:py-16 bg-bg-alt">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <h2 class="font-heading text-2xl md:text-3xl text-text mb-8">
+      {t('guide.relatedGuides', locale)}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {guides.map((guide) => (
+        <GuideCard
+          title={guide.title}
+          slug={guide.slug}
+          date={guide.date}
+          category={guide.category}
+          excerpt={guide.excerpt}
+          basePath={basePath}
+          locale={locale}
+          compact
+        />
+      ))}
+    </div>
+  </div>
+</section>

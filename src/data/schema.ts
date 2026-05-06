@@ -217,6 +217,35 @@ export function generatePlace(location: {
   });
 }
 
+/** Article/BlogPosting — for guide pages. */
+export function generateArticle(article: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  author: string;
+}) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.description,
+    url: article.url,
+    datePublished: article.datePublished,
+    ...(article.dateModified && { dateModified: article.dateModified }),
+    author: {
+      '@type': 'Person',
+      name: article.author,
+    },
+    publisher: {
+      '@type': 'MedicalBusiness',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  });
+}
+
 /** Person — for team members (E-E-A-T). */
 export function generatePerson(member: {
   name: string;

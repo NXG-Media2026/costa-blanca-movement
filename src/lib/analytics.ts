@@ -27,6 +27,7 @@ export type PageType =
   | 'reviews'
   | 'contact'
   | 'about'
+  | 'guide'
   | 'dashboard'
   | 'page';
 

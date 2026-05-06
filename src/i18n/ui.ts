@@ -24,6 +24,7 @@ export const ui = {
     'review.cta': 'Share Your Experience',
     'review.heading': 'What Our Patients Say',
     'review.leaveReview': 'Leave a Review',
+    'review.reviews': 'reviews',
 
     // FAQ
     'faq.heading': 'Frequently Asked Questions',
@@ -50,6 +51,18 @@ export const ui = {
     'location.servingArea': 'Serving the',
     'location.distanceFromClinic': 'Distance from clinic',
     'location.bookAtClinic': 'Book an appointment at our clinic in Torrevieja',
+
+    // Guides
+    'nav.guides': 'Guides',
+    'guide.allGuides': 'All Guides',
+    'guide.latestGuides': 'Latest Guides',
+    'guide.viewAll': 'View all guides',
+    'guide.by': 'By',
+    'guide.updated': 'Updated',
+    'guide.relatedGuides': 'Related Guides',
+    'guide.relatedTreatments': 'Related Treatments',
+    'guide.relatedConditions': 'Related Conditions',
+    'breadcrumb.guides': 'Guides',
 
     // General
     'general.readMore': 'Read More',
@@ -97,6 +110,7 @@ export const ui = {
     'review.cta': 'Deel Je Ervaring',
     'review.heading': 'Wat Onze Patiënten Zeggen',
     'review.leaveReview': 'Schrijf een Review',
+    'review.reviews': 'reviews',
 
     // FAQ
     'faq.heading': 'Veelgestelde Vragen',
@@ -123,6 +137,18 @@ export const ui = {
     'location.servingArea': 'Werkgebied',
     'location.distanceFromClinic': 'Afstand tot kliniek',
     'location.bookAtClinic': 'Maak een afspraak in onze kliniek in Torrevieja',
+
+    // Guides
+    'nav.guides': 'Gidsen',
+    'guide.allGuides': 'Alle Gidsen',
+    'guide.latestGuides': 'Laatste Gidsen',
+    'guide.viewAll': 'Bekijk alle gidsen',
+    'guide.by': 'Door',
+    'guide.updated': 'Bijgewerkt',
+    'guide.relatedGuides': 'Gerelateerde Gidsen',
+    'guide.relatedTreatments': 'Gerelateerde Behandelingen',
+    'guide.relatedConditions': 'Gerelateerde Klachten',
+    'breadcrumb.guides': 'Gidsen',
 
     // General
     'general.readMore': 'Lees Meer',

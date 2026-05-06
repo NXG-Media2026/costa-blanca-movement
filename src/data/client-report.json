@@ -14,12 +14,32 @@
       { "month": "2026-03", "value": 210 }
     ]
   },
+  "topPages": [
+    { "page": "/treatments/spinal-decompression", "title": "Spinal Decompression", "clicks": 68, "impressions": 1240, "trend": "up" },
+    { "page": "/conditions/lower-back-pain", "title": "Lower Back Pain", "clicks": 52, "impressions": 980, "trend": "up" },
+    { "page": "/", "title": "Homepage", "clicks": 41, "impressions": 620, "trend": "stable" },
+    { "page": "/treatments/sports-massage", "title": "Sports Massage", "clicks": 28, "impressions": 510, "trend": "up" },
+    { "page": "/conditions/sciatica", "title": "Sciatica", "clicks": 21, "impressions": 390, "trend": "new" }
+  ],
+  "pageVisibility": [
+    { "page": "Spinal Decompression", "targetQuery": "spinal decompression torrevieja", "googleStatus": "ranking", "aiStatus": "cited" },
+    { "page": "Lower Back Pain", "targetQuery": "lower back pain costa blanca", "googleStatus": "ranking", "aiStatus": "not_found" },
+    { "page": "Sports Massage", "targetQuery": "sports massage torrevieja expats", "googleStatus": "ranking", "aiStatus": "not_found" },
+    { "page": "Sciatica", "targetQuery": "sciatica treatment spain", "googleStatus": "not_yet", "aiStatus": "not_found" }
+  ],
   "events": {
     "period": "2026-03",
     "phone_clicks": 12,
     "whatsapp_clicks": 8,
     "form_submits": 5,
-    "route_clicks": 15
+    "route_clicks": 15,
+    "previousMonth": {
+      "period": "2026-02",
+      "phone_clicks": 8,
+      "whatsapp_clicks": 5,
+      "form_submits": 3,
+      "route_clicks": 11
+    }
   },
   "reviews": {
     "total": 23,

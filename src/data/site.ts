@@ -69,7 +69,8 @@ export const siteConfig = {
         'Certified Spinal Decompression Specialist',
         'Sports Rehabilitation Diploma',
       ],
-      image: '/images/team/placeholder-1.jpg',
+      // Add real team photos per client. Empty string falls back to CSS initials avatar.
+      image: '',
     },
     {
       name: 'Laura van den Berg',
@@ -80,7 +81,8 @@ export const siteConfig = {
         'Certified Myofascial Release Practitioner',
         'Dry Needling Certificate',
       ],
-      image: '/images/team/placeholder-2.jpg',
+      // Add real team photos per client. Empty string falls back to CSS initials avatar.
+      image: '',
     },
   ],
 } as const;

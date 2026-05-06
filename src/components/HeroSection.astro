@@ -95,6 +95,12 @@ const trackProps = { page_type: pageType, page_slug: pageSlug, locale, cta_locat
           </a>
         )}
       </div>
+
+      {/* Mini trust badge */}
+      <div class="mt-8 flex items-center gap-3 text-sm text-white/50">
+        <div class="flex text-accent text-xs tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <span>{locale === 'nl' ? 'Vertrouwd door 2.300+ expat patienten' : 'Trusted by 2,300+ expat patients'}</span>
+      </div>
     </div>
   </div>
 </section>
