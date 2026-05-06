@@ -1,15 +1,24 @@
 ---
 import { siteConfig } from '../data/site';
+import { generatePerson } from '../data/schema';
 import type { Locale } from '../data/site';
 
 interface Props {
   locale?: Locale;
+  /** Emit Person JSON-LD inline. Set true on homepage so AI surfaces author identity directly. */
+  includeSchema?: boolean;
 }
 
-const { locale = 'en' } = Astro.props;
+const { locale = 'en', includeSchema = false } = Astro.props;
 const { team } = siteConfig;
 const aboutPath = locale === 'nl' ? '/nl/over-ons' : '/about';
+
+const personSchemas = includeSchema ? team.map((m) => generatePerson(m)) : [];
 ---
+
+{includeSchema && personSchemas.map((schema) => (
+  <script type="application/ld+json" set:html={schema} />
+))}
 
 <section class="py-16 md:py-24 lg:py-32 bg-bg">
   <div class="max-w-4xl mx-auto px-4 md:px-6">

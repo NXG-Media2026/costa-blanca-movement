@@ -4,6 +4,7 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 import RelatedGuides from '../components/RelatedGuides.astro';
 import RelatedTreatments from '../components/RelatedTreatments.astro';
 import RelatedConditions from '../components/RelatedConditions.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import CTABand from '../components/CTABand.astro';
 import { siteConfig } from '../data/site';
 import { t } from '../i18n/utils';
@@ -61,16 +62,26 @@ const breadcrumbSchema = breadcrumbs.map((b) => ({
   url: b.href ? `${siteConfig.url}${b.href}` : `${siteConfig.url}${pageUrl}`,
 }));
 
+// Try to match author name to a team member for slug-based linking + Person schema
+const authorMember = siteConfig.team.find((m) => m.name === frontmatter.author);
+
+// Treatment + Patient Guide categories are clinically focused → MedicalScholarlyArticle
+const articleType = (frontmatter.category === 'Treatment' || frontmatter.category === 'Patient Guide')
+  ? 'MedicalScholarlyArticle'
+  : 'BlogPosting';
+
 const schemas = [
   generateLocalBusiness(),
   generateBreadcrumbs(breadcrumbSchema),
   generateArticle({
+    type: articleType,
     title: frontmatter.title,
     description: frontmatter.metaDescription,
     url: `${siteConfig.url}${pageUrl}`,
     datePublished: frontmatter.date,
     dateModified: frontmatter.updatedDate,
-    author: frontmatter.author,
+    authorName: frontmatter.author,
+    authorSlug: authorMember?.slug,
   }),
 ];
 
@@ -141,6 +152,15 @@ const colorClass = categoryColors[frontmatter.category] || 'bg-accent/10 text-ac
           )}
         </div>
       </div>
+
+      {/* Author byline — visible E-E-A-T signal */}
+      <AuthorByline
+        authorName={frontmatter.author}
+        authorSlug={authorMember?.slug}
+        publishedDate={frontmatter.date}
+        reviewedDate={frontmatter.updatedDate}
+        locale={locale}
+      />
 
       {/* Markdown content */}
       <div class="prose prose-lg max-w-none

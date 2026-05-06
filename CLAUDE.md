@@ -59,6 +59,40 @@ npm run preview  # Preview production build
 Same process as treatments, but in `src/content/conditions/`.
 Extra required fields: `symptoms`, `causes`, `whenToSeekHelp`, `relatedTreatments`.
 
+## Languages parity check (BLOCKING for new sections/pages)
+
+**Rule:** every new section, component, or page MUST be added to BOTH locales in the same change. NL must remain visually + structurally identical to EN — only the text translated.
+
+When adding a new section to a page:
+- [ ] Add to the EN page
+- [ ] Add the same section, in the same position, with the same image/component props, to the NL counterpart
+- [ ] Translate all visible strings (title, body, CTA labels, alt text)
+- [ ] Verify section order matches EN exactly
+- [ ] Reuse the same images from `public/images/` (do not duplicate)
+
+When adding a new page:
+- [ ] Create EN page at `/some-path/`
+- [ ] Create NL page at `/nl/<translated-segment>/` — see `src/i18n/routes.ts`
+- [ ] Both pages set hreflang pairs pointing at each other
+- [ ] Add route segment mapping to `src/i18n/routes.ts` if new
+- [ ] Update `src/data/navigation.ts` for both locales
+- [ ] Update `src/i18n/ui.ts` if new visible UI strings
+
+**Quick parity check before committing:**
+```bash
+# Compare line counts of paired pages — large diffs flag missing sections
+for f in $(ls src/pages/*.astro src/pages/**/*.astro | grep -v '^src/pages/nl/'); do
+  nl=$(echo "$f" | sed 's|src/pages/|src/pages/nl/|;s|treatments|behandelingen|;s|conditions|klachten|;s|locations|locaties|;s|guides|gidsen|;s|about|over-ons|')
+  if [ -f "$nl" ]; then
+    en_lines=$(wc -l < "$f"); nl_lines=$(wc -l < "$nl")
+    diff=$((en_lines > nl_lines ? en_lines - nl_lines : nl_lines - en_lines))
+    [ $diff -gt 20 ] && echo "DIFF $diff: $f vs $nl"
+  fi
+done
+```
+
+**Why this matters:** the meertalige propositie is core to the sales pitch. A NL site that's visibly thinner than EN undermines the "full multilingual support" claim.
+
 ## i18n Rules
 
 - EN = root URLs (`/treatments/spinal-decompression`)
@@ -115,3 +149,47 @@ Generated via `src/data/schema.ts`. Each page type gets specific schemas:
 4. `public/images/` — new photos
 5. `src/data/client-report.json` — dashboard data for this client
 6. Deploy to new Cloudflare Pages project
+
+## Per-client checklist before going live
+
+All template placeholders live in **`src/data/site.ts`**. Replace these before launching:
+
+### Identity & branding
+- [ ] `name` — full legal/brand name (also used in schema, footer, page titles)
+- [ ] `shortName` — compact form used in `<title>` tags (keep ≤22 chars to fit ≤60-char title limit)
+- [ ] `tagline` — one-line description, used in MedicalBusiness schema and footer
+- [ ] `url` — production URL **without trailing slash** — cruciaal voor canonicals, hreflang, sitemap, OG tags
+
+### Contact & NAP (single source of truth)
+- [ ] `phone` — E.164 format for `tel:` links (`+34XXXXXXXXX`)
+- [ ] `phoneDisplay` — pretty format for UI (`+34 XXX XXX XXX`)
+- [ ] `email` — primary contact address
+- [ ] `whatsappNumber` + `whatsappUrl` — WhatsApp click-to-chat
+- [ ] `address` — street, city, province, postal, country, countryCode
+- [ ] `geo.latitude` / `geo.longitude` — for LocalBusiness schema + map embeds
+- [ ] `googleMapsUrl` / `googleMapsEmbed` — directions link + iframe embed src
+
+### Hours
+- [ ] `openingHours` — display format for footer/contact
+- [ ] `openingHoursSpecification` — Schema.org format (must match `openingHours`)
+
+### Social profiles → fed into Footer + schema `sameAs`
+- [ ] `socials.google` — Google Business Profile URL (also used as review link)
+- [ ] `socials.instagram` / `facebook` / `linkedin` / `youtube` — empty string = hidden
+
+### Analytics — per client. Empty string disables the feature.
+- [ ] `analytics.ga4MeasurementId` — `G-XXXXXXXXXX` (from analytics.google.com → Admin → Data Streams)
+- [ ] `analytics.gscVerificationId` — content value from the `<meta name="google-site-verification">` tag (Google Search Console → Settings → Ownership verification → HTML tag method)
+
+### Service areas, team & content
+- [ ] `serviceAreas` — primary location + nearby towns (with drive times)
+- [ ] `team` — names, roles, bio, qualifications. `image: ''` falls back to CSS initials avatar.
+- [ ] `src/content/treatments|conditions|guides/` — replace markdown files
+- [ ] `public/images/` — hero, treatments, atmosphere, clinic, og/default.jpg
+- [ ] `src/data/client-report.json` — visibility dashboard data
+
+### Per-page SEO limits enforced in template
+- Title: max 60 chars (use `siteConfig.shortName` in templates, not `siteConfig.name`)
+- Meta description: max 150 chars
+- Hreflang: self-referential per locale + `x-default` automatically added by `SEOHead.astro`
+- Canonical URL on every page (set via `BaseLayout` prop)

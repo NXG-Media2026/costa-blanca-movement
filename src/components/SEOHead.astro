@@ -26,6 +26,10 @@ const {
 const fullOgImage = ogImage
   ? ogImage.startsWith('http') ? ogImage : `${siteConfig.url}${ogImage}`
   : `${siteConfig.url}/images/og/default.jpg`;
+
+// x-default hreflang: points to the default-locale (EN) version of the page
+// when a translation exists. Only emitted when hreflang has entries.
+const xDefaultEntry = hreflang.find((h) => h.lang === siteConfig.defaultLocale);
 ---
 
 <meta charset="utf-8" />
@@ -36,6 +40,10 @@ const fullOgImage = ogImage
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+{siteConfig.analytics.gscVerificationId && (
+  <meta name="google-site-verification" content={siteConfig.analytics.gscVerificationId} />
+)}
 
 <!-- Open Graph -->
 <meta property="og:title" content={title} />
@@ -51,10 +59,13 @@ const fullOgImage = ogImage
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullOgImage} />
 
-<!-- Hreflang -->
+<!-- Hreflang (self-referential per Google guidelines + x-default) -->
 {hreflang.map(({ lang, href }) => (
   <link rel="alternate" hreflang={lang} href={href} />
 ))}
+{xDefaultEntry && (
+  <link rel="alternate" hreflang="x-default" href={xDefaultEntry.href} />
+)}
 
 <!-- JSON-LD Structured Data -->
 {schemas.map((schema) => (

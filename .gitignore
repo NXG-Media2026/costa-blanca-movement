@@ -3,4 +3,7 @@ dist/
 .astro/
 .env
 .DS_Store
+.claude/tmp-team/
 .claude/
+tmp-team/
+tmp-team/

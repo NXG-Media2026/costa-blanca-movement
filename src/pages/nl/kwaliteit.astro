@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbNav from '../../components/BreadcrumbNav.astro';
+import CTABand from '../../components/CTABand.astro';
+import { siteConfig } from '../../data/site';
+import { generateLocalBusiness, generateBreadcrumbs } from '../../data/schema';
+
+const { clinicCredentials } = siteConfig;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/nl' },
+  { label: 'Over Ons', href: '/nl/over-ons' },
+  { label: 'Kwaliteit & Registraties' },
+];
+
+const schemas = [
+  generateLocalBusiness(),
+  generateBreadcrumbs([
+    { name: 'Home', url: `${siteConfig.url}/nl` },
+    { name: 'Over Ons', url: `${siteConfig.url}/nl/over-ons` },
+    { name: 'Kwaliteit & Registraties', url: `${siteConfig.url}/nl/kwaliteit` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={`Kwaliteit & Registraties | ${siteConfig.shortName}`}
+  description="Beroepsregistraties, verzekeringspartners, hygiënestandaarden en continue scholing van onze kliniek in Torrevieja."
+  canonical={`${siteConfig.url}/nl/kwaliteit`}
+  schemas={schemas}
+  hreflang={[
+    { lang: 'en', href: `${siteConfig.url}/credentials` },
+    { lang: 'nl', href: `${siteConfig.url}/nl/kwaliteit` },
+  ]}
+  locale="nl"
+>
+  <BreadcrumbNav items={breadcrumbs} />
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 md:px-6">
+      <div class="max-w-3xl mb-12 md:mb-16">
+        <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text mb-6">
+          Kwaliteit & Registraties
+        </h1>
+        <p class="text-lg text-text-muted leading-relaxed">
+          Vertrouwen is essentieel in de zorg. Op deze pagina vindt u onze beroepsregistraties, verzekeringspartners, klinische veiligheidsprotocollen en onze inzet voor continue professionele ontwikkeling.
+        </p>
+      </div>
+
+      <section class="mb-14">
+        <h2 class="font-heading text-2xl md:text-3xl text-text mb-2">Beroepsregistraties</h2>
+        <p class="text-sm text-text-muted mb-6">Onze kliniek is officieel geregistreerd bij de relevante Spaanse en professionele instanties.</p>
+        <ul class="space-y-4">
+          {clinicCredentials.registrations.map((reg) => (
+            <li class="flex items-start gap-4 p-5 bg-bg-alt rounded-xl border border-border">
+              <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="font-medium text-text">{reg.name}</p>
+                <p class="text-sm text-text-muted mt-1">{reg.detail}</p>
+                {reg.registryId && (
+                  <p class="text-xs text-text-muted/60 mt-1">Registratie-ID: {reg.registryId}</p>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="mb-14">
+        <h2 class="font-heading text-2xl md:text-3xl text-text mb-2">Verzekeringspartners</h2>
+        <p class="text-sm text-text-muted mb-6">We werken met de meeste internationale en Spaanse zorgverzekeraars en leveren gedetailleerde facturen voor declaratie.</p>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          {clinicCredentials.insurers.map((insurer) => (
+            <li class="px-4 py-3 bg-white border border-border rounded-lg text-center text-sm font-medium text-text">
+              {insurer}
+            </li>
+          ))}
+        </ul>
+        <p class="text-xs text-text-muted/60 mt-4">Staat uw verzekeraar er niet bij? Neem contact op — we werken met de meeste internationale verzekeringen en kunnen facturen in elk gewenst formaat leveren.</p>
+      </section>
+
+      <section class="mb-14">
+        <h2 class="font-heading text-2xl md:text-3xl text-text mb-2">Hygiëne, Veiligheid & Apparatuur</h2>
+        <p class="text-sm text-text-muted mb-6">Klinische veiligheidsstandaarden en onderhoudsprotocollen voor onze apparatuur.</p>
+        <ul class="space-y-4">
+          {clinicCredentials.certifications.map((cert) => (
+            <li class="flex items-start gap-4 p-5 bg-bg-alt rounded-xl border border-border">
+              <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="font-medium text-text">{cert.name}</p>
+                <p class="text-sm text-text-muted mt-1">{cert.detail}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-heading text-2xl md:text-3xl text-text mb-2">Inzet voor Continue Scholing</h2>
+        <div class="p-6 md:p-8 bg-accent-light rounded-xl border border-accent/20">
+          <p class="text-text leading-relaxed">{clinicCredentials.continuingEducation}</p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <CTABand
+    title="Heeft u een vraag over onze standaarden?"
+    subtitle="We zijn transparant over onze klinische praktijk. Neem gerust contact op."
+    ctaText="Neem Contact Op"
+    ctaHref="/nl/contact"
+    locale="nl"
+    pageType="about"
+    pageSlug="kwaliteit"
+  />
+</BaseLayout>

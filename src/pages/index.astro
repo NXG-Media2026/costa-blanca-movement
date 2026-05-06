@@ -126,8 +126,8 @@ const approachItems = [
 ---
 
 <BaseLayout
-  title={`${siteConfig.name} — Spine & Mobility Care in Torrevieja, Costa Blanca`}
-  description="Expert spine and mobility care for the expat community on Spain's Costa Blanca. Non-surgical treatments for back pain, neck pain, and sports injuries in Torrevieja."
+  title={`Spine & Mobility Care in Torrevieja | ${siteConfig.shortName}`}
+  description="Non-surgical spine and mobility care for the Costa Blanca expat community. Back pain, neck pain, and sports injuries — Torrevieja clinic."
   schemas={[generateLocalBusiness(), generateMedicalBusiness(), generateFAQPage(faqs)]}
   hreflang={[
     { lang: 'en', href: siteConfig.url },
@@ -184,7 +184,7 @@ const approachItems = [
     locale="en"
   />
 
-  <TeamPreview locale="en" />
+  <TeamPreview locale="en" includeSchema={true} />
 
   <LocationPreview locale="en" />
 

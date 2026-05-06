@@ -4,6 +4,7 @@ import BreadcrumbNav from '../components/BreadcrumbNav.astro';
 import DefinitionBlock from '../components/DefinitionBlock.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import RelatedConditions from '../components/RelatedConditions.astro';
+import MedicalReviewerNote from '../components/MedicalReviewerNote.astro';
 import ReviewCTA from '../components/ReviewCTA.astro';
 import CTABand from '../components/CTABand.astro';
 import { siteConfig } from '../data/site';
@@ -139,6 +140,9 @@ const relatedConditionItems = frontmatter.relatedConditions.map((slug) => ({
     basePath={conditionsPath}
     locale={locale}
   />
+
+  {/* Medical reviewer note — E-E-A-T for YMYL health content */}
+  <MedicalReviewerNote locale={locale} />
 
   {/* FAQ */}
   {frontmatter.faq.length > 0 && (

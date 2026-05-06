@@ -52,6 +52,21 @@ export const ui = {
     'location.distanceFromClinic': 'Distance from clinic',
     'location.bookAtClinic': 'Book an appointment at our clinic in Torrevieja',
 
+    // E-E-A-T bylines
+    'eeat.writtenBy': 'Written by',
+    'eeat.reviewedBy': 'Medically reviewed by',
+    'eeat.lastReviewed': 'Last reviewed',
+    'eeat.viewProfile': 'View profile',
+
+    // About / credentials labels
+    'about.education': 'Education',
+    'about.credentials': 'Certifications',
+    'about.languages': 'Languages',
+    'about.memberships': 'Professional memberships',
+    'about.publications': 'Publications & talks',
+    'nav.credentials': 'Credentials & Quality',
+    'breadcrumb.credentials': 'Credentials & Quality',
+
     // Guides
     'nav.guides': 'Guides',
     'guide.allGuides': 'All Guides',
@@ -137,6 +152,21 @@ export const ui = {
     'location.servingArea': 'Werkgebied',
     'location.distanceFromClinic': 'Afstand tot kliniek',
     'location.bookAtClinic': 'Maak een afspraak in onze kliniek in Torrevieja',
+
+    // E-E-A-T bylines
+    'eeat.writtenBy': 'Geschreven door',
+    'eeat.reviewedBy': 'Medisch beoordeeld door',
+    'eeat.lastReviewed': 'Laatst beoordeeld',
+    'eeat.viewProfile': 'Bekijk profiel',
+
+    // About / credentials labels
+    'about.education': 'Opleiding',
+    'about.credentials': 'Certificeringen',
+    'about.languages': 'Talen',
+    'about.memberships': 'Beroepsregistraties',
+    'about.publications': 'Publicaties & lezingen',
+    'nav.credentials': 'Kwaliteit & Registraties',
+    'breadcrumb.credentials': 'Kwaliteit & Registraties',
 
     // Guides
     'nav.guides': 'Gidsen',

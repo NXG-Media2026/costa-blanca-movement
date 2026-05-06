@@ -6,8 +6,8 @@ date: "2026-02-15"
 excerpt: "Sciatica and herniated discs are often confused. Learn how they differ, how they're connected, and what treatment options are available at our clinic."
 category: "Patient Guide"
 author: "Dr. James Mitchell"
-metaTitle: "Sciatica vs Herniated Disc — Understanding the Difference"
-metaDescription: "Confused about sciatica and herniated discs? Learn how these conditions differ, how they're connected, and what non-surgical treatments can help."
+metaTitle: "Sciatica vs Herniated Disc | Costa Blanca Movement"
+metaDescription: "Confused about sciatica and herniated discs? Learn how they differ, how they're connected, and what non-surgical treatments help."
 relatedTreatments: ["spinal-decompression"]
 relatedConditions: ["sciatica", "lower-back-pain"]
 ---

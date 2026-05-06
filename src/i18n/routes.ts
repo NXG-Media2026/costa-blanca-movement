@@ -9,6 +9,7 @@ export const routeSegments: Record<string, Record<string, string>> = {
     faq: 'faq',
     reviews: 'reviews',
     guides: 'guides',
+    credentials: 'credentials',
     privacy: 'privacy',
   },
   nl: {
@@ -20,6 +21,7 @@ export const routeSegments: Record<string, Record<string, string>> = {
     faq: 'faq',
     reviews: 'reviews',
     guides: 'gidsen',
+    credentials: 'kwaliteit',
     privacy: 'privacy',
   },
 };

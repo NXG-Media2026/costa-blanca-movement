@@ -58,7 +58,7 @@ export const navigation: Record<Locale, NavItem[]> = {
         { label: 'Hernia', href: '/nl/klachten/hernia' },
       ],
     },
-    { label: 'Locaties', href: '/nl/locaties/torrevieja' },
+    { label: 'Locaties', href: '/nl/locaties' },
     { label: 'Over Ons', href: '/nl/over-ons' },
     { label: 'Reviews', href: '/nl/reviews' },
     { label: 'FAQ', href: '/nl/faq' },

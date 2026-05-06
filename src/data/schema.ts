@@ -28,11 +28,17 @@ function baseOpeningHours() {
   }));
 }
 
+/** sameAs URLs — used for entity coupling in Google + AI knowledge graphs. */
+function baseSameAs(): string[] {
+  return Object.values(siteConfig.socials).filter((url): url is string => Boolean(url));
+}
+
 /**
  * LocalBusiness — used on most pages.
  * For service area pages, pass the area to add areaServed.
  */
 export function generateLocalBusiness(serviceArea?: { name: string }) {
+  const sameAs = baseSameAs();
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -43,6 +49,7 @@ export function generateLocalBusiness(serviceArea?: { name: string }) {
     address: baseAddress(),
     geo: baseGeo(),
     openingHoursSpecification: baseOpeningHours(),
+    ...(sameAs.length > 0 && { sameAs }),
   };
 
   if (serviceArea) {
@@ -60,6 +67,7 @@ export function generateLocalBusiness(serviceArea?: { name: string }) {
  * Extends LocalBusiness; includes full NAP + all service areas.
  */
 export function generateMedicalBusiness() {
+  const sameAs = baseSameAs();
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
@@ -75,6 +83,7 @@ export function generateMedicalBusiness() {
       '@type': 'City',
       name: area.name,
     })),
+    ...(sameAs.length > 0 && { sameAs }),
   });
 }
 
@@ -217,55 +226,121 @@ export function generatePlace(location: {
   });
 }
 
-/** Article/BlogPosting — for guide pages. */
+/**
+ * Article / MedicalScholarlyArticle — for guide pages.
+ * Use type 'MedicalScholarlyArticle' for clinically-focused content reviewed by a clinician.
+ */
 export function generateArticle(article: {
   title: string;
   description: string;
   url: string;
   datePublished: string;
   dateModified?: string;
-  author: string;
+  authorName: string;
+  authorSlug?: string; // links to /about#<slug> as Person.url
+  type?: 'Article' | 'BlogPosting' | 'MedicalScholarlyArticle';
+  image?: string;
 }) {
+  const type = article.type ?? 'BlogPosting';
+  const authorUrl = article.authorSlug
+    ? `${siteConfig.url}/about#${article.authorSlug}`
+    : undefined;
+
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': type,
     headline: article.title,
     description: article.description,
     url: article.url,
     datePublished: article.datePublished,
-    ...(article.dateModified && { dateModified: article.dateModified }),
+    dateModified: article.dateModified ?? article.datePublished,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': article.url,
+    },
     author: {
       '@type': 'Person',
-      name: article.author,
+      name: article.authorName,
+      ...(authorUrl && { url: authorUrl }),
     },
     publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/images/og/default.jpg`,
+      },
+    },
+    ...(article.image && {
+      image: article.image.startsWith('http') ? article.image : `${siteConfig.url}${article.image}`,
+    }),
+  });
+}
+
+/**
+ * Person — full E-E-A-T schema for team members.
+ * Used on /about (full team) and homepage (TeamPreview) so AI surfaces author identity.
+ */
+export function generatePerson(member: {
+  slug?: string;
+  name: string;
+  role: string;
+  description?: string;
+  qualifications: readonly string[];
+  credentials?: readonly { name: string; issuer: string; year?: number }[];
+  education?: readonly { institution: string; degree: string; year?: number }[];
+  languages?: readonly string[];
+  memberships?: readonly string[];
+  image?: string;
+}) {
+  const personUrl = member.slug ? `${siteConfig.url}/about#${member.slug}` : `${siteConfig.url}/about`;
+  const fullImage = member.image
+    ? (member.image.startsWith('http') ? member.image : `${siteConfig.url}${member.image}`)
+    : undefined;
+
+  // Prefer structured credentials when present; fall back to flat qualifications list
+  const hasCredential = (member.credentials && member.credentials.length > 0)
+    ? member.credentials.map((c) => ({
+        '@type': 'EducationalOccupationalCredential',
+        name: c.name,
+        ...(c.issuer && {
+          recognizedBy: { '@type': 'Organization', name: c.issuer },
+        }),
+        ...(c.year && { dateCreated: String(c.year) }),
+      }))
+    : member.qualifications.map((q) => ({
+        '@type': 'EducationalOccupationalCredential',
+        name: q,
+      }));
+
+  const alumniOf = member.education?.map((e) => ({
+    '@type': 'EducationalOrganization',
+    name: e.institution,
+  })) ?? [];
+
+  const memberOf = member.memberships?.map((m) => ({
+    '@type': 'Organization',
+    name: m,
+  })) ?? [];
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': personUrl,
+    name: member.name,
+    url: personUrl,
+    jobTitle: member.role,
+    ...(member.description && { description: member.description }),
+    worksFor: {
       '@type': 'MedicalBusiness',
       name: siteConfig.name,
       url: siteConfig.url,
     },
-  });
-}
-
-/** Person — for team members (E-E-A-T). */
-export function generatePerson(member: {
-  name: string;
-  role: string;
-  qualifications: string[];
-  image?: string;
-}) {
-  return JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: member.name,
-    jobTitle: member.role,
-    worksFor: {
-      '@type': 'MedicalBusiness',
-      name: siteConfig.name,
-    },
-    hasCredential: member.qualifications.map((q) => ({
-      '@type': 'EducationalOccupationalCredential',
-      name: q,
-    })),
-    ...(member.image && { image: member.image }),
+    hasCredential,
+    ...(alumniOf.length > 0 && { alumniOf }),
+    ...(memberOf.length > 0 && { memberOf }),
+    ...(member.languages && member.languages.length > 0 && { knowsLanguage: [...member.languages] }),
+    ...(fullImage && { image: fullImage }),
   });
 }

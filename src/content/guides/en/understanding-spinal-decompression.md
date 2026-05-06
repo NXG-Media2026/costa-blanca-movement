@@ -7,8 +7,8 @@ updatedDate: "2026-03-20"
 excerpt: "A comprehensive guide to non-surgical spinal decompression therapy — how it works, what to expect, and why it's a popular choice for expats on the Costa Blanca."
 category: "Treatment"
 author: "Dr. James Mitchell"
-metaTitle: "Understanding Spinal Decompression — What Expats Need to Know"
-metaDescription: "Learn how non-surgical spinal decompression works, what to expect during treatment, and why expats on the Costa Blanca choose this therapy for back pain relief."
+metaTitle: "Understanding Spinal Decompression | Costa Blanca Movement"
+metaDescription: "Learn how non-surgical spinal decompression works, what to expect, and why Costa Blanca expats choose this therapy for back pain relief."
 relatedTreatments: ["spinal-decompression"]
 relatedConditions: ["lower-back-pain", "herniated-disc"]
 ---

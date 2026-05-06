@@ -91,8 +91,8 @@ const schemas = [
 ---
 
 <BaseLayout
-  title={`Patient Reviews | ${siteConfig.name}`}
-  description={`Read ${totalReviews} patient reviews for ${siteConfig.name} in Torrevieja. Rated ${averageRating}/5 for spine treatments, sports massage, and mobility care.`}
+  title={`Patient Reviews | ${siteConfig.shortName}`}
+  description={`Read ${totalReviews} patient reviews for ${siteConfig.shortName} in Torrevieja. Rated ${averageRating}/5 for spine and mobility care.`}
   canonical={`${siteConfig.url}/reviews`}
   schemas={schemas}
   hreflang={[
@@ -129,7 +129,7 @@ const schemas = [
         <p class="text-4xl font-heading text-text mb-1">{averageRating}<span class="text-lg text-text-muted">/5</span></p>
         <p class="text-sm text-text-muted">Based on {totalReviews} patient reviews</p>
         <a
-          href={siteConfig.social.google || '#'}
+          href={siteConfig.socials.google || '#'}
           target="_blank"
           rel="noopener noreferrer"
           class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
@@ -192,7 +192,7 @@ const schemas = [
     locale="en"
     pageType="reviews"
     pageSlug="reviews"
-    googleUrl={siteConfig.social.google || '#'}
+    googleUrl={siteConfig.socials.google || '#'}
   />
 
   <CTABand

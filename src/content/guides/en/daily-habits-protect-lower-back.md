@@ -6,8 +6,8 @@ date: "2026-03-01"
 excerpt: "Simple, evidence-based habits you can start today to reduce lower back pain and keep your spine healthy — especially important for desk workers and active expats."
 category: "Prevention"
 author: "Dr. James Mitchell"
-metaTitle: "5 Daily Habits to Protect Your Lower Back | Costa Blanca Movement Centre"
-metaDescription: "Discover 5 evidence-based daily habits to prevent lower back pain and keep your spine healthy. Practical tips from our spine specialists in Torrevieja."
+metaTitle: "5 Daily Habits to Protect Your Lower Back | Costa Blanca Movement"
+metaDescription: "5 evidence-based daily habits to prevent lower back pain and keep your spine healthy. Tips from our spine specialists in Torrevieja."
 relatedTreatments: []
 relatedConditions: ["lower-back-pain"]
 ---

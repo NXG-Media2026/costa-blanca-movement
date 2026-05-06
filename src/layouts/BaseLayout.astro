@@ -53,8 +53,8 @@ const {
 
   <!-- Analytics — works without GA4, silent no-op -->
   <script is:inline set:html={getTrackingScript()} />
-  {siteConfig.ga4MeasurementId && (
-    <Fragment set:html={getGA4Script(siteConfig.ga4MeasurementId)} />
+  {siteConfig.analytics.ga4MeasurementId && (
+    <Fragment set:html={getGA4Script(siteConfig.analytics.ga4MeasurementId)} />
   )}
 </head>
 <body class="bg-bg text-text min-h-screen flex flex-col">
