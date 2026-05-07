@@ -78,7 +78,7 @@ const fullAddress = `${address.street}, ${address.postalCode} ${address.city}, $
 
       <!-- Treatments -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
           {t('nav.treatments', locale)}
         </h3>
         <ul class="space-y-2.5">
@@ -122,7 +122,7 @@ const fullAddress = `${address.street}, ${address.postalCode} ${address.city}, $
 
       <!-- Contact / NAP -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
           {t('nav.contact', locale)}
         </h3>
         <ul class="space-y-3">
@@ -154,14 +154,14 @@ const fullAddress = `${address.street}, ${address.postalCode} ${address.city}, $
 
       <!-- Opening hours -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
           {t('location.openingHours', locale)}
         </h3>
         <ul class="space-y-2.5">
           {siteConfig.openingHours.map((slot) => (
             <li class="flex justify-between text-sm">
               <span class="text-white/70">{slot.days}</span>
-              <span class:list={['font-medium', slot.hours === 'Closed' ? 'text-white/40' : 'text-white/90']}>
+              <span class:list={['font-medium', slot.hours === 'Closed' ? 'text-white/60' : 'text-white/90']}>
                 {slot.hours}
               </span>
             </li>
@@ -174,12 +174,12 @@ const fullAddress = `${address.street}, ${address.postalCode} ${address.city}, $
   <!-- Bottom bar -->
   <div class="border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-      <p class="text-xs text-white/40">
+      <p class="text-xs text-white/70">
         &copy; {year} {siteConfig.name}. {t('footer.rights', locale)}.
       </p>
       <a
         href={locale === 'nl' ? '/nl/privacy' : '/privacy'}
-        class="text-xs text-white/40 hover:text-white/70 transition-colors"
+        class="text-xs text-white/70 hover:text-white transition-colors"
       >
         {t('footer.privacy', locale)}
       </a>

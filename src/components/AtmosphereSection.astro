@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
-  image: string;
+  image: ImageMetadata | string;
   quote?: string;
   attribution?: string;
   alt?: string;
@@ -17,15 +20,27 @@ const {
 <section class="relative overflow-hidden js-reveal" aria-label="Atmosphere">
   {/* Full-width image */}
   <div class="relative h-[40vh] md:h-[50vh] lg:h-[60vh]">
-    <img
-      src={image}
-      alt={alt}
-      width="1920"
-      height="2880"
-      class="w-full h-full object-cover"
-      loading="lazy"
-      decoding="async"
-    />
+    {typeof image === 'string' ? (
+      <img
+        src={image}
+        alt={alt}
+        width="1920"
+        height="1276"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    ) : (
+      <Image
+        src={image}
+        alt={alt}
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    )}
 
     {/* Dark overlay */}
     <div class="absolute inset-0 bg-[#2D2A26]/40"></div>

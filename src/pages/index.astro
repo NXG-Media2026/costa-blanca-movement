@@ -13,7 +13,18 @@ import GuidesPreview from '../components/GuidesPreview.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import CTABand from '../components/CTABand.astro';
 import { siteConfig } from '../data/site';
-import { generateMedicalBusiness, generateLocalBusiness, generateFAQPage } from '../data/schema';
+import { getReviews, aggregateRating, treatmentLabel, reviewText } from '../data/reviews';
+import { generateMedicalBusiness, generateLocalBusiness, generateFAQPage, generateAggregateRating, generateReviewArray } from '../data/schema';
+
+// Image imports — optimised at build time by Astro's <Image> with densities/widths
+import heroImg from '../assets/images/hero/hero-clinic.webp';
+import spinalDecompressionImg from '../assets/images/treatments/spinal-decompression.webp';
+import sportsMassageImg from '../assets/images/treatments/sports-massage.webp';
+import posturalAssessmentImg from '../assets/images/treatments/postural-assessment.webp';
+import dryNeedlingImg from '../assets/images/treatments/dry-needling.webp';
+import atmosphereImg from '../assets/images/atmosphere/costa-blanca.webp';
+import treatmentRoomImg from '../assets/images/clinic/treatment-room.webp';
+import ctaBgImg from '../assets/images/cta/cta-background.webp';
 
 const services = [
   {
@@ -21,7 +32,7 @@ const services = [
     slug: 'spinal-decompression',
     excerpt: 'Non-surgical treatment to relieve compressed spinal discs, reduce nerve pressure, and restore mobility.',
     icon: 'spine',
-    image: '/images/treatments/spinal-decompression.webp',
+    image: spinalDecompressionImg,
     imageAlt: 'Therapist performing manual shoulder and spine therapy on a patient lying on a treatment table',
   },
   {
@@ -29,7 +40,7 @@ const services = [
     slug: 'sports-massage',
     excerpt: 'Deep tissue and sports-focused massage for faster recovery, injury prevention, and pain relief.',
     icon: 'massage',
-    image: '/images/treatments/sports-massage.webp',
+    image: sportsMassageImg,
     imageAlt: 'Therapist performing deep tissue massage on a patient shoulder and upper back',
   },
   {
@@ -37,7 +48,7 @@ const services = [
     slug: 'postural-assessment',
     excerpt: 'Comprehensive evaluation of your alignment and movement patterns to identify the root cause of pain.',
     icon: 'posture',
-    image: '/images/treatments/postural-assessment.webp',
+    image: posturalAssessmentImg,
     imageAlt: 'Physiotherapist assessing patient spinal posture and alignment in a modern clinic',
   },
   {
@@ -45,35 +56,22 @@ const services = [
     slug: 'dry-needling',
     excerpt: 'Targeted trigger point therapy using thin needles to release muscle tension and reduce chronic pain.',
     icon: 'needle',
-    image: '/images/treatments/dry-needling.webp',
+    image: dryNeedlingImg,
     imageAlt: 'Practitioner inserting thin dry needling needles into a patient upper back and neck area',
   },
 ];
 
-const testimonials = [
-  {
-    name: 'Margaret T.',
-    text: 'After years of lower back pain, I finally found relief at Costa Blanca Movement Centre. Dr. Mitchell explained everything clearly and the spinal decompression treatment has been life-changing.',
-    rating: 5,
-    source: 'Google',
-    treatment: 'Spinal Decompression',
-    location: 'Torrevieja',
-  },
-  {
-    name: 'Hans van der Berg',
-    text: 'As a keen cyclist, regular sports massage here keeps me on the bike. Laura is incredibly skilled — she finds tension I didn\'t even know I had. Highly recommended for any active expat.',
-    rating: 5,
-    source: 'Google',
-    treatment: 'Sports Massage',
-  },
-  {
-    name: 'David R.',
-    text: 'Professional, knowledgeable, and genuinely caring. I came in with severe neck pain and sciatica. Within 6 sessions, I saw a dramatic improvement. Best clinic on the Costa Blanca.',
-    rating: 5,
-    source: 'Google',
-    treatment: 'Spinal Decompression',
-  },
-];
+const featuredReviews = getReviews({ featuredOnly: true });
+const testimonials = featuredReviews.map((r) => ({
+  name: r.name,
+  text: reviewText(r, 'en'),
+  rating: r.rating,
+  source: r.source,
+  treatment: treatmentLabel(r.treatmentSlug, 'en'),
+  location: r.location,
+  date: r.date,
+}));
+const homepageAggregate = aggregateRating(featuredReviews);
 
 const faqs = [
   {
@@ -128,7 +126,13 @@ const approachItems = [
 <BaseLayout
   title={`Spine & Mobility Care in Torrevieja | ${siteConfig.shortName}`}
   description="Non-surgical spine and mobility care for the Costa Blanca expat community. Back pain, neck pain, and sports injuries — Torrevieja clinic."
-  schemas={[generateLocalBusiness(), generateMedicalBusiness(), generateFAQPage(faqs)]}
+  schemas={[
+    generateLocalBusiness(),
+    generateMedicalBusiness(),
+    generateFAQPage(faqs),
+    generateAggregateRating(homepageAggregate),
+    ...generateReviewArray(featuredReviews, 'en'),
+  ]}
   hreflang={[
     { lang: 'en', href: siteConfig.url },
     { lang: 'nl', href: `${siteConfig.url}/nl` },
@@ -142,7 +146,7 @@ const approachItems = [
     ctaHref="/contact"
     secondaryCtaText="Call Us"
     secondaryCtaHref={`tel:${siteConfig.phone}`}
-    backgroundImage="/images/hero/hero-clinic.webp"
+    backgroundImage={heroImg}
     backgroundAlt="Physiotherapist treating a patient on a treatment table in a bright, modern clinic"
     locale="en"
     pageType="homepage"
@@ -161,7 +165,7 @@ const approachItems = [
   />
 
   <AtmosphereSection
-    image="/images/atmosphere/costa-blanca.webp"
+    image={atmosphereImg}
     quote="Helping you move freely again — in the heart of the Costa Blanca."
     alt="Golden sunset reflecting over calm Mediterranean Sea waters on the Costa Blanca"
   />
@@ -169,7 +173,7 @@ const approachItems = [
   <DefinitionBlock
     term="What We Do"
     definition="Costa Blanca Movement Centre is a specialist mobility and spine health clinic in Torrevieja, Spain. We combine evidence-based manual therapy with modern non-surgical techniques to treat back pain, neck pain, sports injuries, and postural problems. Our multilingual team serves the international expat community across the southern Costa Blanca — from Orihuela Costa to Guardamar del Segura and Pilar de la Horadada."
-    image="/images/clinic/treatment-room.webp"
+    image={treatmentRoomImg}
     imageAlt="Physiotherapist providing hands-on treatment to a patient in a warm, modern clinic"
   />
 
@@ -204,7 +208,7 @@ const approachItems = [
     subtitle="Book your initial assessment today. We'll create a personalised treatment plan to get you back to doing what you love."
     ctaText="Book Your Assessment"
     ctaHref="/contact"
-    backgroundImage="/images/cta/cta-background.webp"
+    backgroundImage={ctaBgImg}
     backgroundAlt="Tranquil Mediterranean beach at sunset with soft purple sky and gentle waves"
     eventName="appointment_click"
     ctaLocation="inline"

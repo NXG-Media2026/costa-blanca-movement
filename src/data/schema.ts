@@ -1,4 +1,11 @@
 import { siteConfig } from './site';
+import type { Review } from './reviews';
+
+/**
+ * Stable @id for the business entity.
+ * Reviews + AggregateRating reference this so Google can join the records.
+ */
+const businessId = `${siteConfig.url}#business`;
 
 function baseAddress() {
   return {
@@ -42,6 +49,7 @@ export function generateLocalBusiness(serviceArea?: { name: string }) {
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': businessId,
     name: siteConfig.name,
     url: siteConfig.url,
     telephone: siteConfig.phone,
@@ -71,6 +79,7 @@ export function generateMedicalBusiness() {
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
+    '@id': businessId,
     name: siteConfig.name,
     description: siteConfig.tagline,
     url: siteConfig.url,
@@ -170,7 +179,10 @@ export function generateMedicalCondition(condition: {
   return JSON.stringify(schema);
 }
 
-/** AggregateRating — for reviews page. */
+/**
+ * AggregateRating — references the business via @id so Google merges the records
+ * with LocalBusiness/MedicalBusiness on the same page.
+ */
 export function generateAggregateRating(rating: {
   ratingValue: number;
   reviewCount: number;
@@ -178,18 +190,41 @@ export function generateAggregateRating(rating: {
 }) {
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: siteConfig.name,
-    url: siteConfig.url,
-    address: baseAddress(),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: rating.ratingValue,
-      reviewCount: rating.reviewCount,
-      bestRating: rating.bestRating ?? 5,
-      worstRating: 1,
-    },
+    '@type': 'AggregateRating',
+    itemReviewed: { '@id': businessId },
+    ratingValue: String(rating.ratingValue),
+    reviewCount: String(rating.reviewCount),
+    bestRating: String(rating.bestRating ?? 5),
+    worstRating: '1',
   });
+}
+
+/**
+ * Review array — one schema per testimonial, all linked to the business via @id.
+ * Use on homepage (featured subset) and /reviews (all).
+ */
+export function generateReviewArray(set: Review[], lang: 'en' | 'nl'): string[] {
+  return set
+    .filter((r) => r[lang] || r[lang === 'en' ? 'nl' : 'en'])
+    .map((r) => {
+      const reviewBody = r[lang] ?? r[lang === 'en' ? 'nl' : 'en'] ?? '';
+      return JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Review',
+        '@id': `${siteConfig.url}#review-${r.id}`,
+        itemReviewed: { '@id': businessId },
+        author: { '@type': 'Person', name: r.name },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: String(r.rating),
+          bestRating: '5',
+          worstRating: '1',
+        },
+        reviewBody,
+        datePublished: r.date,
+        ...(r.source && { publisher: { '@type': 'Organization', name: r.source } }),
+      });
+    });
 }
 
 /**

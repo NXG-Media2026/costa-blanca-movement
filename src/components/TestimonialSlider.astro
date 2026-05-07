@@ -50,16 +50,23 @@ const rest = testimonials.slice(1);
 
     {/* Featured testimonial — large */}
     {featured && (
-      <article class="max-w-3xl mx-auto mb-10 md:mb-14 js-reveal">
+      <article
+        class="testimonial testimonial--featured max-w-3xl mx-auto mb-10 md:mb-14 js-reveal"
+        aria-label={locale === 'nl' ? `Review van ${featured.name}` : `Review by ${featured.name}`}
+      >
         <div class="bg-white rounded-card p-8 md:p-12 border-l-4 border-accent shadow-sm">
           {/* Large quote mark */}
-          <svg class="w-10 h-10 md:w-12 md:h-12 text-accent/15 mb-4" viewBox="0 0 24 24" fill="currentColor">
+          <svg class="w-10 h-10 md:w-12 md:h-12 text-accent/15 mb-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
           </svg>
 
           {/* Stars */}
-          <div class="text-accent text-lg tracking-wider mb-5" aria-label={`${featured.rating} out of 5 stars`}>
-            {renderStars(featured.rating)}
+          <div
+            class="text-accent text-lg tracking-wider mb-5"
+            role="img"
+            aria-label={locale === 'nl' ? `${featured.rating} van 5 sterren` : `${featured.rating} out of 5 stars`}
+          >
+            <span aria-hidden="true">{renderStars(featured.rating)}</span>
           </div>
 
           {/* Large quote text */}
@@ -69,10 +76,13 @@ const rest = testimonials.slice(1);
 
           {/* Attribution */}
           <footer class="flex items-center gap-4">
-            <div class:list={[
-              'w-12 h-12 rounded-full flex items-center justify-center text-sm font-semibold shrink-0',
-              avatarColors[0],
-            ]}>
+            <div
+              class:list={[
+                'w-12 h-12 rounded-full flex items-center justify-center text-sm font-semibold shrink-0',
+                avatarColors[0],
+              ]}
+              aria-hidden="true"
+            >
               {getInitials(featured.name)}
             </div>
             <div>
@@ -92,16 +102,22 @@ const rest = testimonials.slice(1);
         {rest.map((item, idx) => (
           <article
             class:list={[
+              'testimonial',
               'bg-white rounded-card p-6 flex flex-col',
               'border-l-4 border-accent/30',
               'shadow-sm',
               'js-reveal',
             ]}
+            aria-label={locale === 'nl' ? `Review van ${item.name}` : `Review by ${item.name}`}
             style={`--reveal-delay: ${idx * 120}ms`}
           >
             {/* Stars */}
-            <div class="text-accent text-sm tracking-wider mb-3" aria-label={`${item.rating} out of 5 stars`}>
-              {renderStars(item.rating)}
+            <div
+              class="text-accent text-sm tracking-wider mb-3"
+              role="img"
+              aria-label={locale === 'nl' ? `${item.rating} van 5 sterren` : `${item.rating} out of 5 stars`}
+            >
+              <span aria-hidden="true">{renderStars(item.rating)}</span>
             </div>
 
             {/* Quote */}
@@ -111,10 +127,13 @@ const rest = testimonials.slice(1);
 
             {/* Attribution */}
             <footer class="flex items-center gap-3 pt-4 border-t border-border">
-              <div class:list={[
-                'w-9 h-9 rounded-full flex items-center justify-center text-xs font-semibold shrink-0',
-                avatarColors[(idx + 1) % avatarColors.length],
-              ]}>
+              <div
+                class:list={[
+                  'w-9 h-9 rounded-full flex items-center justify-center text-xs font-semibold shrink-0',
+                  avatarColors[(idx + 1) % avatarColors.length],
+                ]}
+                aria-hidden="true"
+              >
                 {getInitials(item.name)}
               </div>
               <div class="min-w-0">

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import type { EventName, CTALocation, PageType } from '../lib/analytics';
 import { trackOnClick } from '../lib/analytics';
 import type { Locale } from '../data/site';
@@ -10,7 +12,8 @@ interface Props {
   ctaHref: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
-  backgroundImage?: string;
+  /** Imported ImageMetadata (preferred — generates responsive variants) or string path (legacy). */
+  backgroundImage?: ImageMetadata | string;
   backgroundAlt?: string;
   locale?: Locale;
   pageType?: PageType;
@@ -38,16 +41,29 @@ const trackProps = { page_type: pageType, page_slug: pageSlug, locale, cta_locat
   {/* Background image */}
   {backgroundImage ? (
     <div class="absolute inset-0">
-      <img
-        src={backgroundImage}
-        alt={backgroundAlt}
-        width="1920"
-        height="1280"
-        class="w-full h-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-      />
+      {typeof backgroundImage === 'string' ? (
+        <img
+          src={backgroundImage}
+          alt={backgroundAlt}
+          width="1920"
+          height="1280"
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      ) : (
+        <Image
+          src={backgroundImage}
+          alt={backgroundAlt}
+          widths={[768, 1280, 1920]}
+          sizes="100vw"
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      )}
       {/* Left-to-right gradient overlay for text readability */}
       <div class="absolute inset-0 bg-gradient-to-r from-[#2D2A26]/95 via-[#2D2A26]/75 to-[#2D2A26]/30"></div>
       {/* Bottom fade for smooth section transition */}

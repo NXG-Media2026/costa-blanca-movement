@@ -13,7 +13,18 @@ import GuidesPreview from '../../components/GuidesPreview.astro';
 import FAQAccordion from '../../components/FAQAccordion.astro';
 import CTABand from '../../components/CTABand.astro';
 import { siteConfig } from '../../data/site';
-import { generateMedicalBusiness, generateLocalBusiness, generateFAQPage } from '../../data/schema';
+import { getReviews, aggregateRating, treatmentLabel, reviewText } from '../../data/reviews';
+import { generateMedicalBusiness, generateLocalBusiness, generateFAQPage, generateAggregateRating, generateReviewArray } from '../../data/schema';
+
+// Image imports — same source as EN, optimised at build time via Astro Image
+import heroImg from '../../assets/images/hero/hero-clinic.webp';
+import spinalDecompressionImg from '../../assets/images/treatments/spinal-decompression.webp';
+import sportsMassageImg from '../../assets/images/treatments/sports-massage.webp';
+import posturalAssessmentImg from '../../assets/images/treatments/postural-assessment.webp';
+import dryNeedlingImg from '../../assets/images/treatments/dry-needling.webp';
+import atmosphereImg from '../../assets/images/atmosphere/costa-blanca.webp';
+import treatmentRoomImg from '../../assets/images/clinic/treatment-room.webp';
+import ctaBgImg from '../../assets/images/cta/cta-background.webp';
 
 const services = [
   {
@@ -21,7 +32,7 @@ const services = [
     slug: 'wervelkolom-decompressie',
     excerpt: 'Niet-chirurgische behandeling om gecomprimeerde wervelschijven te verlichten, zenuwdruk te verminderen en mobiliteit te herstellen.',
     icon: 'spine',
-    image: '/images/treatments/spinal-decompression.webp',
+    image: spinalDecompressionImg,
     imageAlt: 'Therapeut die manuele schouder- en wervelkolomtherapie uitvoert bij een patient op een behandeltafel',
   },
   {
@@ -29,7 +40,7 @@ const services = [
     slug: 'sportmassage',
     excerpt: 'Diepe weefsel- en sportgerichte massage voor sneller herstel, blessurepreventie en pijnverlichting.',
     icon: 'massage',
-    image: '/images/treatments/sports-massage.webp',
+    image: sportsMassageImg,
     imageAlt: 'Therapeut die diepe weefselmassage uitvoert op de schouder en bovenrug van een patient',
   },
   {
@@ -37,7 +48,7 @@ const services = [
     slug: 'houdingsanalyse',
     excerpt: 'Uitgebreide evaluatie van je houding en bewegingspatronen om de oorzaak van pijn te achterhalen.',
     icon: 'posture',
-    image: '/images/treatments/postural-assessment.webp',
+    image: posturalAssessmentImg,
     imageAlt: 'Fysiotherapeut die de wervelkolomhouding en uitlijning van een patient beoordeelt in een moderne kliniek',
   },
   {
@@ -45,35 +56,22 @@ const services = [
     slug: 'dry-needling',
     excerpt: 'Gerichte triggerpoint-therapie met dunne naalden om spierspanning los te maken en chronische pijn te verminderen.',
     icon: 'needle',
-    image: '/images/treatments/dry-needling.webp',
+    image: dryNeedlingImg,
     imageAlt: 'Behandelaar die dunne dry needling naalden inbrengt in de bovenrug en nek van een patient',
   },
 ];
 
-const testimonials = [
-  {
-    name: 'Margaret T.',
-    text: 'Na jaren van lage rugpijn vond ik eindelijk verlichting bij Costa Blanca Movement Centre. Dr. Mitchell legde alles duidelijk uit en de wervelkolom decompressie behandeling heeft mijn leven veranderd.',
-    rating: 5,
-    source: 'Google',
-    treatment: 'Wervelkolom Decompressie',
-    location: 'Torrevieja',
-  },
-  {
-    name: 'Hans van der Berg',
-    text: 'Als enthousiast fietser houdt de regelmatige sportmassage hier me op de fiets. Laura is ongelooflijk bekwaam — ze vindt spanning waarvan ik niet eens wist dat ik die had. Sterk aanbevolen voor elke actieve expat.',
-    rating: 5,
-    source: 'Google',
-    treatment: 'Sportmassage',
-  },
-  {
-    name: 'David R.',
-    text: 'Professioneel, deskundig en oprecht betrokken. Ik kwam binnen met ernstige nekpijn en ischias. Binnen 6 sessies zag ik een dramatische verbetering. Beste kliniek aan de Costa Blanca.',
-    rating: 5,
-    source: 'Google',
-    treatment: 'Wervelkolom Decompressie',
-  },
-];
+const featuredReviews = getReviews({ featuredOnly: true });
+const testimonials = featuredReviews.map((r) => ({
+  name: r.name,
+  text: reviewText(r, 'nl'),
+  rating: r.rating,
+  source: r.source,
+  treatment: treatmentLabel(r.treatmentSlug, 'nl'),
+  location: r.location,
+  date: r.date,
+}));
+const homepageAggregate = aggregateRating(featuredReviews);
 
 const faqs = [
   {
@@ -128,7 +126,13 @@ const approachItems = [
 <BaseLayout
   title={`Wervelkolom & Mobiliteit Torrevieja | ${siteConfig.shortName}`}
   description="Niet-chirurgische wervelkolom- en mobiliteitszorg voor de expat-gemeenschap. Rugpijn, nekpijn en sportblessures — kliniek Torrevieja."
-  schemas={[generateLocalBusiness(), generateMedicalBusiness(), generateFAQPage(faqs)]}
+  schemas={[
+    generateLocalBusiness(),
+    generateMedicalBusiness(),
+    generateFAQPage(faqs),
+    generateAggregateRating(homepageAggregate),
+    ...generateReviewArray(featuredReviews, 'nl'),
+  ]}
   hreflang={[
     { lang: 'en', href: siteConfig.url },
     { lang: 'nl', href: `${siteConfig.url}/nl` },
@@ -142,7 +146,7 @@ const approachItems = [
     ctaHref="/nl/contact"
     secondaryCtaText="Bel Ons"
     secondaryCtaHref={`tel:${siteConfig.phone}`}
-    backgroundImage="/images/hero/hero-clinic.webp"
+    backgroundImage={heroImg}
     backgroundAlt="Fysiotherapeut behandelt een patient op een behandeltafel in een lichte, moderne kliniek"
     locale="nl"
     pageType="homepage"
@@ -161,7 +165,7 @@ const approachItems = [
   />
 
   <AtmosphereSection
-    image="/images/atmosphere/costa-blanca.webp"
+    image={atmosphereImg}
     quote="Helpen je weer vrij te bewegen — in het hart van de Costa Blanca."
     alt="Gouden zonsondergang weerspiegeld in het rustige water van de Middellandse Zee aan de Costa Blanca"
   />
@@ -169,7 +173,7 @@ const approachItems = [
   <DefinitionBlock
     term="Wat Wij Doen"
     definition="Costa Blanca Movement Centre is een gespecialiseerde kliniek voor mobiliteit en wervelkolomgezondheid in Torrevieja, Spanje. We combineren evidence-based manuele therapie met moderne niet-chirurgische technieken voor de behandeling van rugpijn, nekpijn, sportblessures en houdingsproblemen. Ons meertalig team bedient de internationale expat-gemeenschap in de zuidelijke Costa Blanca — van Orihuela Costa tot Guardamar del Segura en Pilar de la Horadada."
-    image="/images/clinic/treatment-room.webp"
+    image={treatmentRoomImg}
     imageAlt="Fysiotherapeut die hands-on behandeling geeft aan een patient in een warme, moderne kliniek"
   />
 
@@ -204,7 +208,7 @@ const approachItems = [
     subtitle="Boek vandaag nog je eerste beoordeling. We stellen een persoonlijk behandelplan op om je terug te brengen naar wat je graag doet."
     ctaText="Boek Je Beoordeling"
     ctaHref="/nl/contact"
-    backgroundImage="/images/cta/cta-background.webp"
+    backgroundImage={ctaBgImg}
     backgroundAlt="Rustig Middellands Zee strand bij zonsondergang met zachte paarse lucht en zachte golven"
     eventName="appointment_click"
     ctaLocation="inline"
