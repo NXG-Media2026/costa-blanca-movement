@@ -27,13 +27,13 @@ relatedTreatments:
   - "dry-needling"
 faq:
   - q: "Can a herniated disc heal without surgery?"
-    a: "Yes, the majority of herniated discs heal without surgery. Research shows that up to 90% of patients improve with conservative treatment. At our clinic, we use spinal decompression and targeted manual therapy to promote natural disc healing. Surgery is generally only considered if symptoms persist after several months of dedicated treatment."
+    a: "Yes — the majority of herniated discs heal without surgery. Research shows that up to 90% of patients improve with conservative treatment. At our clinic we use spinal decompression and targeted manual therapy to promote natural disc healing. Surgery is generally only considered if symptoms persist after several months of dedicated non-surgical treatment, or if there are red-flag signs such as progressive weakness."
   - q: "How does spinal decompression help a herniated disc?"
-    a: "Spinal decompression therapy gently stretches the spine, creating negative pressure within the disc. This draws the herniated material back toward the centre of the disc and promotes the flow of nutrients and oxygen needed for healing. Most patients notice a reduction in pain within the first few sessions."
+    a: "Spinal decompression therapy gently stretches the spine in a controlled, motorised way. That means it creates negative pressure within the disc, which draws the herniated material back toward the centre and promotes the flow of nutrients and oxygen needed for natural healing. Most patients notice a meaningful reduction in pain within the first few sessions."
   - q: "How long does recovery from a herniated disc take?"
-    a: "With consistent treatment, many patients see significant improvement within 6–12 weeks. Mild herniations may resolve faster, while larger herniations can take 3–6 months. Early treatment and adherence to your rehabilitation programme are the strongest predictors of a good outcome."
+    a: "With consistent treatment, many patients see significant improvement within 6–12 weeks. Mild herniations — for example, a small protrusion with localised pain — may resolve in 4–8 weeks. Larger herniations causing radiating leg pain or numbness can take 3–6 months. Early treatment and adherence to your rehabilitation programme are the strongest predictors of a good outcome."
   - q: "What is the difference between a bulging disc and a herniated disc?"
-    a: "A bulging disc extends outward evenly around its circumference, like a hamburger that's too big for its bun. A herniated disc has a localised rupture where the inner material pushes through the outer ring. Herniated discs are more likely to compress nerves and cause radiating pain, but both conditions respond well to non-surgical treatment."
+    a: "A bulging disc extends outward evenly around its full circumference — picture a hamburger that is slightly too big for its bun. A herniated disc has a localised rupture where the soft inner material (nucleus pulposus) pushes through a tear in the outer ring (annulus fibrosus). Herniated discs are more likely to compress a nerve root and cause radiating pain, but both conditions respond well to non-surgical treatment."
 order: 4
 ---
 

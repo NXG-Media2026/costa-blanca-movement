@@ -27,13 +27,13 @@ relatedTreatments:
   - "dry-needling"
 faq:
   - q: "Kan een hernia genezen zonder operatie?"
-    a: "Ja, de meerderheid van hernia's verbetert met conservatieve, niet-chirurgische behandeling. Wervelkolom decompressie, gerichte oefentherapie en manuele behandeling zijn bij de meeste patienten effectief. Slechts een klein percentage heeft uiteindelijk een operatie nodig."
+    a: "Ja — de meerderheid van hernia's geneest zonder operatie. Onderzoek toont aan dat tot 90% van de patienten verbetert met conservatieve, niet-chirurgische behandeling. In onze kliniek gebruiken we wervelkolom decompressie en gerichte manuele therapie om natuurlijk herstel te bevorderen. Een operatie wordt doorgaans pas overwogen als de klachten na enkele maanden toegewijde niet-chirurgische behandeling blijven aanhouden, of bij red-flag symptomen zoals progressieve spierzwakte."
   - q: "Hoe helpt wervelkolom decompressie bij een hernia?"
-    a: "Wervelkolom decompressie creert een gecontroleerde negatieve druk in de tussenwervelschijf. Hierdoor kan de uitpuilende kern geleidelijk terugtrekken, waardoor de druk op de zenuw vermindert. Tegelijkertijd verbetert de vochtopname in de schijf, wat het natuurlijke herstelproces bevordert."
+    a: "Wervelkolom decompressie therapie rekt de wervelkolom op een gecontroleerde, gemotoriseerde manier voorzichtig uit. Dat betekent dat het negatieve druk creeert in de tussenwervelschijf, waardoor het uitgepuilde materiaal naar het centrum kan terugtrekken en voedingsstoffen en zuurstof kunnen instromen voor natuurlijk herstel. De meeste patienten merken in de eerste sessies al een duidelijke pijnvermindering."
   - q: "Hoe lang duurt herstel van een hernia?"
-    a: "Met de juiste behandeling zien de meeste patienten binnen 6 tot 12 weken significante verbetering. De exacte hersteltijd hangt af van de ernst van de hernia, je algehele gezondheid en hoe consequent je het behandelplan volgt. Wij begeleiden je door het hele traject."
+    a: "Met consistente behandeling zien veel patienten binnen 6-12 weken significante verbetering. Lichte hernia's — bijvoorbeeld een kleine protrusie met gelokaliseerde pijn — kunnen binnen 4-8 weken verdwijnen. Grotere hernia's die uitstralende beenpijn of gevoelloosheid veroorzaken kunnen 3-6 maanden vergen. Vroege behandeling en het consequent volgen van je revalidatieprogramma zijn de belangrijkste voorspellers van een goed resultaat."
   - q: "Wat is het verschil tussen een uitpuilende schijf en een hernia?"
-    a: "Bij een uitpuilende schijf bolt de schijf als geheel op, maar blijft de buitenring intact. Bij een hernia breekt de zachte kern daadwerkelijk door de buitenste ring heen. Een hernia veroorzaakt doorgaans meer klachten omdat het materiaal direct op de zenuw kan drukken."
+    a: "Een uitpuilende schijf bolt gelijkmatig naar buiten over de hele omtrek — denk aan een hamburger die net iets te groot is voor zijn broodje. Bij een hernia is er een lokale ruptuur waar de zachte binnenkern (nucleus pulposus) door een scheur in de buitenste ring (annulus fibrosus) heenbreekt. Hernia's drukken vaker op een zenuwwortel en veroorzaken uitstralende pijn, maar beide aandoeningen reageren goed op niet-chirurgische behandeling."
 order: 4
 ---
 

@@ -14,13 +14,13 @@ relatedConditions:
   - "neck-pain"
 faq:
   - q: "Is dry needling painful?"
-    a: "Most patients feel minimal discomfort during needle insertion. When the needle reaches a trigger point, you may feel a brief twitch or cramping sensation — this is a good sign that the muscle is releasing. Any discomfort is short-lived, and many patients feel immediate relief afterwards."
+    a: "Dry needling causes minimal discomfort during needle insertion — patients typically feel only a small prick. When the needle reaches a trigger point, you may feel a brief twitch or cramping sensation, which is a positive sign that the muscle is releasing. Any discomfort is short-lived, and many patients feel immediate relief afterwards."
   - q: "What is the difference between dry needling and acupuncture?"
-    a: "Although both use thin needles, the approaches are fundamentally different. Dry needling is based on Western anatomy and targets specific muscular trigger points identified during your assessment. Acupuncture follows traditional Chinese medicine principles and works along energy meridians. The treatment goals and needle placement are different."
+    a: "Although both use thin filiform needles, the approaches are fundamentally different. Dry needling is based on Western musculoskeletal anatomy and targets specific muscular trigger points identified during your assessment — for example, a knot in the upper trapezius referring pain into the head. Acupuncture follows traditional Chinese medicine principles and treats along energy meridians. The treatment goals, diagnostic framework, and needle placement are entirely different."
   - q: "How many sessions will I need?"
-    a: "Many patients notice improvement after 1–2 sessions. For chronic conditions, we typically recommend 4–6 sessions combined with other therapies. Your treatment plan will be tailored to your specific condition and how you respond to treatment."
+    a: "Many patients notice meaningful improvement after just 1–2 sessions. For chronic conditions, we typically recommend 4–6 sessions combined with complementary therapies — such as sports massage or postural correction — to address the underlying cause. Your treatment plan is tailored to your specific condition and how you respond to the first sessions."
   - q: "Are there any side effects?"
-    a: "Mild soreness in the treated area is common for 12–24 hours after treatment — similar to post-exercise muscle ache. Occasionally, minor bruising may occur. These are normal responses and resolve quickly. We'll give you clear aftercare advice at the end of each session."
+    a: "Mild soreness in the treated area is common for 12–24 hours after dry needling — similar to post-exercise muscle ache. Occasionally, minor bruising may occur at the needle site. These are normal responses and resolve quickly without intervention. We give you clear aftercare advice — for example, gentle movement and adequate hydration — at the end of each session."
 order: 4
 ---
 

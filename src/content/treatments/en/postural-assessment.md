@@ -14,13 +14,13 @@ relatedConditions:
   - "neck-pain"
 faq:
   - q: "What should I expect during a postural assessment?"
-    a: "We'll observe your standing and seated posture, assess your joint mobility and muscle balance, and run a series of functional movement tests. Wear comfortable clothing you can move freely in — no special preparation is needed."
+    a: "A postural assessment takes 45–60 minutes and includes three parts: we observe your standing and seated posture, measure your joint mobility and muscle balance, and run a series of functional movement tests — such as squats, single-leg balance, and overhead reach. Wear comfortable clothing you can move freely in. No special preparation is needed."
   - q: "Who benefits most from a postural assessment?"
-    a: "Anyone experiencing recurring pain, stiffness, or limited mobility. It's especially valuable for desk workers, athletes, people recovering from injury, and anyone who wants to understand why their body isn't moving the way it should."
+    a: "A postural assessment is most valuable for anyone with recurring pain, stiffness, or limited mobility. For example, desk workers with chronic neck or back tension, athletes hitting performance plateaus, patients recovering from injury, and people who simply want to understand why their body is not moving the way it should."
   - q: "Do I need a postural assessment before starting treatment?"
-    a: "Not always, but it's highly recommended. A thorough assessment ensures we treat the underlying cause of your problem rather than chasing symptoms. It gives us a clear baseline to measure your progress against."
+    a: "Not always, but it is highly recommended. A thorough assessment means we treat the underlying cause of your problem rather than chasing symptoms — for example, addressing a hip imbalance that is driving lower back pain instead of only treating the back. It also gives us a clear baseline to measure your progress against."
   - q: "How often should I have a postural assessment?"
-    a: "We recommend an initial assessment followed by a review after 6–8 weeks of treatment. After that, a check-up every 3–6 months helps maintain progress and catch any new imbalances early."
+    a: "We recommend an initial assessment, followed by a review after 6–8 weeks of treatment to measure progress. After that, a check-up every 3–6 months helps maintain results and catch any new imbalances early — particularly useful if your activity level or work setup changes."
 order: 3
 ---
 

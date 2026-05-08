@@ -28,13 +28,13 @@ relatedTreatments:
   - "wervelkolom-decompressie"
 faq:
   - q: "Kan nekpijn hoofdpijn veroorzaken?"
-    a: "Ja, veel hoofdpijn heeft een cervicogene oorsprong — dat betekent dat de oorzaak in de nek ligt. Stijve gewrichten, gespannen spieren of geprikkelde zenuwen in de bovenste nekwervels kunnen pijn doorsturen naar het hoofd. Behandeling gericht op de nek lost deze hoofdpijn vaak effectief op."
+    a: "Ja, veel hoofdpijn heeft een cervicogene oorsprong — dat betekent dat de oorzaak in de nek ligt. Bijvoorbeeld stijve cervicale gewrichten, gespannen bovenste trapeziusspieren of geprikkelde zenuwwortels in de bovenste nekwervels kunnen pijn doorsturen naar het hoofd. Deze hoofdpijn begint meestal aan de basis van de schedel en straalt uit naar het voorhoofd of de slapen. Behandeling gericht op de onderliggende nekpijn lost deze hoofdpijn vaak effectief op."
   - q: "Is het veilig om te sporten met nekpijn?"
-    a: "Voorzichtige beweging is meestal juist nuttig bij nekpijn. Volledige rust kan de stijfheid zelfs verergeren. Wel is het belangrijk om bepaalde oefeningen tijdelijk te vermijden, zoals zware gewichten boven het hoofd. Wij adviseren je welke activiteiten veilig zijn en welke je beter even kunt laten."
+    a: "Voorzichtige beweging is meestal juist nuttig bij nekpijn — volledige rust kan de stijfheid zelfs verergeren. Dat betekent dat het belangrijk is om bepaalde oefeningen tijdelijk te vermijden, zoals zware gewichten boven het hoofd, agressieve nekstretches en hoge-impact activiteiten op harde ondergrond. Wij adviseren je welke activiteiten veilig zijn en welke je beter even kunt laten tot je nek beoordeeld is."
   - q: "Hoe kan ik nekpijn door schermgebruik voorkomen?"
-    a: "Plaats je beeldscherm op ooghoogte zodat je niet naar beneden hoeft te kijken. Neem elke 30-45 minuten een korte pauze om je nek te bewegen. Houd je schouders ontspannen en vermijd het om je hoofd naar voren te steken richting het scherm. Een goede werkplek-inrichting maakt een groot verschil."
+    a: "Drie eenvoudige aanpassingen voorkomen de meeste schermgerelateerde nekpijn: plaats je beeldscherm op ooghoogte zodat je niet naar beneden hoeft te kijken, neem elke 30 minuten een korte pauze om te bewegen, en houd je schouders ontspannen weg van je oren. Wij kunnen een houdingsanalyse uitvoeren en specifieke aanpassingen aan je werkplek aanbevelen — zoals monitorverhogers, toetsenbordhoogte of stoelinstellingen — afgestemd op jouw situatie."
   - q: "Welke behandelingen bieden jullie voor nekpijn?"
-    a: "Wij behandelen nekpijn met een combinatie van sportmassage om gespannen spieren los te maken, wervelkolom decompressie bij schijf- of zenuwproblemen, en houdingscorrectie om de onderliggende oorzaak aan te pakken. Het behandelplan stemmen we altijd af op jouw specifieke klachten."
+    a: "Wij behandelen nekpijn met een combinatie van drie aanpakken: sportmassage om gespannen spieren los te maken, wervelkolom decompressie bij schijf- of zenuwproblemen zoals een cervicale hernia, en houdingscorrectie om de onderliggende oorzaak aan te pakken. Het behandelplan stemmen we altijd af op een grondige beoordeling van je klachten, houding en bewegingspatronen."
 order: 2
 ---
 

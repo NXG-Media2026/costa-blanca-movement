@@ -27,13 +27,13 @@ relatedTreatments:
   - "sportmassage"
 faq:
   - q: "Wat veroorzaakt ischias?"
-    a: "Ischias ontstaat meestal door een gecomprimeerde zenuw in de lage rug. De meest voorkomende oorzaken zijn een hernia die op de zenuwwortel drukt, of spinale stenose waarbij het wervelkanaal te nauw wordt. De nervus ischiadicus is de langste zenuw in het lichaam, waardoor je klachten kunt voelen tot in je voet."
+    a: "Ischias ontstaat meestal door een gecomprimeerde zenuwwortel in de lage rug. De meest voorkomende oorzaken zijn een hernia die op een lumbale zenuwwortel drukt, spinale stenose (vernauwing van het wervelkanaal), piriformissyndroom (een bilspier die de zenuw afknelt) en degeneratieve schijfziekte. De nervus ischiadicus is de langste zenuw in het lichaam — dat betekent dat je klachten kunt voelen van de lage rug tot in de voet."
   - q: "Hoe lang duurt ischias?"
-    a: "Acute ischias verbetert vaak binnen 4 tot 6 weken met de juiste behandeling. Bij chronische ischias of een onderliggende hernia kan het behandeltraject langer duren. Vroeg ingrijpen verkort de hersteltijd aanzienlijk — uitstel leidt vaak tot langere klachten."
+    a: "De meeste ischias-episodes verbeteren significant binnen 4-8 weken met de juiste behandeling. Milde gevallen — bijvoorbeeld een kleine hernia met intermitterende pijn — kunnen binnen 2-4 weken verdwijnen. Complexere gevallen met een grote hernia kunnen 3-6 maanden consistente behandeling vragen. Vroeg ingrijpen leidt doorgaans tot sneller en vollediger herstel."
   - q: "Kan ischias behandeld worden zonder operatie?"
-    a: "Ja, de overgrote meerderheid van ischiasgevallen reageert goed op niet-chirurgische behandeling. Wervelkolom decompressie, gerichte oefeningen en manuele therapie zijn in de meeste situaties effectief. Een operatie is pas aan de orde als conservatieve behandeling onvoldoende resultaat oplevert."
+    a: "Ja — de overgrote meerderheid van ischiasgevallen reageert goed op niet-chirurgische behandeling. In onze kliniek gebruiken we wervelkolom decompressie therapie in combinatie met gerichte manuele behandeling en een gestructureerd oefenprogramma. Een operatie wordt doorgaans pas overwogen als conservatieve behandeling na enkele maanden onvoldoende resultaat heeft opgeleverd, of bij red-flag symptomen zoals progressieve spierzwakte of verlies van blaascontrole."
   - q: "Welke oefeningen helpen bij ischias?"
-    a: "Voorzichtige stretches en specifieke versterkende oefeningen kunnen ischiaspijn verlichten. Welke oefeningen het best bij jouw situatie passen, hangt af van de oorzaak. Daarom stellen wij na een grondige beoordeling een persoonlijk oefenprogramma samen — zodat je zeker weet dat je de juiste dingen doet."
+    a: "Nuttige ischias-oefeningen zijn doorgaans voorzichtige nerve-gliding bewegingen (soms 'nerve flossing' genoemd), specifieke stretches voor de piriformis en hamstrings, en core-stabilisatie werk. De juiste oefeningen hangen af van de onderliggende oorzaak — sommige veelvoorkomende oefeningen kunnen bepaalde vormen van ischias zelfs verergeren, zoals krachtige voorwaartse buigingen bij een posterieure hernia. Wij stellen na een grondige beoordeling een persoonlijk oefenprogramma samen."
 order: 3
 ---
 

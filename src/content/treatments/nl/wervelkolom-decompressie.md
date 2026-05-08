@@ -15,13 +15,13 @@ relatedConditions:
   - "ischias"
 faq:
   - q: "Is wervelkolom decompressie pijnlijk?"
-    a: "Nee. De meeste patienten ervaren de behandeling als comfortabel en ontspannend. Je voelt een zachte rek in je wervelkolom. Sommige patienten vallen zelfs in slaap tijdens de sessie."
+    a: "Nee. De meeste patienten ervaren wervelkolom decompressie als comfortabel en ontspannend — je voelt een zachte, gecontroleerde rek in je wervelkolom, geen scherpe trek. Sommige patienten vallen zelfs in slaap tijdens de sessie. Eventuele lichte spierpijn na de behandeling verdwijnt meestal binnen 24 uur."
   - q: "Hoeveel sessies heb ik nodig?"
-    a: "Een typisch behandeltraject bestaat uit 6-12 sessies over 4-6 weken. Tijdens je eerste beoordeling stellen we een specifiek plan op op basis van je klachten en reactie op de behandeling."
+    a: "Een typisch wervelkolom decompressie traject bestaat uit 6-12 sessies over 4-6 weken. Het exacte aantal hangt af van factoren zoals de ernst van de schijfcompressie, hoe lang de klachten al bestaan en hoe je reageert op de eerste sessies. We geven na je eerste beoordeling een duidelijke, persoonlijke inschatting."
   - q: "Kan wervelkolom decompressie helpen bij een hernia?"
-    a: "Ja. Wervelkolom decompressie is een van de meest effectieve niet-chirurgische behandelingen voor hernia's en uitpuilende schijven. Het vermindert de druk op de schijf, waardoor de hernia kan terugtrekken en natuurlijk kan herstellen."
+    a: "Ja. Wervelkolom decompressie is een van de meest effectieve niet-chirurgische behandelingen voor hernia's en uitpuilende schijven. Dat betekent dat het negatieve druk in de schijf creeert, waardoor het uitgepuilde materiaal naar het centrum kan terugtrekken en voedingsstoffen en zuurstof kunnen instromen voor natuurlijk herstel. De meeste patienten met een hernia merken in de eerste sessies al een duidelijke pijnvermindering."
   - q: "Is wervelkolom decompressie veilig voor ouderen?"
-    a: "Wervelkolom decompressie is veilig voor de meeste volwassenen, ongeacht leeftijd. We voeren eerst een grondig onderzoek uit om te bepalen of het geschikt is voor jouw specifieke situatie. Bij bepaalde aandoeningen zoals ernstige osteoporose kan een alternatieve aanpak nodig zijn."
+    a: "Ja — wervelkolom decompressie is veilig voor de meeste volwassenen, ongeacht leeftijd, inclusief patienten van 70-80+ jaar. We voeren altijd eerst een grondig onderzoek uit om te bevestigen dat het geschikt is voor jouw specifieke situatie. Bij bepaalde aandoeningen — zoals ernstige osteoporose, gevorderde spinale stenose of recente wervelkolomoperatie — kan een alternatieve aanpak nodig zijn."
 order: 1
 ---
 

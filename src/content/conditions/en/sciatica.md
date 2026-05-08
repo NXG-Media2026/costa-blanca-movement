@@ -27,13 +27,13 @@ relatedTreatments:
   - "sports-massage"
 faq:
   - q: "What causes sciatica?"
-    a: "The most common cause is a herniated disc in the lumbar spine pressing on the sciatic nerve root. Other causes include spinal stenosis, piriformis syndrome, and degenerative disc disease. We identify the specific cause during your initial assessment so we can target treatment effectively."
+    a: "The most common cause of sciatica is a herniated disc in the lumbar spine pressing on the sciatic nerve root. Other causes include spinal stenosis (narrowing of the spinal canal), piriformis syndrome (a buttock muscle compressing the nerve), and degenerative disc disease. We identify the specific cause during your initial assessment so treatment targets the actual problem rather than just the symptoms."
   - q: "How long does sciatica take to heal?"
-    a: "Most episodes of sciatica improve significantly within 4–8 weeks with appropriate treatment. Mild cases may resolve sooner, while more complex cases involving significant disc herniation may take 3–6 months. Early treatment generally leads to faster and more complete recovery."
+    a: "Most episodes of sciatica improve significantly within 4–8 weeks with appropriate treatment. Mild cases — for example, a small disc bulge with intermittent pain — may resolve in 2–4 weeks. More complex cases involving significant disc herniation may take 3–6 months of consistent treatment. Early treatment generally leads to faster and more complete recovery."
   - q: "Can sciatica be treated without surgery?"
-    a: "Yes, the vast majority of sciatica cases respond well to non-surgical treatment. At our clinic, we use spinal decompression therapy combined with targeted manual treatment and exercise rehabilitation. Surgery is typically only considered when conservative treatment has not provided relief after several months."
+    a: "Yes — the vast majority of sciatica cases respond well to non-surgical treatment. At our clinic we use spinal decompression therapy combined with targeted manual treatment and a structured exercise rehabilitation programme. Surgery is typically only considered when conservative treatment has not provided meaningful relief after several months, or when there are red-flag symptoms such as progressive weakness or loss of bladder control."
   - q: "What are the best exercises for sciatica?"
-    a: "Gentle nerve gliding exercises, specific stretches for the piriformis and hamstrings, and core stabilisation work are generally beneficial. However, the right exercises depend on the underlying cause. We'll prescribe a tailored programme based on your assessment — some common exercises can actually worsen certain types of sciatica."
+    a: "Beneficial sciatica exercises generally include gentle nerve gliding (sometimes called nerve flossing), specific stretches for the piriformis and hamstrings, and core stabilisation work. The right exercises depend on the underlying cause — some common exercises can actually worsen certain types of sciatica, such as forceful forward bends if your sciatica is caused by a posterior disc herniation. We prescribe a tailored programme based on your assessment."
 order: 3
 ---
 

@@ -14,11 +14,11 @@ relatedConditions:
   - "nekpijn"
 faq:
   - q: "Moet ik een sporter zijn om baat te hebben bij sportmassage?"
-    a: "Absoluut niet. Sportmassage is waardevol voor iedereen met spierspanning, chronische pijn of een actieve levensstijl. Veel van onze patienten zijn expats die genieten van golf, fietsen, wandelen of zwemmen — maar ook mensen met spanningsklachten door bureauwerk."
+    a: "Nee — sportmassage is waardevol voor iedereen met spierspanning, chronische pijn of een actieve levensstijl. Bijvoorbeeld: onze patienten zijn onder andere golfers, fietsers, wandelaars, zwemmers en mensen met spanningsklachten in nek en schouders door bureauwerk. Je hoeft geen wedstrijdsporter te zijn — de technieken werken op elk strak of overbelast weefsel."
   - q: "Hoe vaak moet ik een sportmassage krijgen?"
-    a: "Bij chronische pijn of actief herstel adviseren we in eerste instantie wekelijkse of tweewekelijkse sessies. Zodra de klachten verminderen, helpen maandelijkse onderhoudssessies om terugval te voorkomen. Je therapeut stelt een frequentie voor op basis van jouw situatie."
+    a: "Bij chronische pijn of actief herstel adviseren we in eerste instantie wekelijkse of tweewekelijkse sessies. Zodra de klachten verminderen, helpen maandelijkse onderhoudssessies om terugval te voorkomen — bijvoorbeeld voor een groot evenement zoals een fietstocht of na een zware trainingsweek. Je therapeut stelt een persoonlijke frequentie voor op basis van jouw doelen."
   - q: "Is sportmassage pijnlijk?"
-    a: "Je kunt wat ongemak ervaren in gebieden met diepe spanning — dit wordt soms omschreven als 'goede pijn.' Onze therapeut communiceert altijd met je en past de druk aan op jouw comfortniveau. Lichte spierpijn na de behandeling is normaal en verdwijnt doorgaans binnen 24-48 uur."
+    a: "Sportmassage kan wat ongemak veroorzaken in gebieden met diepe spanning — wat patienten soms 'goede pijn' noemen, wat een ontladingsgevoel betekent in plaats van scherpe pijn. Onze therapeut communiceert tijdens de hele sessie met je en past de druk aan op jouw comfortniveau. Lichte spierpijn na de behandeling is normaal en verdwijnt doorgaans binnen 24-48 uur, vergelijkbaar met milde spierpijn na het sporten."
 order: 2
 ---
 

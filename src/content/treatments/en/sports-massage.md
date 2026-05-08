@@ -14,11 +14,11 @@ relatedConditions:
   - "neck-pain"
 faq:
   - q: "Do I need to be an athlete to benefit from sports massage?"
-    a: "Not at all. Sports massage benefits anyone with muscle tension, chronic pain, or an active lifestyle. Many of our patients are expats who enjoy golf, cycling, hiking, or swimming — as well as those with desk-related tension."
+    a: "No — sports massage benefits anyone with muscle tension, chronic pain, or an active lifestyle. For example, our patients include golfers, cyclists, hikers, swimmers, and people with desk-related shoulder and neck tension. You do not need to be a competitive athlete; the techniques work on any tight or overworked tissue."
   - q: "How often should I get a sports massage?"
-    a: "For chronic pain or active recovery, we typically recommend weekly or bi-weekly sessions initially. Once symptoms improve, monthly maintenance sessions help prevent recurrence. Your therapist will recommend a frequency based on your needs."
+    a: "For chronic pain or active recovery, we typically recommend weekly or bi-weekly sessions initially. Once symptoms improve, monthly maintenance sessions help prevent recurrence — for example, before a major event like a cycling tour or after a heavy training week. Your therapist will recommend a personalised frequency based on your goals."
   - q: "Will sports massage be painful?"
-    a: "You may experience some discomfort in areas of deep tension — this is sometimes described as 'good pain.' Our therapist will always communicate with you and adjust pressure to your comfort level. Post-treatment soreness is normal and typically fades within 24–48 hours."
+    a: "Sports massage may cause some discomfort in areas of deep tension — what patients sometimes call 'good pain', meaning a release sensation rather than sharp pain. Our therapist communicates with you throughout and adjusts pressure to your comfort level. Post-treatment soreness is normal and typically fades within 24–48 hours, similar to mild post-exercise muscle ache."
 order: 2
 ---
 

@@ -5,19 +5,19 @@
       "questions": [
         {
           "q": "Do I need a referral to visit your clinic?",
-          "a": "No, you don't need a referral. You can book an appointment directly by phone, WhatsApp, or through our <a href=\"/contact\">contact form</a>. We welcome both new and returning patients."
+          "a": "No, a referral is not required. Patients can book an appointment directly by phone, WhatsApp, or through our <a href=\"/contact\">contact form</a>. We welcome both new and returning patients, including international visitors and expats living on the Costa Blanca."
         },
         {
           "q": "Do you treat international patients and expats?",
-          "a": "Yes — our clinic primarily serves the international expat community on the Costa Blanca. We speak English, Dutch, and Spanish, and we're experienced with international health insurance claims."
+          "a": "Yes. Our clinic primarily serves the international expat community on the Costa Blanca. That means consultations and treatments are available in English, Dutch, and Spanish, and our team is experienced with international health insurance claims and reimbursement documentation."
         },
         {
           "q": "What should I expect during my first visit?",
-          "a": "Your first visit includes a comprehensive assessment of your condition, medical history, and movement patterns. We'll discuss your symptoms, perform a physical examination, and create a personalised treatment plan. Please allow 45–60 minutes."
+          "a": "Your first visit is a comprehensive assessment that takes 45–60 minutes. We discuss your symptoms in detail, review your medical history, perform a physical examination, and run targeted movement tests. Based on those findings, we create a personalised treatment plan with clear goals and an honest estimate of the recommended course."
         },
         {
           "q": "How many treatment sessions will I need?",
-          "a": "This depends on your condition and its severity. Most patients notice improvement within 3–4 sessions. During your initial assessment, we'll give you an honest estimate of the recommended treatment course."
+          "a": "The number of sessions depends on your condition and its severity. Most patients notice meaningful improvement within 3–4 sessions, with a typical full course running 6–12 sessions over 4–8 weeks. During your initial assessment, we give you an honest estimate so you know exactly what to expect."
         }
       ]
     },
@@ -26,15 +26,15 @@
       "questions": [
         {
           "q": "Is treatment covered by insurance?",
-          "a": "Many international health insurance providers cover our treatments. We can provide detailed invoices for reimbursement. <a href=\"/contact\">Contact us</a> with your insurance details and we'll help you understand your coverage."
+          "a": "Many international health insurance providers cover our treatments — for example, Cigna Global, Allianz Care, AXA International, and Bupa Global. We supply detailed itemised invoices that you can submit for reimbursement. <a href=\"/contact\">Contact us</a> with your insurance details and we'll help you understand your specific coverage."
         },
         {
           "q": "What payment methods do you accept?",
-          "a": "We accept cash, debit card, credit card (Visa, Mastercard), and bank transfer. Payment is due at the time of treatment."
+          "a": "We accept cash, debit card, credit card (such as Visa and Mastercard), and SEPA bank transfer. Payment is due at the time of treatment. We provide receipts and itemised invoices on request, formatted to meet most international insurer requirements."
         },
         {
           "q": "Do you offer package deals for multiple sessions?",
-          "a": "Yes, we offer treatment packages at a reduced rate for patients who need a course of sessions. Ask about our package options during your initial assessment."
+          "a": "Yes. We offer treatment packages at a reduced rate for patients who need a course of sessions — for example, a 6-session spinal decompression block. Ask about package options during your initial assessment so we can build one that matches your treatment plan."
         }
       ]
     },
@@ -43,19 +43,19 @@
       "questions": [
         {
           "q": "What is spinal decompression therapy?",
-          "a": "Spinal decompression is a non-surgical, motorised traction therapy that gently stretches the spine to relieve pressure on compressed discs and pinched nerves. Learn more on our <a href=\"/treatments/spinal-decompression\">spinal decompression page</a>."
+          "a": "Spinal decompression is a non-surgical, motorised traction therapy. That means a specialised treatment table gently stretches the spine in a controlled way, creating negative pressure inside the discs to relieve compression on pinched nerves and bulging discs. Each session typically lasts 30–45 minutes. Read more on our <a href=\"/treatments/spinal-decompression\">spinal decompression page</a>."
         },
         {
           "q": "Is spinal decompression painful?",
-          "a": "No. Most patients find the treatment comfortable and relaxing. You'll feel a gentle stretch in your spine. Some patients even fall asleep during the session."
+          "a": "No. Most patients describe spinal decompression as comfortable and relaxing. You feel a gentle, controlled stretch in your spine — not a sharp pull. Some patients even fall asleep during the session. Any mild soreness afterwards typically fades within 24 hours."
         },
         {
           "q": "Do I need to be an athlete to benefit from sports massage?",
-          "a": "Not at all. <a href=\"/treatments/sports-massage\">Sports massage</a> benefits anyone with muscle tension, chronic pain, or an active lifestyle — including golfers, cyclists, hikers, and people with desk-related tension."
+          "a": "No — <a href=\"/treatments/sports-massage\">sports massage</a> benefits anyone with muscle tension, chronic pain, or an active lifestyle. For example, we regularly treat golfers, cyclists, hikers, and people with desk-related shoulder and neck tension. You do not need to be a competitive athlete to benefit."
         },
         {
           "q": "What is the difference between sports massage and relaxation massage?",
-          "a": "Sports massage uses firmer pressure and targeted techniques (deep tissue, trigger point therapy, myofascial release) to treat specific problem areas. It's therapeutic rather than purely relaxing. Read more about <a href=\"/treatments/sports-massage\">our sports massage approach</a>."
+          "a": "Sports massage is therapeutic, not purely relaxing. That means it uses firmer pressure and targeted techniques — such as deep tissue work, trigger point therapy, and myofascial release — to treat specific problem areas like chronic muscle tension or recurring injury sites. A relaxation massage uses lighter, broader strokes aimed at general stress relief. Read more about <a href=\"/treatments/sports-massage\">our sports massage approach</a>."
         }
       ]
     },
@@ -64,15 +64,15 @@
       "questions": [
         {
           "q": "When should I see a specialist for back pain?",
-          "a": "You should seek help if your <a href=\"/conditions/lower-back-pain\">lower back pain</a> lasts longer than 2–3 weeks, radiates into your legs, is accompanied by numbness or tingling, disrupts your sleep, or limits your daily activities."
+          "a": "Seek professional help if your <a href=\"/conditions/lower-back-pain\">lower back pain</a> meets any of these criteria: it lasts longer than 2–3 weeks, radiates into your legs, is accompanied by numbness or tingling, disrupts your sleep, or limits daily activities. Early assessment generally leads to faster recovery and prevents acute episodes from becoming chronic."
         },
         {
           "q": "Can neck pain cause headaches?",
-          "a": "Yes. Cervicogenic headaches originate from structures in the neck — tight muscles, stiff joints, or irritated nerves. Treating the underlying <a href=\"/conditions/neck-pain\">neck pain</a> often resolves the headaches."
+          "a": "Yes. Cervicogenic headaches originate from structures in the neck — for example, tight upper trapezius muscles, stiff cervical joints, or irritated nerve roots. These headaches typically start at the base of the skull and radiate to the forehead or temples. Treating the underlying <a href=\"/conditions/neck-pain\">neck pain</a> often resolves the headaches."
         },
         {
           "q": "What is sciatica?",
-          "a": "Sciatica is pain that radiates along the sciatic nerve, from the lower back through the buttock and down the leg. It's usually caused by a herniated disc or bone spur compressing the nerve. We treat sciatica with <a href=\"/treatments/spinal-decompression\">spinal decompression</a> and targeted manual therapy."
+          "a": "Sciatica is pain that radiates along the sciatic nerve, from the lower back through the buttock and down the back of the leg. It is usually caused by a herniated disc or bone spur compressing a lumbar nerve root — not a disease itself, but a symptom of an underlying spinal issue. We treat sciatica with <a href=\"/treatments/spinal-decompression\">spinal decompression</a> and targeted manual therapy."
         }
       ]
     },
@@ -81,15 +81,15 @@
       "questions": [
         {
           "q": "Where is your clinic located?",
-          "a": "We're located in Torrevieja, on the southern Costa Blanca in Spain. Our clinic is easily accessible from Orihuela Costa (15 min), Guardamar del Segura (15 min), and Pilar de la Horadada (20 min). Free parking is available nearby."
+          "a": "Our clinic is in Torrevieja, on the southern Costa Blanca in Spain. We are easily accessible from surrounding expat areas — such as Orihuela Costa (15 min drive), Guardamar del Segura (15 min), and Pilar de la Horadada (20 min). Free parking is available nearby."
         },
         {
           "q": "What are your opening hours?",
-          "a": "We're open Monday to Friday from 9:00 to 18:00, and Saturday from 9:00 to 13:00. We're closed on Sundays. <a href=\"/contact\">Book an appointment</a> to secure your preferred time."
+          "a": "We are open Monday to Friday from 9:00 to 18:00, and Saturday from 9:00 to 13:00. We are closed on Sundays. <a href=\"/contact\">Book an appointment</a> online or by phone to secure your preferred time slot."
         },
         {
           "q": "Do you offer home visits?",
-          "a": "In certain cases, we may be able to arrange a home visit for patients who have difficulty travelling to the clinic. Please <a href=\"/contact\">contact us</a> to discuss your situation."
+          "a": "In certain cases, we can arrange a home visit — for example, for patients with mobility limitations who cannot travel to the clinic. Home visits are subject to availability and a travel surcharge. <a href=\"/contact\">Contact us</a> to discuss your situation and check availability."
         }
       ]
     }

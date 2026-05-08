@@ -28,13 +28,13 @@ relatedTreatments:
   - "sports-massage"
 faq:
   - q: "What is the best treatment for lower back pain?"
-    a: "The most effective treatment depends on the cause. At our clinic, we use a combination of spinal decompression, sports massage, and postural correction tailored to your specific condition. Most patients see significant improvement within 3–6 sessions."
+    a: "The most effective treatment depends on the underlying cause — for example, a herniated disc, muscular imbalance, or postural overload each call for a different approach. At our clinic we typically combine spinal decompression, sports massage, and postural correction, tailored to your specific diagnosis. Most patients see significant improvement within 3–6 sessions."
   - q: "How long does lower back pain take to heal?"
-    a: "Acute episodes often improve within 2–6 weeks with proper treatment. Chronic lower back pain may require a longer treatment course of 6–12 weeks. Early intervention typically leads to faster recovery."
+    a: "Acute lower back pain episodes often improve within 2–6 weeks with proper treatment. Chronic lower back pain — meaning pain lasting longer than 12 weeks — usually requires a longer course of 6–12 weeks of consistent treatment. Early intervention generally leads to faster recovery and reduces the risk of acute pain becoming chronic."
   - q: "Can lower back pain be caused by sitting too much?"
-    a: "Yes, prolonged sitting is one of the most common causes of lower back pain, especially for expats who work from home. Sitting increases disc pressure by up to 40% compared to standing. We can help with postural assessment and targeted treatment."
+    a: "Yes, prolonged sitting is one of the most common causes of lower back pain — especially for expats who work from home or drive long distances along the coast. Sitting increases disc pressure by up to 40% compared to standing, which strains the lumbar discs and surrounding muscles. A postural assessment combined with targeted treatment usually resolves the underlying issue."
   - q: "Should I rest or stay active with lower back pain?"
-    a: "Staying gently active is usually better than bed rest. Complete rest can actually slow recovery. We'll advise you on which movements are safe and beneficial, and which to temporarily avoid."
+    a: "Staying gently active is generally better than bed rest. That means short walks, light stretching, and continuing daily activities at a reduced intensity — complete rest can actually slow recovery and weaken the muscles that support your spine. We advise you on which specific movements are safe and beneficial, and which to temporarily avoid."
 order: 1
 ---
 

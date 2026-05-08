@@ -14,13 +14,13 @@ relatedConditions:
   - "nekpijn"
 faq:
   - q: "Is dry needling pijnlijk?"
-    a: "De meeste patienten voelen minimaal ongemak bij het inbrengen van de naald. Wanneer de naald een triggerpoint bereikt, kun je een korte spiertrekkeling of krampgevoel voelen — dit is een goed teken dat de spier loslaat. Het ongemak is kortdurend en veel patienten ervaren direct daarna verlichting."
+    a: "Dry needling veroorzaakt minimaal ongemak bij het inbrengen van de naald — patienten voelen meestal slechts een kleine prik. Wanneer de naald een triggerpoint bereikt, kun je een korte spiertrekkeling of krampgevoel ervaren, wat een positief teken is dat de spier loslaat. Het ongemak is kortdurend en veel patienten ervaren direct daarna verlichting."
   - q: "Wat is het verschil tussen dry needling en acupunctuur?"
-    a: "Hoewel beide technieken dunne naalden gebruiken, zijn de benaderingen fundamenteel anders. Dry needling is gebaseerd op westerse anatomie en richt zich op specifieke spiertriggerpoints die tijdens je onderzoek zijn vastgesteld. Acupunctuur volgt de principes van traditionele Chinese geneeskunde en werkt via energiemeridianen. De behandeldoelen en naaldplaatsing zijn verschillend."
+    a: "Hoewel beide technieken dunne filiform-naalden gebruiken, zijn de benaderingen fundamenteel anders. Dry needling is gebaseerd op westerse musculoskeletale anatomie en richt zich op specifieke spiertriggerpoints die tijdens je onderzoek zijn vastgesteld — bijvoorbeeld een knoop in de bovenste trapeziusspier die pijn naar het hoofd doorstuurt. Acupunctuur volgt de principes van traditionele Chinese geneeskunde en behandelt via energiemeridianen. De behandeldoelen, het diagnostisch kader en de naaldplaatsing zijn volledig verschillend."
   - q: "Hoeveel sessies heb ik nodig?"
-    a: "Veel patienten merken verbetering na 1-2 sessies. Bij chronische klachten adviseren we doorgaans 4-6 sessies in combinatie met andere therapieen. Je behandelplan wordt afgestemd op jouw specifieke klachten en hoe je reageert op de behandeling."
+    a: "Veel patienten merken al na 1-2 sessies een duidelijke verbetering. Bij chronische klachten adviseren we doorgaans 4-6 sessies in combinatie met aanvullende therapieen — zoals sportmassage of houdingscorrectie — om de onderliggende oorzaak aan te pakken. Je behandelplan wordt afgestemd op jouw specifieke klachten en hoe je reageert op de eerste sessies."
   - q: "Zijn er bijwerkingen?"
-    a: "Lichte spierpijn in het behandelde gebied is normaal gedurende 12-24 uur na de behandeling — vergelijkbaar met spierpijn na inspanning. Af en toe kan een klein bloeduitstortinkje optreden. Dit zijn normale reacties die snel verdwijnen. We geven je duidelijke nazorgadviezen aan het einde van elke sessie."
+    a: "Lichte spierpijn in het behandelde gebied is normaal gedurende 12-24 uur na dry needling — vergelijkbaar met spierpijn na inspanning. Af en toe kan een klein bloeduitstortinkje op de prikplaats optreden. Dit zijn normale reacties die snel zonder behandeling verdwijnen. We geven je duidelijke nazorgadviezen — bijvoorbeeld zachte beweging en voldoende drinken — aan het einde van elke sessie."
 order: 4
 ---
 

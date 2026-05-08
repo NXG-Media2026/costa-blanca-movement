@@ -14,11 +14,13 @@ relatedConditions:
   - "nekpijn"
 faq:
   - q: "Wat kan ik verwachten bij een houdingsanalyse?"
-    a: "De sessie begint met een visuele beoordeling van je houding in staande positie. Vervolgens voeren we gerichte bewegingstests en functionele tests uit om te bepalen hoe je lichaam beweegt en waar beperkingen liggen. Aan het eind bespreken we de bevindingen en stellen we samen een behandelplan op."
+    a: "Een houdingsanalyse duurt 45-60 minuten en bestaat uit drie delen: we beoordelen je staande en zittende houding, meten je gewrichtsmobiliteit en spierbalans, en voeren gerichte functionele bewegingstests uit — zoals squats, eenbenig staan en bovenhandse beweging. Draag comfortabele kleding waarin je vrij kunt bewegen. Geen speciale voorbereiding nodig."
   - q: "Voor wie is een houdingsanalyse nuttig?"
-    a: "Voor iedereen met terugkerende pijnklachten, of je nu een bureauwerker bent met nek- en rugklachten, een sporter die blessures wil voorkomen, of iemand die herstelt na een blessure of operatie. Een houdingsanalyse geeft inzicht in de onderliggende oorzaak van je klachten."
+    a: "Een houdingsanalyse is het meest waardevol voor iedereen met terugkerende pijn, stijfheid of beperkte mobiliteit. Bijvoorbeeld: bureauwerkers met chronische nek- of rugspanning, sporters die niet verder komen op hun niveau, patienten die herstellen van een blessure, en mensen die simpelweg willen begrijpen waarom hun lichaam niet beweegt zoals het zou moeten."
+  - q: "Moet ik eerst een houdingsanalyse doen voordat ik aan een behandeling begin?"
+    a: "Niet altijd, maar het wordt sterk aanbevolen. Een grondige analyse betekent dat we de onderliggende oorzaak van je klacht behandelen in plaats van symptomen najagen — bijvoorbeeld een heupasymmetrie aanpakken die lage rugpijn veroorzaakt, in plaats van alleen de rug behandelen. Het geeft ons ook een duidelijk uitgangspunt om je voortgang aan af te meten."
   - q: "Hoe vaak moet ik een houdingsanalyse laten doen?"
-    a: "We adviseren een eerste uitgebreide analyse, gevolgd door een follow-up na 6-8 weken behandeling om je voortgang te beoordelen. Daarna kan een periodieke herhalingsanalyse nuttig zijn, afhankelijk van je klachten en doelen."
+    a: "We adviseren een eerste uitgebreide analyse, gevolgd door een follow-up na 6-8 weken behandeling om je voortgang te beoordelen. Daarna helpt een controle elke 3-6 maanden om resultaten te behouden en nieuwe disbalansen vroeg te signaleren — bijvoorbeeld nuttig als je activiteitsniveau of werkplek verandert."
 order: 3
 ---
 

@@ -28,13 +28,13 @@ relatedTreatments:
   - "spinal-decompression"
 faq:
   - q: "Can neck pain cause headaches?"
-    a: "Yes. Cervicogenic headaches originate from structures in the neck — tight muscles, stiff joints, or irritated nerves. These headaches typically start at the base of the skull and radiate to the forehead or temples. Treating the neck often resolves the headaches."
+    a: "Yes. Cervicogenic headaches originate from structures in the neck — for example, tight upper trapezius muscles, stiff cervical joints, or irritated nerve roots. These headaches typically start at the base of the skull and radiate to the forehead or temples. Treating the underlying neck pain usually resolves the headaches as well."
   - q: "Is it safe to exercise with neck pain?"
-    a: "Gentle movement is usually beneficial, but certain exercises can worsen neck pain. We'll advise you on safe exercises and stretches specific to your condition. Avoid high-impact activities or heavy overhead lifting until your neck has been assessed."
+    a: "Gentle movement is usually beneficial, but certain exercises can worsen neck pain. That means avoiding high-impact activities like running on hard surfaces, heavy overhead lifting, and aggressive neck stretches until your neck has been properly assessed. We provide a list of safe exercises and stretches tailored to your specific diagnosis."
   - q: "How can I prevent neck pain from screen use?"
-    a: "Position your screen at eye level, take breaks every 30 minutes, and keep your shoulders relaxed. We can perform a postural assessment and recommend specific stretches and desk setup changes tailored to your situation."
+    a: "Three simple changes prevent most screen-related neck pain: position your screen at eye level, take a 30-second break every 30 minutes, and keep your shoulders relaxed and away from your ears. We can perform a postural assessment and recommend specific stretches and desk-setup changes — such as monitor risers, keyboard tray height, or chair adjustments — tailored to your workstation."
   - q: "What treatments do you offer for neck pain?"
-    a: "We treat neck pain with a combination of sports massage to release muscle tension, spinal decompression for disc-related issues, and postural correction to address the root cause. Your treatment plan is personalised based on a thorough assessment."
+    a: "We treat neck pain with a combination of three approaches: sports massage to release muscle tension, spinal decompression for disc-related issues such as cervical disc bulges, and postural correction to address the root cause. Your treatment plan is personalised based on a thorough assessment of your symptoms, posture, and movement patterns."
 order: 2
 ---
 

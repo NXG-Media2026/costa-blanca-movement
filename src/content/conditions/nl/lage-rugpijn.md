@@ -28,13 +28,13 @@ relatedTreatments:
   - "sportmassage"
 faq:
   - q: "Wat is de beste behandeling voor lage rugpijn?"
-    a: "De meest effectieve behandeling hangt af van de oorzaak. In onze kliniek gebruiken we een combinatie van wervelkolom decompressie, sportmassage en houdingscorrectie, afgestemd op jouw specifieke klachten. De meeste patienten zien significante verbetering binnen 3-6 sessies."
+    a: "De meest effectieve behandeling hangt af van de onderliggende oorzaak — bijvoorbeeld een hernia, spierdisbalans of houdingsoverbelasting vragen elk een andere aanpak. In onze kliniek combineren we doorgaans wervelkolom decompressie, sportmassage en houdingscorrectie, afgestemd op jouw specifieke diagnose. De meeste patienten zien significante verbetering binnen 3-6 sessies."
   - q: "Hoe lang duurt het voordat lage rugpijn geneest?"
-    a: "Acute episodes verbeteren vaak binnen 2-6 weken met de juiste behandeling. Chronische lage rugpijn kan een langer behandeltraject van 6-12 weken vereisen. Vroeg ingrijpen leidt doorgaans tot sneller herstel."
+    a: "Acute lage rugpijn-episodes verbeteren vaak binnen 2-6 weken met de juiste behandeling. Chronische lage rugpijn — wat betekent pijn die langer dan 12 weken aanhoudt — vereist meestal een langer traject van 6-12 weken consistente behandeling. Vroeg ingrijpen leidt doorgaans tot sneller herstel en verkleint de kans dat acute pijn chronisch wordt."
   - q: "Kan lage rugpijn worden veroorzaakt door te veel zitten?"
-    a: "Ja, langdurig zitten is een van de meest voorkomende oorzaken van lage rugpijn, vooral voor expats die thuis werken. Zitten verhoogt de schijfdruk met wel 40% vergeleken met staan. Wij kunnen helpen met een houdingsbeoordeling en gerichte behandeling."
+    a: "Ja, langdurig zitten is een van de meest voorkomende oorzaken van lage rugpijn — vooral voor expats die thuiswerken of lange ritten over de kust maken. Zitten verhoogt de schijfdruk tot wel 40% vergeleken met staan, wat de lumbale schijven en omliggende spieren overbelast. Een houdingsanalyse in combinatie met gerichte behandeling lost het onderliggende probleem meestal op."
   - q: "Moet ik rusten of actief blijven bij lage rugpijn?"
-    a: "Voorzichtig actief blijven is meestal beter dan bedrust. Volledige rust kan het herstel zelfs vertragen. Wij adviseren je welke bewegingen veilig en nuttig zijn, en welke je tijdelijk beter kunt vermijden."
+    a: "Voorzichtig actief blijven is doorgaans beter dan bedrust. Dat betekent korte wandelingen, lichte stretches en doorgaan met dagelijkse activiteiten op een lager intensiteitsniveau — volledige rust kan het herstel zelfs vertragen en de spieren die je wervelkolom ondersteunen verzwakken. Wij adviseren je welke specifieke bewegingen veilig en nuttig zijn, en welke je tijdelijk beter kunt vermijden."
 order: 1
 ---
 

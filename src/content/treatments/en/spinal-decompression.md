@@ -15,13 +15,13 @@ relatedConditions:
   - "sciatica"
 faq:
   - q: "Is spinal decompression painful?"
-    a: "No. Most patients find the treatment comfortable and relaxing. You'll feel a gentle stretch in your spine. Some patients even fall asleep during the session."
+    a: "No. Most patients describe spinal decompression as comfortable and relaxing — you feel a gentle, controlled stretch in your spine, not a sharp pull. Some patients even fall asleep during the session. Any mild soreness afterwards typically fades within 24 hours."
   - q: "How many sessions will I need?"
-    a: "A typical treatment course is 6–12 sessions over 4–6 weeks. During your initial assessment, we'll recommend a specific plan based on your condition and response to treatment."
+    a: "A typical spinal decompression course is 6–12 sessions over 4–6 weeks. The exact number depends on factors such as the severity of disc compression, how long symptoms have been present, and your response to the first sessions. We give a clear, personalised estimate after your initial assessment."
   - q: "Can spinal decompression help a herniated disc?"
-    a: "Yes. Spinal decompression is one of the most effective non-surgical treatments for herniated and bulging discs. It reduces disc pressure, allowing the herniation to retract and heal naturally."
+    a: "Yes. Spinal decompression is one of the most effective non-surgical treatments for herniated and bulging discs. That means it creates negative pressure inside the disc, drawing the herniated material back toward the centre and allowing nutrients and oxygen to flow in for natural healing. Most patients with a herniated disc see meaningful pain reduction within the first few sessions."
   - q: "Is spinal decompression safe for older adults?"
-    a: "Spinal decompression is safe for most adults regardless of age. We'll perform a thorough assessment first to ensure it's appropriate for your specific situation. Certain conditions like severe osteoporosis may require alternative approaches."
+    a: "Yes — spinal decompression is safe for most adults regardless of age, including patients in their 70s and 80s. We always perform a thorough assessment first to confirm it is appropriate for your specific situation. Certain conditions, such as severe osteoporosis, advanced spinal stenosis, or recent spinal surgery, may require alternative approaches."
 order: 1
 ---
 

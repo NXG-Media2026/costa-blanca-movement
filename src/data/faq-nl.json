@@ -5,19 +5,19 @@
       "questions": [
         {
           "q": "Heb ik een verwijzing nodig om jullie kliniek te bezoeken?",
-          "a": "Nee, je hebt geen verwijzing nodig. Je kunt direct een afspraak maken per telefoon, WhatsApp of via ons <a href=\"/nl/contact\">contactformulier</a>. Zowel nieuwe als terugkerende patienten zijn welkom."
+          "a": "Nee, een verwijzing is niet nodig. Patienten kunnen direct een afspraak maken per telefoon, WhatsApp of via ons <a href=\"/nl/contact\">contactformulier</a>. Zowel nieuwe als terugkerende patienten zijn welkom, inclusief internationale bezoekers en expats die aan de Costa Blanca wonen."
         },
         {
           "q": "Behandelen jullie internationale patienten en expats?",
-          "a": "Ja — onze kliniek bedient voornamelijk de internationale expat-gemeenschap aan de Costa Blanca. We spreken Engels, Nederlands en Spaans, en we hebben ervaring met internationale zorgverzekeringsclaims."
+          "a": "Ja. Onze kliniek bedient voornamelijk de internationale expat-gemeenschap aan de Costa Blanca. Dat betekent dat consulten en behandelingen beschikbaar zijn in het Engels, Nederlands en Spaans, en dat ons team ervaring heeft met internationale zorgverzekeringsclaims en restitutiedocumentatie."
         },
         {
           "q": "Wat kan ik verwachten bij mijn eerste bezoek?",
-          "a": "Je eerste bezoek omvat een uitgebreide beoordeling van je klachten, medische voorgeschiedenis en bewegingspatronen. We bespreken je symptomen, voeren een lichamelijk onderzoek uit en stellen een persoonlijk behandelplan op. Reken op 45-60 minuten."
+          "a": "Je eerste bezoek is een uitgebreide beoordeling die 45-60 minuten duurt. We bespreken je klachten in detail, nemen je medische voorgeschiedenis door, voeren een lichamelijk onderzoek uit en doen gerichte bewegingstests. Op basis van die bevindingen stellen we een persoonlijk behandelplan op met duidelijke doelen en een eerlijke inschatting van het aanbevolen traject."
         },
         {
           "q": "Hoeveel behandelsessies heb ik nodig?",
-          "a": "Dit hangt af van je klachten en de ernst ervan. De meeste patienten merken verbetering binnen 3-4 sessies. Tijdens je eerste beoordeling geven we een eerlijke inschatting van het aanbevolen behandeltraject."
+          "a": "Het aantal sessies hangt af van je klachten en de ernst ervan. De meeste patienten merken binnen 3-4 sessies een duidelijke verbetering, met een gemiddeld volledig traject van 6-12 sessies over 4-8 weken. Tijdens je eerste beoordeling geven we een eerlijke inschatting zodat je precies weet wat je kunt verwachten."
         }
       ]
     },
@@ -26,15 +26,15 @@
       "questions": [
         {
           "q": "Wordt de behandeling vergoed door de verzekering?",
-          "a": "Veel internationale zorgverzekeraars vergoeden onze behandelingen. We kunnen gedetailleerde facturen leveren voor restitutie. <a href=\"/nl/contact\">Neem contact op</a> met je verzekeringsgegevens en we helpen je je dekking te begrijpen."
+          "a": "Veel internationale zorgverzekeraars vergoeden onze behandelingen — bijvoorbeeld Cigna Global, Allianz Care, AXA International en Bupa Global. We leveren gedetailleerde, gespecificeerde facturen die je kunt indienen voor restitutie. <a href=\"/nl/contact\">Neem contact op</a> met je verzekeringsgegevens en we helpen je je specifieke dekking te begrijpen."
         },
         {
           "q": "Welke betaalmethoden accepteren jullie?",
-          "a": "We accepteren contant, pinpas, creditcard (Visa, Mastercard) en bankoverschrijving. Betaling vindt plaats op het moment van behandeling."
+          "a": "We accepteren contant, pinpas, creditcard (zoals Visa en Mastercard) en SEPA-bankoverschrijving. Betaling vindt plaats op het moment van behandeling. We leveren bonnen en gespecificeerde facturen op verzoek, opgemaakt volgens de eisen van de meeste internationale verzekeraars."
         },
         {
           "q": "Bieden jullie pakketdeals aan voor meerdere sessies?",
-          "a": "Ja, we bieden behandelpakketten aan tegen een gereduceerd tarief voor patienten die een behandeltraject nodig hebben. Vraag naar onze pakketopties tijdens je eerste beoordeling."
+          "a": "Ja. We bieden behandelpakketten tegen een gereduceerd tarief voor patienten die een traject nodig hebben — bijvoorbeeld een blok van 6 wervelkolom decompressie sessies. Vraag naar de pakketopties tijdens je eerste beoordeling, dan stellen we er een samen die bij je behandelplan past."
         }
       ]
     },
@@ -43,19 +43,19 @@
       "questions": [
         {
           "q": "Wat is wervelkolom decompressie therapie?",
-          "a": "Wervelkolom decompressie is een niet-chirurgische, gemotoriseerde tractie-therapie die de wervelkolom voorzichtig uitrekt om druk op gecomprimeerde schijven en beknelde zenuwen te verlichten. Lees meer op onze <a href=\"/nl/behandelingen/wervelkolom-decompressie\">wervelkolom decompressie pagina</a>."
+          "a": "Wervelkolom decompressie is een niet-chirurgische, gemotoriseerde tractie-therapie. Dat betekent dat een gespecialiseerde behandeltafel de wervelkolom op een gecontroleerde manier voorzichtig uitrekt, waardoor er negatieve druk in de tussenwervelschijven ontstaat die de druk op beknelde zenuwen en uitpuilende schijven vermindert. Elke sessie duurt doorgaans 30-45 minuten. Lees meer op onze <a href=\"/nl/behandelingen/wervelkolom-decompressie\">wervelkolom decompressie pagina</a>."
         },
         {
           "q": "Is wervelkolom decompressie pijnlijk?",
-          "a": "Nee. De meeste patienten ervaren de behandeling als comfortabel en ontspannend. Je voelt een zachte rek in je wervelkolom. Sommige patienten vallen zelfs in slaap tijdens de sessie."
+          "a": "Nee. De meeste patienten ervaren wervelkolom decompressie als comfortabel en ontspannend. Je voelt een zachte, gecontroleerde rek in je wervelkolom — geen scherpe trek. Sommige patienten vallen zelfs in slaap tijdens de sessie. Eventuele lichte spierpijn na de behandeling verdwijnt meestal binnen 24 uur."
         },
         {
           "q": "Moet ik een sporter zijn om baat te hebben bij sportmassage?",
-          "a": "Absoluut niet. <a href=\"/nl/behandelingen/sportmassage\">Sportmassage</a> is gunstig voor iedereen met spierspanning, chronische pijn of een actieve levensstijl — inclusief golfers, fietsers, wandelaars en mensen met spanningsklachten door bureauwerk."
+          "a": "Nee — <a href=\"/nl/behandelingen/sportmassage\">sportmassage</a> is gunstig voor iedereen met spierspanning, chronische pijn of een actieve levensstijl. Bijvoorbeeld: we behandelen regelmatig golfers, fietsers, wandelaars en mensen met spanningsklachten in nek en schouders door bureauwerk. Je hoeft geen wedstrijdsporter te zijn om er baat bij te hebben."
         },
         {
           "q": "Wat is het verschil tussen sportmassage en ontspanningsmassage?",
-          "a": "Sportmassage gebruikt stevigere druk en gerichte technieken (diepe weefseltherapie, triggerpoint-therapie, myofasciale release) om specifieke probleemgebieden te behandelen. Het is therapeutisch in plaats van puur ontspannend."
+          "a": "Sportmassage is therapeutisch, niet puur ontspannend. Dat betekent dat er stevigere druk en gerichte technieken worden gebruikt — zoals diepe weefseltherapie, triggerpoint-therapie en myofasciale release — om specifieke probleemgebieden te behandelen, zoals chronische spierspanning of terugkerende blessurepunten. Een ontspanningsmassage gebruikt lichtere, bredere bewegingen en is gericht op algemene stressverlichting."
         }
       ]
     },
@@ -64,15 +64,15 @@
       "questions": [
         {
           "q": "Wanneer moet ik een specialist raadplegen voor rugpijn?",
-          "a": "Zoek hulp als je <a href=\"/nl/klachten/lage-rugpijn\">lage rugpijn</a> langer dan 2-3 weken aanhoudt, uitstraalt naar je benen, gepaard gaat met gevoelloosheid of tintelingen, je slaap verstoort of je dagelijkse activiteiten beperkt."
+          "a": "Zoek professionele hulp als je <a href=\"/nl/klachten/lage-rugpijn\">lage rugpijn</a> aan een van deze criteria voldoet: langer dan 2-3 weken aanhoudt, uitstraalt naar je benen, gepaard gaat met gevoelloosheid of tintelingen, je slaap verstoort of je dagelijkse activiteiten beperkt. Vroege beoordeling leidt over het algemeen tot sneller herstel en voorkomt dat acute klachten chronisch worden."
         },
         {
           "q": "Kan nekpijn hoofdpijn veroorzaken?",
-          "a": "Ja. Cervicogene hoofdpijn ontstaat vanuit structuren in de nek — strakke spieren, stijve gewrichten of geirriteerde zenuwen. Het behandelen van de onderliggende nekpijn lost vaak de hoofdpijn op."
+          "a": "Ja. Cervicogene hoofdpijn ontstaat vanuit structuren in de nek — bijvoorbeeld strakke nek- en schouderspieren, stijve cervicale gewrichten of geirriteerde zenuwwortels. Deze hoofdpijn begint meestal aan de basis van de schedel en straalt uit naar het voorhoofd of de slapen. Het behandelen van de onderliggende <a href=\"/nl/klachten/nekpijn\">nekpijn</a> lost vaak ook de hoofdpijn op."
         },
         {
           "q": "Wat is ischias?",
-          "a": "Ischias is pijn die langs de heupzenuw uitstraalt, van de lage rug door de bil en het been. Het wordt meestal veroorzaakt door een hernia of botuitsteeksel dat op de zenuw drukt. Wij behandelen ischias met <a href=\"/nl/behandelingen/wervelkolom-decompressie\">wervelkolom decompressie</a> en gerichte manuele therapie."
+          "a": "Ischias is pijn die langs de heupzenuw uitstraalt, van de lage rug door de bil en de achterkant van het been. Het wordt meestal veroorzaakt door een hernia of botuitsteeksel die op een lumbale zenuwwortel drukt — ischias is dus geen ziekte op zich, maar een symptoom van een onderliggend wervelkolomprobleem. Wij behandelen ischias met <a href=\"/nl/behandelingen/wervelkolom-decompressie\">wervelkolom decompressie</a> en gerichte manuele therapie."
         }
       ]
     },
@@ -81,15 +81,15 @@
       "questions": [
         {
           "q": "Waar is jullie kliniek gevestigd?",
-          "a": "We zijn gevestigd in Torrevieja, aan de zuidelijke Costa Blanca in Spanje. Onze kliniek is gemakkelijk bereikbaar vanuit Orihuela Costa (15 min), Guardamar del Segura (15 min) en Pilar de la Horadada (20 min). Gratis parkeren in de buurt."
+          "a": "Onze kliniek is gevestigd in Torrevieja, aan de zuidelijke Costa Blanca in Spanje. We zijn goed bereikbaar vanuit omliggende expat-gebieden — zoals Orihuela Costa (15 minuten rijden), Guardamar del Segura (15 min) en Pilar de la Horadada (20 min). Gratis parkeren is beschikbaar in de buurt."
         },
         {
           "q": "Wat zijn jullie openingstijden?",
-          "a": "We zijn open van maandag tot en met vrijdag van 9:00 tot 18:00, en zaterdag van 9:00 tot 13:00. Op zondag zijn we gesloten. <a href=\"/nl/contact\">Maak een afspraak</a> om je gewenste tijdstip vast te leggen."
+          "a": "We zijn geopend maandag tot en met vrijdag van 9:00 tot 18:00, en zaterdag van 9:00 tot 13:00. Op zondag zijn we gesloten. <a href=\"/nl/contact\">Maak online of telefonisch een afspraak</a> om je gewenste tijdstip vast te leggen."
         },
         {
           "q": "Doen jullie huisbezoeken?",
-          "a": "In bepaalde gevallen kunnen we een huisbezoek regelen voor patienten die moeilijk naar de kliniek kunnen reizen. <a href=\"/nl/contact\">Neem contact op</a> om je situatie te bespreken."
+          "a": "In bepaalde gevallen kunnen we een huisbezoek regelen — bijvoorbeeld voor patienten met mobiliteitsbeperkingen die niet naar de kliniek kunnen reizen. Huisbezoeken zijn afhankelijk van beschikbaarheid en er geldt een reistoeslag. <a href=\"/nl/contact\">Neem contact op</a> om je situatie te bespreken en de beschikbaarheid te checken."
         }
       ]
     }
