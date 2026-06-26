@@ -8,7 +8,7 @@ export const siteConfig = {
 
   // Analytics — per client. Empty string = feature disabled.
   analytics: {
-    ga4MeasurementId: '', // Per client: G-XXXXXXXXXX
+    ga4MeasurementId: 'G-Z9SLJYNE4T',
     gscVerificationId: '', // Per client: Google Search Console HTML tag verification
   },
 
